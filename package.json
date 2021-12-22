@@ -1,0 +1,9 @@
+{
+  "name": "@g123jp/g123-UI",
+  "version": "1.0.0",
+  "description": "Reuseable UI based on G123 Design System",
+  "main": "index.js",
+  "repository": "https://github.com/G123-jp/g123-UI.git",
+  "author": "hydRAnger <armyiljfe@gmail.com>",
+  "license": "MIT"
+}

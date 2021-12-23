@@ -1,1 +1,5 @@
-export {default} from './tailwind.config';
+const tailwindConfig = require("./tailwind.config");
+
+module.exports = {
+  tailwindConfig: tailwindConfig,
+};

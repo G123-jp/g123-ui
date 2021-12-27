@@ -45,11 +45,17 @@ module.exports = {
         15: "3.75rem",
       },
       // Akira: 暂时继承tailwind默认调色板，使用全局的调色板变量来自定义颜色（或者之后直接放到这里？）
+      // colors: {
+			// 	primary: '#136c72',
+			// 	secondary: '#d9ede2',
+			// 	highlight: '#e3ff34',
+			// 	danger: '#ff385c'
+      // },
       colors: {
-				primary: '#136c72',
-				secondary: '#d9ede2',
-				highlight: '#e3ff34',
-				danger: '#ff385c'
+        primary: 'var(--color-primary)',
+        secondary: 'var(--color-secondary)',
+        highlight: 'var(--color-highlight)',
+        danger: 'var(--color-danger)',
       },
     },
   },

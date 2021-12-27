@@ -1,0 +1,12 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* FIXME: Akira: current color palette */
+/* Akira: 暂时继承tailwind默认调色板，使用全局的调色板变量来自定义颜色（或者之后直接放到这里？）*/
+:root {
+  --color-primary: #136c72;
+  --color-secondary: #d9ede2;
+  --color-highlight: #e3ff34;
+  --color-danger: #ff385c;
+}

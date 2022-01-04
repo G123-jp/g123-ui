@@ -1,8 +1,10 @@
 import React, { useLayoutEffect } from 'react';
 
-import styles from './global.css';
+import styles from './test.css';
 
-export const Provider: React.VFC = () => {
+export type FooterProps = React.HTMLAttributes<HTMLDivElement>;
+
+const Footer = (props: FooterProps) => {
   useLayoutEffect(() => {
     styles.use();
     // Load Google Font
@@ -13,5 +15,7 @@ export const Provider: React.VFC = () => {
     // document.head.appendChild(link);
   }, []);
 
-  return null;
+  return <div {...props}>This is a footer</div>;
 };
+
+export default Footer;

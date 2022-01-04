@@ -1,37 +1,16 @@
 {
-  "ts-node": {
-    "compilerOptions": {
-      "baseUrl": ".",
-      "module": "commonjs",
-      "target": "es5",
-      "esModuleInterop": true,
-      "resolveJsonModule": true,
-      "allowJs": true
-    }
-  },
   "compilerOptions": {
-    "strict": true,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "noImplicitReturns": true,
-    "noFallthroughCasesInSwitch": true,
-    "moduleResolution": "node",
-    "allowSyntheticDefaultImports": true,
+    "declaration": true,
+    "declarationDir": "dist/types",
     "esModuleInterop": true,
-    "resolveJsonModule": true,
-    "preserveConstEnums": true,
-    "forceConsistentCasingInFileNames": true,
-    "module": "esnext",
-    "target": "es2017",
-    "sourceMap": true,
-    "outDir": "dist",
+    "moduleResolution": "Node",
     "jsx": "react",
-    "baseUrl": ".",
-    "allowJs": true,
-    "paths": {
-      "@/*": ["src/*"],
-      "*": ["node_modules/*", "types/*"]
-    }
+    "resolveJsonModule": true,
+    "strict": true,
+    "target": "ESNext",
+    "plugins": [{ "name": "typescript-plugin-css-modules" }]
   },
-  "include": ["./**/*"]
+  "include": [
+    "src"
+  ]
 }

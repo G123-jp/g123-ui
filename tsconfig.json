@@ -8,7 +8,12 @@
     "resolveJsonModule": true,
     "strict": true,
     "target": "ESNext",
-    "plugins": [{ "name": "typescript-plugin-css-modules" }]
+    "plugins": [{ "name": "typescript-plugin-css-modules" }],
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "*": ["node_modules/*", "types/*"]
+    }
   },
   "include": [
     "src"

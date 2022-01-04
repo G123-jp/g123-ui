@@ -1,6 +1,6 @@
 /* eslint-disable react/button-has-type */
-import React, { useCallback } from 'react';
 import { classnames } from '@/tailwindcss-classnames';
+import React, { useCallback } from 'react';
 
 enum HtmlType {
   button = 'button',
@@ -27,7 +27,7 @@ type Props = {
   type?: Type;
   block?: boolean;
   htmlType?: HtmlType;
-  onClick?: () => void | Promise<void>;
+  onClick?: (() => void | Promise<void>) | undefined;
 };
 
 const Button: React.FC<Props> = ({
@@ -41,7 +41,7 @@ const Button: React.FC<Props> = ({
 }) => {
   const handleClick = useCallback(() => {
     onClick && onClick();
-  }, []);
+  }, [onClick]);
 
   return (
     <button
@@ -85,6 +85,15 @@ const Button: React.FC<Props> = ({
       {children}
     </button>
   );
+};
+
+Button.defaultProps = {
+  type: Type.default,
+  size: Size.middle,
+  disabled: false,
+  block: false,
+  htmlType: HtmlType.button,
+  onClick: undefined,
 };
 
 export { Type as ButtonType, Size as ButtonSize };

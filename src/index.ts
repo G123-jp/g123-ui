@@ -1,6 +1,5 @@
 import Provider from './Provider';
-
-const tailwindConfig = require('./tailwind.config');
+import tailwindConfig from './tailwind.config';
 
 // exports.tailwindConfig = tailwindConfig;
 // exports.Provider = Provider;

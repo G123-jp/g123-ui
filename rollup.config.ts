@@ -1,6 +1,7 @@
 import postcss from 'rollup-plugin-postcss'
 import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
+import image from '@rollup/plugin-image';
 import typescript from 'rollup-plugin-typescript2';
 import pkg from './package.json';
 
@@ -19,6 +20,7 @@ export default {
   external: ['react'],
   plugins: [
     postcss({ extract: true, plugins: [] }),
+    image(),
     resolve(),
     commonjs(),
     typescript({

@@ -1,4 +1,10 @@
-export default {
+// FIXME: Akira
+// .js for tailwind CLI(https://github.com/muhammadsammy/tailwindcss-classnames#using-the-cli)
+// which require a commonjs module.
+// .ts for rollup to compile tailwind.config and export it.
+// both of their's content are duplicated.
+
+module.exports = {
   content: {
     content: ['./src/components/**/*.tsx'],
   },

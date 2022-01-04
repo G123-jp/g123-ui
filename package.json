@@ -15,6 +15,7 @@
   "types": "dist/types",
   "scripts": {
     "build": "rollup -c rollup.config.ts",
+    "generate-tailwindcss-types": "tailwindcss-classnames -i src/tailwind.config.js -x src/tailwindcss-custom-classnames.ts -o src/tailwindcss-classnames.ts",
     "lint": "tsc --noEmit && eslint \"./**/*.ts\" \"./**/*.tsx\"",
     "fix": "eslint --fix \"./**/*.ts\" \"./**/*.tsx\""
   },

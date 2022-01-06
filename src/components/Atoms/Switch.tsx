@@ -1,16 +1,20 @@
-import React, { useCallback } from 'react';
 import { classnames } from '@/tailwindcss-classnames';
+import React, { useCallback } from 'react';
 
 type Props = {
   checked: boolean;
-  disabled?: boolean;
+  // TODO: Akira
+  // disabled?: boolean;
   onSwitch: (checked: boolean) => void | Promise<void>;
 };
 
 const Switch: React.FC<Props> = ({ checked, onSwitch }) => {
-  const handleChange = useCallback((value: boolean) => {
-    onSwitch && onSwitch(value);
-  }, []);
+  const handleChange = useCallback(
+    (value: boolean) => {
+      onSwitch && onSwitch(value);
+    },
+    [onSwitch],
+  );
 
   return (
     <div
@@ -19,7 +23,7 @@ const Switch: React.FC<Props> = ({ checked, onSwitch }) => {
         'items-center',
         'justify-center',
         'w-full',
-        'mb-12'
+        'mb-12',
       )}
     >
       <label
@@ -34,7 +38,7 @@ const Switch: React.FC<Props> = ({ checked, onSwitch }) => {
             } ${classnames('block', 'w-10', 'h-6', 'rounded-full')}`}
           />
           <div
-            aria-hidden={true}
+            aria-hidden
             className={classnames('absolute', 'rounded-full', 'transition', {
               'bg-primary': checked,
               'bg-white': !checked,

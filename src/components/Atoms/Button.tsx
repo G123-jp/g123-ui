@@ -1,6 +1,6 @@
 /* eslint-disable react/button-has-type */
-import React, { useCallback } from 'react';
 import { classnames } from '@/tailwindcss-classnames';
+import React, { useCallback } from 'react';
 
 enum HtmlType {
   button = 'button',
@@ -27,7 +27,7 @@ type Props = {
   type?: Type;
   block?: boolean;
   htmlType?: HtmlType;
-  onClick?: () => void | Promise<void>;
+  onClick?: (() => void | Promise<void>) | undefined;
 };
 
 const Button: React.FC<Props> = ({
@@ -41,20 +41,18 @@ const Button: React.FC<Props> = ({
 }) => {
   const handleClick = useCallback(() => {
     onClick && onClick();
-  }, []);
+  }, [onClick]);
 
   return (
     <button
       className={classnames('rounded-full', 'text-center', 'font-normal', {
         // Color
-        'text-white': disabled || type === Type.default,
-
-        'bg-primary': !disabled && type === Type.default,
+        'text-white': type === Type.default,
+        'bg-primary': type === Type.default,
         'bg-transparent': type === Type.text,
 
-        'bg-highlight': !disabled && type === Type.primary,
-        'text-primary':
-          (!disabled && type === Type.primary) || type === Type.text,
+        'bg-highlight': type === Type.primary,
+        'text-primary': type === Type.primary || type === Type.text,
 
         'border-transparent': type === Type.default || type === Type.primary,
 
@@ -85,6 +83,15 @@ const Button: React.FC<Props> = ({
       {children}
     </button>
   );
+};
+
+Button.defaultProps = {
+  type: Type.default,
+  size: Size.middle,
+  disabled: false,
+  block: false,
+  htmlType: HtmlType.button,
+  onClick: undefined,
 };
 
 export { Type as ButtonType, Size as ButtonSize };

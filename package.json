@@ -1,28 +1,85 @@
 {
   "name": "@g123jp/g123-ui",
-  "version": "1.0.2",
+  "version": "1.2.0",
   "description": "Reuseable UI based on G123 Design System",
-  "main": "dist/index.js",
-  "repository": "https://github.com/G123-jp/g123-UI.git",
   "author": "hydRAnger <armyiljfe@gmail.com>",
   "license": "MIT",
-  "scripts": {
-    "dev": "node scripts/dev.js",
-    "dev-build": "node scripts/dev_build.js",
-    "build": "node scripts/build.js",
-    "generate-tailwindcss-types": "tailwindcss-classnames -i src/tailwind.config.js -x src/tailwindcss-custom-classnames.ts -o src/tailwindcss-classnames.ts"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/G123-jp/g123-UI.git"
   },
-  "dependencies": {
-    "esbuild": "^0.14.8",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+  "keywords": [],
+  "homepage": "",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "types": "dist/types",
+  "scripts": {
+    "build": "rollup -c rollup.config.prod.ts",
+    "dev-build": "rollup -c rollup.config.dev.ts",
+    "generate-tailwindcss-types": "tailwindcss-classnames -i src/tailwind.config.js -x src/tailwindcss-custom-classnames.ts -o src/tailwindcss-classnames.ts",
+    "lint": "tsc --noEmit && eslint \"./**/*.ts\" \"./**/*.tsx\"",
+    "fix": "eslint --fix \"./**/*.ts\" \"./**/*.tsx\""
   },
   "devDependencies": {
-    "@types/react": "^17.0.37",
-    "@types/react-dom": "^17.0.11",
-    "autoprefixer": "^10.4.0",
+    "@g123jp/eslint-config-react": "^1.0.0",
+    "@g123jp/prettier-config-recommended": "^1.1.0",
+    "@rollup/plugin-commonjs": "^21.0.1",
+    "@rollup/plugin-image": "^2.1.1",
+    "@rollup/plugin-node-resolve": "^13.0.6",
+    "@types/react": "^17.0.34",
+    "@typescript-eslint/eslint-plugin": "^5.3.0",
+    "@typescript-eslint/parser": "^5.3.0",
+    "autoprefixer": "^10.4.1",
+    "eslint": "^8.1.0",
+    "eslint-config-airbnb": "^18.2.1",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-import-helpers": "^1.1.0",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^4.0.0",
+    "eslint-plugin-react": "^7.26.1",
+    "eslint-plugin-react-hooks": "^4.2.0",
     "postcss": "^8.4.5",
-    "tailwindcss": "^3.0.7",
-    "tailwindcss-classnames": "^2.2.6"
+    "prettier": "^2.4.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "rollup": "^2.59.0",
+    "rollup-plugin-postcss": "^4.0.2",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-typescript2": "^0.30.0",
+    "tailwindcss": "^3.0.9",
+    "tailwindcss-classnames": "2.2.6",
+    "typescript": "^4.4.4",
+    "typescript-plugin-css-modules": "^3.4.0"
+  },
+  "peerDependencies": {
+    "react": ">=17.0.1",
+    "react-dom": ">=17.0.1"
+  },
+  "prettier": "@g123jp/prettier-config-recommended",
+  "eslintConfig": {
+    "plugins": [
+      "react",
+      "@typescript-eslint",
+      "prettier",
+      "import-helpers"
+    ],
+    "extends": "@g123jp/eslint-config-react",
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "ecmaFeatures": {
+        "jsx": true
+      }
+    },
+    "settings": {
+      "react": {
+        "version": "detect"
+      }
+    },
+    "env": {
+      "browser": true,
+      "node": true,
+      "es6": true
+    }
   }
 }

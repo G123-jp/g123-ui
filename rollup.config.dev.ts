@@ -19,7 +19,7 @@ export default {
   ],
   external: ['react'],
   plugins: [
-    postcss({ extract: true, plugins: [] }),
+    postcss({ modules: true, extract: true, plugins: [] }),
     image(),
     resolve(),
     commonjs(),

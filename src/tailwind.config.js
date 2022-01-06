@@ -5,9 +5,7 @@
 // both of their's content are duplicated.
 
 module.exports = {
-  content: {
-    content: ['./src/components/**/*.tsx'],
-  },
+  content: ['./src/components/**/*.tsx'],
   theme: {
     fontFamily: {
       sans: [
@@ -53,18 +51,12 @@ module.exports = {
       spacing: {
         15: '3.75rem',
       },
-      // Akira: 暂时继承tailwind默认调色板，使用全局的调色板变量来自定义颜色（或者之后直接放到这里？）
-      // colors: {
-      // 	primary: '#136c72',
-      // 	secondary: '#d9ede2',
-      // 	highlight: '#e3ff34',
-      // 	danger: '#ff385c'
-      // },
+      // Akira: tailwind defualt colors + g123 pallate
       colors: {
-        primary: 'var(--color-primary)',
-        secondary: 'var(--color-secondary)',
-        highlight: 'var(--color-highlight)',
-        danger: 'var(--color-danger)',
+        primary: '#136c72',
+        secondary: '#d9ede2',
+        highlight: '#e3ff34',
+        danger: '#ff385c',
       },
     },
   },

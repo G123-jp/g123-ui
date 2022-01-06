@@ -1,2 +1,2 @@
 dist
-rollup.config.ts
+rollup.config.*.ts

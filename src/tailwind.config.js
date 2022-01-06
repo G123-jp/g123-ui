@@ -58,6 +58,58 @@ module.exports = {
         highlight: '#e3ff34',
         danger: '#ff385c',
       },
+      animation: {
+        'fade-in-bottom': 'fade-in-bottom 0.4s ease-out',
+        'fade-out-bottom': 'fade-out-bottom 0.4s ease-out',
+        'slide-in-bottom':
+          'slide-in-bottom 0.4s cubic-bezier(0.2, 0.8, 0.2, 1)',
+        'slide-in-left': 'slide-in-left 0.4s cubic-bezier(0.2, 0.8, 0.2, 1)',
+      },
+      keyframes: {
+        'fade-in-bottom': {
+          '0%': {
+            opacity: 0,
+            transform: 'translateY(10px)',
+          },
+          '100%': {
+            opacity: 1,
+            transform: 'translateY(0)',
+          },
+        },
+        'fade-out-bottom': {
+          '0%': {
+            opacity: 1,
+            transform: 'translateY(0)',
+          },
+          '100%': {
+            opacity: 0,
+            transform: 'translateY(10px)',
+          },
+        },
+        'slide-in-bottom': {
+          '0%': {
+            opacity: 0,
+            transform: 'translateY(100%)',
+          },
+          '100%': {
+            opacity: 1,
+            transform: 'translateY(0)',
+          },
+        },
+        'slide-in-left': {
+          '0%': {
+            opacity: 0,
+            transform: 'translateX(-100%)',
+          },
+          '100%': {
+            opacity: 1,
+            transform: 'translateX(0)',
+          },
+        },
+      },
+      transitionProperty: {
+        height: 'height',
+      },
     },
   },
   // Akira: FIXME: should be removed, ref: https://tailwindcss.com/docs/upgrade-guide#remove-variant-configuration

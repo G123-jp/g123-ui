@@ -1,16 +1,16 @@
 import { classnames } from '@/tailwindcss-classnames';
 import React from 'react';
 
-import CloseImg from './images/close.svg';
+import ChevronLeftImg from './images/chevron-left.svg';
 
 type Props = {
-  onClose: (e: React.MouseEvent) => void | Promise<void>;
+  onGoBack?: (e: React.MouseEvent) => void | Promise<void>;
 };
 
-const CloseButton: React.VFC<Props> = ({ onClose }) => {
+const GoBackButton: React.VFC<Props> = ({ onGoBack }) => {
   return (
     <button
-      aria-label="Close Button"
+      aria-label="Go Back Button"
       className={classnames(
         'cursor-pointer',
         'flex',
@@ -23,11 +23,13 @@ const CloseButton: React.VFC<Props> = ({ onClose }) => {
         'h-6',
       )}
       type="button"
-      onClick={onClose}
+      onClick={(e: React.MouseEvent): void => {
+        onGoBack && onGoBack(e);
+      }}
     >
-      <img alt="Close Button" src={CloseImg} />
+      <img alt="Go Back Button" src={ChevronLeftImg} />
     </button>
   );
 };
 
-export default CloseButton;
+export default GoBackButton;

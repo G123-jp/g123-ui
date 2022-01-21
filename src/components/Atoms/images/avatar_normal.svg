@@ -1,12 +1,1 @@
-<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0)">
-<path d="M0 24C0 10.7452 10.7452 0 24 0C37.2548 0 48 10.7452 48 24C48 37.2548 37.2548 48 24 48C10.7452 48 0 37.2548 0 24Z" fill="#591BDC"/>
-<path d="M15 17.5C15 12.8056 18.8056 9 23.5 9C28.1944 9 32 12.8056 32 17.5V19.5C32 24.1944 28.1944 28 23.5 28C18.8056 28 15 24.1944 15 19.5V17.5Z" fill="#FAFFFC"/>
-<ellipse cx="24" cy="56" rx="21" ry="24" fill="#E3FF34"/>
-</g>
-<defs>
-<clipPath id="clip0">
-<path d="M0 24C0 10.7452 10.7452 0 24 0C37.2548 0 48 10.7452 48 24C48 37.2548 37.2548 48 24 48C10.7452 48 0 37.2548 0 24Z" fill="white"/>
-</clipPath>
-</defs>
-</svg>
+<svg width="48" height="48" fill="none" xmlns="http://www.w3.org/2000/svg"><g clip-path="url(#a)"><path d="M0 24C0 10.745 10.745 0 24 0s24 10.745 24 24-10.745 24-24 24S0 37.255 0 24Z" fill="#591BDC"/><path d="M15 17.5a8.5 8.5 0 0 1 17 0v2a8.5 8.5 0 0 1-17 0v-2Z" fill="#FAFFFC"/><ellipse cx="24" cy="56" rx="21" ry="24" fill="#E3FF34"/></g><defs><clipPath id="a"><path d="M0 24C0 10.745 10.745 0 24 0s24 10.745 24 24-10.745 24-24 24S0 37.255 0 24Z" fill="#fff"/></clipPath></defs></svg>

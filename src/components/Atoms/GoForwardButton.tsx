@@ -4,14 +4,20 @@ import React from 'react';
 import ChevronRightImg from './images/chevron-right.svg';
 
 type Props = {
+  className?: string;
+  style?: React.CSSProperties;
   onGoForward?: (e: React.MouseEvent) => void | Promise<void>;
 };
 
-const GoForwardButton: React.VFC<Props> = ({ onGoForward }) => {
+const GoForwardButton: React.VFC<Props> = ({
+  style,
+  className = '',
+  onGoForward,
+}) => {
   return (
     <button
       aria-label="Go Forward Button"
-      className={classnames(
+      className={`${classnames(
         'cursor-pointer',
         'flex',
         'content-center',
@@ -21,8 +27,9 @@ const GoForwardButton: React.VFC<Props> = ({ onGoForward }) => {
         'box-border',
         'w-6',
         'h-6',
-      )}
+      )} ${className}`}
       type="button"
+      {...(style && { style })}
       onClick={(e: React.MouseEvent): void => {
         onGoForward && onGoForward(e);
       }}

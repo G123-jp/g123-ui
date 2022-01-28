@@ -8,7 +8,7 @@ type Props = {
   onSwitch: (checked: boolean) => void | Promise<void>;
 };
 
-const Switch: React.FC<Props> = ({ checked, onSwitch }) => {
+const Switch: React.VFC<Props> = ({ checked, onSwitch }) => {
   const handleChange = useCallback(
     (value: boolean) => {
       onSwitch && onSwitch(value);

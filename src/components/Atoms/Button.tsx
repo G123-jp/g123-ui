@@ -1,6 +1,6 @@
 /* eslint-disable react/button-has-type */
 import { classnames } from '@/tailwindcss-classnames';
-import React, { useCallback } from 'react';
+import React, { ReactNode, useCallback } from 'react';
 
 enum HtmlType {
   button = 'button',
@@ -17,11 +17,15 @@ enum Size {
 enum Type {
   default = 'default',
   primary = 'primary',
+  secondary = 'secondary',
   danger = 'danger',
   text = 'text',
 }
 
 type Props = {
+  children: ReactNode;
+  className?: string;
+  style?: React.CSSProperties;
   size?: Size;
   disabled?: boolean;
   type?: Type;
@@ -30,8 +34,10 @@ type Props = {
   onClick?: (() => void | Promise<void>) | undefined;
 };
 
-const Button: React.FC<Props> = ({
+const Button: React.VFC<Props> = ({
   type = Type.default,
+  style,
+  className = '',
   size = Size.middle,
   disabled = false,
   block = false,
@@ -45,23 +51,33 @@ const Button: React.FC<Props> = ({
 
   return (
     <button
-      className={classnames('rounded-full', 'text-center', 'font-normal', {
+      className={`${classnames('rounded-full', 'text-center', 'font-normal', {
         // Color
         'text-white': type === Type.default,
         'bg-primary': type === Type.default,
+        'bg-secondary': type === Type.secondary,
         'bg-transparent': type === Type.text,
 
         'bg-highlight': type === Type.primary,
-        'text-primary': type === Type.primary || type === Type.text,
+        'text-primary':
+          type === Type.primary ||
+          type === Type.secondary ||
+          type === Type.text,
 
         'border-transparent': type === Type.default || type === Type.primary,
 
         // Size
         'w-full': block,
+
         'h-6': size === Size.small,
         'py-1.5': size === Size.small,
+
         'h-8': size === Size.middle,
         'py-2': size === Size.middle,
+
+        'h-12': size === Size.large,
+        'py-3': size === Size.large,
+
         'px-0': type === Type.text,
         'px-3': type !== Type.text && size === Size.small,
         'px-5': type !== Type.text && size === Size.middle,
@@ -75,10 +91,11 @@ const Button: React.FC<Props> = ({
         // UX
         'cursor-pointer': !disabled,
         'cursor-not-allowed': disabled,
-      })}
+      })} ${className}`}
       disabled={disabled}
       type={htmlType}
       {...(!disabled && onClick && { onClick: handleClick })}
+      {...(style && { style })}
     >
       {children}
     </button>
@@ -87,6 +104,8 @@ const Button: React.FC<Props> = ({
 
 Button.defaultProps = {
   type: Type.default,
+  style: undefined,
+  className: '',
   size: Size.middle,
   disabled: false,
   block: false,

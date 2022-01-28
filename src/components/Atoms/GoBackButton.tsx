@@ -4,14 +4,20 @@ import React from 'react';
 import ChevronLeftImg from './images/chevron-left.svg';
 
 type Props = {
+  className?: string;
+  style?: React.CSSProperties;
   onGoBack?: (e: React.MouseEvent) => void | Promise<void>;
 };
 
-const GoBackButton: React.VFC<Props> = ({ onGoBack }) => {
+const GoBackButton: React.VFC<Props> = ({
+  style,
+  className = '',
+  onGoBack,
+}) => {
   return (
     <button
       aria-label="Go Back Button"
-      className={classnames(
+      className={`${classnames(
         'cursor-pointer',
         'flex',
         'content-center',
@@ -21,7 +27,8 @@ const GoBackButton: React.VFC<Props> = ({ onGoBack }) => {
         'box-border',
         'w-6',
         'h-6',
-      )}
+      )} ${className}`}
+      {...(style && { style })}
       type="button"
       onClick={(e: React.MouseEvent): void => {
         onGoBack && onGoBack(e);

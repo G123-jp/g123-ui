@@ -9,6 +9,7 @@
 export default MyCustomType;
 
 type MyCustomType =
+  | 'w-fit' // FIXME: Akira: 'w-fit' is not supported by tailwindcss-classnames@v2
   | 'text-primary'
   | 'text-secondary'
   | 'bg-primary'

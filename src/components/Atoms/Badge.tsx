@@ -2,6 +2,7 @@ import { classnames } from '@/tailwindcss-classnames';
 import React, { ReactNode } from 'react';
 
 type Props = {
+  children: ReactNode;
   show?: boolean;
   content?: ReactNode;
   // TODO: Akira: 2020/08/10:
@@ -10,7 +11,7 @@ type Props = {
   offsetRight?: number;
 };
 
-const Badge: React.FC<Props> = ({
+const Badge: React.VFC<Props> = ({
   show = true,
   content,
   offsetTop = 0,
@@ -22,7 +23,7 @@ const Badge: React.FC<Props> = ({
   }
 
   return content ? (
-    <div className={classnames('relative', 'flex')}>
+    <div className={classnames('relative', 'flex', 'w-fit')}>
       {children}
       <div
         className={classnames(
@@ -47,7 +48,7 @@ const Badge: React.FC<Props> = ({
       </div>
     </div>
   ) : (
-    <div className={classnames('relative', 'flex')}>
+    <div className={classnames('relative', 'flex', 'w-fit')}>
       {children}
       <div
         className={classnames(

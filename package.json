@@ -1,6 +1,6 @@
 {
   "name": "@g123jp/g123-ui",
-  "version": "1.4.3",
+  "version": "1.4.4",
   "description": "Reuseable UI based on G123 Design System",
   "author": "hydRAnger <armyiljfe@gmail.com>",
   "license": "MIT",
@@ -18,18 +18,27 @@
     "dev-build": "rollup -c rollup.config.dev.ts",
     "generate-tailwindcss-types": "tailwindcss-classnames -i src/tailwind.config.js -x src/tailwindcss-custom-classnames.ts -o src/tailwindcss-classnames.ts",
     "lint": "tsc --noEmit && eslint \"./**/*.ts\" \"./**/*.tsx\"",
-    "fix": "eslint --fix \"./**/*.ts\" \"./**/*.tsx\""
+    "fix": "eslint --fix \"./**/*.ts\" \"./**/*.tsx\"",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "devDependencies": {
+    "@babel/core": "^7.16.12",
     "@g123jp/eslint-config-react": "^1.0.0",
     "@g123jp/prettier-config-recommended": "^1.1.0",
     "@rollup/plugin-commonjs": "^21.0.1",
     "@rollup/plugin-image": "^2.1.1",
     "@rollup/plugin-node-resolve": "^13.0.6",
+    "@storybook/addon-actions": "^6.4.17",
+    "@storybook/addon-essentials": "^6.4.17",
+    "@storybook/addon-links": "^6.4.17",
+    "@storybook/addon-postcss": "^2.0.0",
+    "@storybook/react": "^6.4.17",
     "@types/react": "^17.0.34",
     "@typescript-eslint/eslint-plugin": "^5.3.0",
     "@typescript-eslint/parser": "^5.3.0",
     "autoprefixer": "^10.4.1",
+    "babel-loader": "^8.2.3",
     "eslint": "^8.1.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^8.3.0",
@@ -81,5 +90,6 @@
       "node": true,
       "es6": true
     }
-  }
+  },
+  "dependencies": {}
 }

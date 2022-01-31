@@ -81,6 +81,7 @@ const Button: React.VFC<Props> = ({
         'px-0': type === Type.text,
         'px-3': type !== Type.text && size === Size.small,
         'px-5': type !== Type.text && size === Size.middle,
+        'px-7': type !== Type.text && size === Size.large,
 
         // Font
         'text-xxs': size === Size.small,
@@ -113,5 +114,5 @@ Button.defaultProps = {
   onClick: undefined,
 };
 
-export { Type as ButtonType, Size as ButtonSize };
+export { Type as ButtonType, Size as ButtonSize, HtmlType as ButtonHtmlType };
 export default Button;

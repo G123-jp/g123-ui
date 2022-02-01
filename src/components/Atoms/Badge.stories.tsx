@@ -4,10 +4,6 @@ import React from 'react';
 import Badge from './Badge';
 import Button from './Button';
 
-// show?: boolean;
-// content?: ReactNode;
-// offsetTop?: number;
-// offsetRight?: number;
 export default {
   title: 'Example/Badge',
   component: Badge,

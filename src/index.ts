@@ -2,6 +2,8 @@ import tailwindConfig from './tailwind.config';
 
 export { tailwindConfig };
 
+export * from './utils';
+
 // Ref: Atomic Design(https://atomicdesign.bradfrost.com/)
 export * as Atoms from './components/Atoms';
 export * from './components/Atoms';

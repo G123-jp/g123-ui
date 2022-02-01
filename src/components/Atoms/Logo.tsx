@@ -1,6 +1,6 @@
 import React from 'react';
 
-import LogoImg from './images/G123_logo.svg';
+import LogoSvg from './images/G123_logo.svg';
 
 type Props = {
   className?: string;
@@ -9,11 +9,12 @@ type Props = {
 
 const Logo: React.VFC<Props> = ({ style, className = '' }) => {
   return (
-    <img
-      alt=""
+    <LogoSvg
       className={className}
-      src={LogoImg}
-      style={{ width: '42px', height: '14px', ...style }}
+      height="14"
+      style={{ ...style }}
+      viewBox="0 0 68 24"
+      width="42"
     />
   );
 };

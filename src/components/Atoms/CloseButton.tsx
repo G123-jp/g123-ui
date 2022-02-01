@@ -1,7 +1,7 @@
 import { classnames } from '@/tailwindcss-classnames';
 import React from 'react';
 
-import CloseImg from './images/close.svg';
+import CloseSvg from './images/close.svg';
 
 type Props = {
   className?: string;
@@ -28,7 +28,7 @@ const CloseButton: React.VFC<Props> = ({ style, className = '', onClose }) => {
       type="button"
       onClick={onClose}
     >
-      <img alt="Close Button" src={CloseImg} />
+      <CloseSvg />
     </button>
   );
 };

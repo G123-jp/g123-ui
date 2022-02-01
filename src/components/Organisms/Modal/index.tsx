@@ -1,11 +1,12 @@
 import { classnames } from '@/tailwindcss-classnames';
-import React, { useEffect, useState } from 'react';
+import React, { ReactNode, useEffect, useState } from 'react';
 
 type WrapperProps = {
+  children: ReactNode;
   isOpen: boolean;
 };
 
-const Wrapper: React.FC<WrapperProps> = ({ isOpen, children }) => {
+const Wrapper: React.VFC<WrapperProps> = ({ isOpen, children }) => {
   const [drawerOpen, setDrawerOpen] = useState<boolean>(false);
 
   useEffect(() => {
@@ -35,7 +36,7 @@ const Wrapper: React.FC<WrapperProps> = ({ isOpen, children }) => {
   );
 };
 
-const Content: React.FC = ({ children }) => {
+const Content: React.VFC<{ children: ReactNode }> = ({ children }) => {
   return (
     <div
       aria-hidden="true"
@@ -67,11 +68,12 @@ const Content: React.FC = ({ children }) => {
 };
 
 type Props = {
+  children: ReactNode;
   isOpen?: boolean;
 };
 
 // Akira refs: https://gist.github.com/raymondsiu/b565b629d84b7085d073934eee4da6ab
-const Modal: React.FC<Props> = ({ isOpen = false, children }) => {
+const Modal: React.VFC<Props> = ({ isOpen = false, children }) => {
   return (
     <Wrapper isOpen={isOpen}>
       <Content>{children}</Content>

@@ -1,10 +1,11 @@
 import { classnames } from '@/tailwindcss-classnames';
+import { isValidHexColor, isValidHtmlColor } from '@/utils';
 import React, { useCallback } from 'react';
 
-import ChevronDownImg from './images/chevron-down.svg';
-import ChevronLeftImg from './images/chevron-left.svg';
-import ChevronRightImg from './images/chevron-right.svg';
-import ChevronUpImg from './images/chevron-up.svg';
+import ChevronDownSvg from './images/chevron-down.svg';
+import ChevronLeftSvg from './images/chevron-left.svg';
+import ChevronRightSvg from './images/chevron-right.svg';
+import ChevronUpSvg from './images/chevron-up.svg';
 
 enum Type {
   left = 'left',
@@ -16,16 +17,17 @@ enum Type {
 }
 
 const IconMap = {
-  [Type.left]: ChevronLeftImg,
-  [Type.right]: ChevronRightImg,
-  [Type.up]: ChevronUpImg,
-  [Type.down]: ChevronDownImg,
-  [Type.back]: ChevronLeftImg,
-  [Type.forward]: ChevronRightImg,
+  [Type.left]: ChevronLeftSvg,
+  [Type.right]: ChevronRightSvg,
+  [Type.up]: ChevronUpSvg,
+  [Type.down]: ChevronDownSvg,
+  [Type.back]: ChevronLeftSvg,
+  [Type.forward]: ChevronRightSvg,
 };
 
 type Props = {
   type: Type;
+  color?: string;
   disabled?: boolean;
   className?: string;
   style?: React.CSSProperties;
@@ -34,6 +36,7 @@ type Props = {
 
 const ChevronButton: React.VFC<Props> = ({
   type,
+  color,
   disabled = false,
   style,
   className = '',
@@ -42,6 +45,8 @@ const ChevronButton: React.VFC<Props> = ({
   const handleClick = useCallback(() => {
     onClick && onClick();
   }, [onClick]);
+
+  const ChevronComponent = IconMap[type];
 
   return (
     <button
@@ -65,7 +70,15 @@ const ChevronButton: React.VFC<Props> = ({
       {...(style && { style })}
       {...(!disabled && onClick && { onClick: handleClick })}
     >
-      <img alt={`chevron-${type}-button`} src={IconMap[type]} />
+      {/* <img alt={`chevron-${type}-button`} src={IconMap[type]} /> */}
+      <ChevronComponent
+        style={{
+          color:
+            isValidHexColor(color) || isValidHtmlColor(color)
+              ? color
+              : 'inherit',
+        }}
+      />
     </button>
   );
 };

@@ -1,13 +1,13 @@
 import React from 'react';
 
-import AvatarNormalImg from './images/avatar_normal.svg';
+import AvatarNormalSvg from './images/avatar_normal.svg';
 
 type Props = {
   isGuest?: boolean;
 };
 
-const Avatar: React.FC<Props> = () => {
-  return <img alt="" src={AvatarNormalImg} />;
+const Avatar: React.VFC<Props> = () => {
+  return <AvatarNormalSvg />;
 };
 
 export default Avatar;

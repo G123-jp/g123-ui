@@ -47,6 +47,8 @@ export default {
       },
       // Akira: tailwind defualt colors + g123 pallate
       colors: {
+        transparent: 'transparent',
+        current: 'currentColor',
         primary: '#136c72',
         secondary: '#d9ede2',
         highlight: '#e3ff34',

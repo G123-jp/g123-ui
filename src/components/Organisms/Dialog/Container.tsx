@@ -12,7 +12,7 @@ type Option = {
   options: DialogOption;
 };
 
-const Container: React.FC = () => {
+const Container: React.VFC = () => {
   const [dialogs, setDialogs] = useState<Record<string, Option>>({});
 
   useEffect(() => {

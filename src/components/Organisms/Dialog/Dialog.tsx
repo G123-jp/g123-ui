@@ -39,7 +39,7 @@ type Props = {
   options: DialogOption;
 };
 
-const Dialog: React.FunctionComponent<Props> = (props) => {
+const Dialog: React.VFC<Props> = (props) => {
   const { buttons, message, options, destroy } = props;
   const [destroyed, setDestroyed] = React.useState(false);
   const [destroying, setDestroying] = React.useState(false);
@@ -129,7 +129,7 @@ const Dialog: React.FunctionComponent<Props> = (props) => {
               type="button"
               onClick={events.handleCloseButtonClick}
             >
-              <img alt="Close Dialog" src={IconClose} />
+              <IconClose />
             </button>
           </div>
         </header>
@@ -146,11 +146,9 @@ const Dialog: React.FunctionComponent<Props> = (props) => {
               },
             )}
           >
-            {options.icon === 'exclamation' && (
-              <img alt="Warning" src={IconExclamation} />
-            )}
+            {options.icon === 'exclamation' && <IconExclamation />}
 
-            {options.icon === 'tick' && <img alt="Success" src={IconTick} />}
+            {options.icon === 'tick' && <IconTick />}
           </div>
         )}
 

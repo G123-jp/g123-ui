@@ -18,13 +18,7 @@ const Switch: React.VFC<Props> = ({ checked, onSwitch }) => {
 
   return (
     <div
-      className={classnames(
-        'flex',
-        'items-center',
-        'justify-center',
-        'w-full',
-        'mb-12',
-      )}
+      className={classnames('flex', 'items-center', 'justify-center', 'w-fit')}
     >
       <label
         className={classnames('flex', 'items-center', 'cursor-pointer')}

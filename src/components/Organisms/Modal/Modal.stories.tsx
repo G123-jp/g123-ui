@@ -5,7 +5,7 @@ import React from 'react';
 import Modal from '.';
 
 export default {
-  title: 'Example/Modal',
+  title: 'Organisms/Modal',
   component: Modal,
   argTypes: {
     isOpen: { control: 'boolean', defaultValue: true },

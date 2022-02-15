@@ -4,7 +4,7 @@ import React from 'react';
 import Logo from './Logo';
 
 export default {
-  title: 'Example/Logo',
+  title: 'Atoms/Logo',
   component: Logo,
 } as ComponentMeta<typeof Logo>;
 

@@ -53,12 +53,15 @@ const Button: React.VFC<Props> = ({
     <button
       className={`${classnames('rounded-full', 'text-center', 'font-normal', {
         // Color
-        'text-white': type === Type.default,
+        'text-white': type === Type.default || type === Type.danger,
+
         'bg-primary': type === Type.default,
         'bg-secondary': type === Type.secondary,
+        'bg-danger': type === Type.danger,
         'bg-transparent': type === Type.text,
 
         'bg-highlight': type === Type.primary,
+
         'text-primary':
           type === Type.primary ||
           type === Type.secondary ||

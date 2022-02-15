@@ -4,7 +4,7 @@ import React from 'react';
 import Switch from './Switch';
 
 export default {
-  title: 'Example/Switch',
+  title: 'Atoms/Switch',
   component: Switch,
   argTypes: {
     checked: { control: 'boolean', defaultValue: false },

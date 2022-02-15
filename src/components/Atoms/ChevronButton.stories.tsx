@@ -6,7 +6,7 @@ import ChevronButton from './ChevronButton';
 import { ChevronButtonType } from '.';
 
 export default {
-  title: 'Example/ChevronButton',
+  title: 'Atoms/ChevronButton',
   component: ChevronButton,
   argTypes: {
     type: {

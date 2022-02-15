@@ -6,7 +6,7 @@ import Button, { ButtonHtmlType } from './Button';
 import { ButtonSize, ButtonType } from '.';
 
 export default {
-  title: 'Example/Button',
+  title: 'Atoms/Button',
   component: Button,
   argTypes: {
     children: { control: 'text', defaultValue: 'G123 Button' },

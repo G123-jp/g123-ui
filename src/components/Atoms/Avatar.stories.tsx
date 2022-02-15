@@ -4,7 +4,7 @@ import React from 'react';
 import Avatar from './Avatar';
 
 export default {
-  title: 'Example/Avatar',
+  title: 'Atoms/Avatar',
   component: Avatar,
 } as ComponentMeta<typeof Avatar>;
 

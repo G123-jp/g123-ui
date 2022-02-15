@@ -4,7 +4,7 @@ import React from 'react';
 import CloseButton from './CloseButton';
 
 export default {
-  title: 'Example/CloseButton',
+  title: 'Atoms/CloseButton',
   component: CloseButton,
 } as ComponentMeta<typeof CloseButton>;
 

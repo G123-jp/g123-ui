@@ -5,7 +5,7 @@ import Badge from './Badge';
 import Button from './Button';
 
 export default {
-  title: 'Example/Badge',
+  title: 'Atoms/Badge',
   component: Badge,
   argTypes: {
     show: { control: 'boolean', defaultValue: true },

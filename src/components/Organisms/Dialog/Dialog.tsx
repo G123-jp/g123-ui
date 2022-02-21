@@ -1,8 +1,7 @@
-import { Logo } from '@/components/Atoms';
+import { Logo, CloseButton } from '@/components/Atoms';
 import { classnames } from '@/tailwindcss-classnames';
 import React from 'react';
 
-import IconClose from './icons/close.svg';
 import IconExclamation from './icons/exclamation.svg';
 import IconTick from './icons/tick.svg';
 
@@ -124,13 +123,7 @@ const Dialog: React.VFC<Props> = (props) => {
           {options.logo === true && <Logo />}
 
           <div className="flex flex-1 justify-end">
-            <button
-              className="border-0 p-1"
-              type="button"
-              onClick={events.handleCloseButtonClick}
-            >
-              <IconClose />
-            </button>
+            <CloseButton onClose={events.handleCloseButtonClick} />
           </div>
         </header>
 

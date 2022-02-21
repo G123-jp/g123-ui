@@ -8,7 +8,7 @@ export default {
   title: 'Organisms/Modal',
   component: Modal,
   argTypes: {
-    isOpen: { control: 'boolean', defaultValue: true },
+    isOpen: { control: 'boolean', defaultValue: false },
   },
 } as ComponentMeta<typeof Modal>;
 

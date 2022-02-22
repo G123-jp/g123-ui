@@ -6,6 +6,9 @@ import Avatar from './Avatar';
 export default {
   title: 'Atoms/Avatar',
   component: Avatar,
+  argTypes: {
+    size: { control: 'text', defaultValue: '48' },
+  },
 } as ComponentMeta<typeof Avatar>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args

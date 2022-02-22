@@ -10,6 +10,7 @@ type Props = {
 
 const Avatar: React.VFC<Props> = ({ size = 48 }) => {
   const validSize = isValidCssSize(size) ? size : 48;
+  console.log(`size: ${size} validSize: ${validSize}`);
 
   return <AvatarNormalSvg height={validSize} width={validSize} />;
 };

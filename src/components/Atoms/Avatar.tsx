@@ -5,7 +5,7 @@ import AvatarNormalSvg from './images/avatar_normal.svg';
 
 type Props = {
   isGuest?: boolean;
-  size?: number;
+  size?: number | string;
 };
 
 const Avatar: React.VFC<Props> = ({ size = 48 }) => {

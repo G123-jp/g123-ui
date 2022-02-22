@@ -65,6 +65,7 @@ yarn add @g123jp/g123-ui
   ```
 
 - ### build
+  > ⛑: **Make sure run build before publish it.**
   ```bash
   yarn build
   ```

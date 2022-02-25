@@ -1,5 +1,4 @@
 import { Logo, CloseButton } from '@/components/Atoms';
-import { classnames } from '@/tailwindcss-classnames';
 import React from 'react';
 
 import IconExclamation from './icons/exclamation.svg';
@@ -88,36 +87,23 @@ const Dialog: React.VFC<Props> = (props) => {
 
   return (
     <div
-      className={classnames(
-        'fixed',
-        'flex',
-        'items-center',
-        'justify-center',
-        'min-h-screen',
-        'top-0',
-        'bottom-0',
-        'left-0',
-        'right-0',
-        'z-50',
-        {
-          'animate-fade-in-bottom': !destroying,
-          'animate-fade-out-bottom': destroying === true,
-          'opacity-0': destroyed === true,
-        },
-      )}
+      className={`fixed flex items-center justify-center min-h-screen top-0 bottom-0 left-0 right-0 z-50
+        ${destroying ? 'animate-fade-out-bottom' : 'animate-fade-in-bottom'}
+        ${destroyed ? 'opacity-0' : ''}
+      `}
       onAnimationEnd={events.handleDialogAnimationEnd}
     >
       <div
         aria-label="Close Dialog"
-        className="backdrop-blur fixed top-0 w-full h-full bg-black bg-opacity-30 transition-opacity"
+        className="fixed top-0 w-full h-full bg-black bg-opacity-30 backdrop-blur transition-opacity"
         role="button"
         tabIndex={0}
         onClick={events.handleBackdropClick}
         onKeyPress={events.handleBackdropKeyPress}
       />
 
-      <div className="inline-block bg-white rounded-lg overflow-hidden shadow-lg max-w-xs w-full mx-8 z-50">
-        <header className="relative flex items-center justify-center px-4 pt-4">
+      <div className="inline-block overflow-hidden z-50 mx-8 w-full max-w-xs bg-white rounded-lg shadow-lg">
+        <header className="flex relative justify-center items-center px-4 pt-4">
           <div className="flex-1" />
 
           {options.logo === true && <Logo />}
@@ -129,15 +115,9 @@ const Dialog: React.VFC<Props> = (props) => {
 
         {options.icon && (
           <div
-            className={classnames(
-              'flex',
-              'items-center',
-              'justify-center',
-              'pb-2',
-              {
-                'pt-12': options.logo,
-              },
-            )}
+            className={`flex items-center justify-center pb-2
+              ${options.logo ? 'pt-12' : ''}
+            `}
           >
             {options.icon === 'exclamation' && <IconExclamation />}
 
@@ -146,43 +126,30 @@ const Dialog: React.VFC<Props> = (props) => {
         )}
 
         <div
-          className={classnames(
-            'text-center',
-            'px-10',
-            'pt-2',
-            'pb-3',
-            'break-words',
-            {
-              'pt-4': !!(options.logo && options.icon),
-              'pb-16': !buttons || buttons.length === 0,
-            },
-          )}
+          className={`text-center px-10 pt-2 pb-3 break-words
+            ${options.logo && options.icon ? 'pt-4' : ''}
+            ${!buttons || buttons.length === 0 ? 'pb-16' : ''}
+          `}
         >
           {message}
         </div>
 
         {buttons && buttons.length > 0 && (
-          <footer className="flex px-8 pb-5 pt-3">
+          <footer className="flex px-8 pt-3 pb-5">
             {buttons.map((button) => (
               <button
-                className={classnames(
-                  'border-0',
-                  'flex-1',
-                  'font-bold',
-                  'mx-2',
-                  'py-3.5',
-                  'rounded-full',
-                  'text-center',
-                  'text-xs',
-                  'first:ml-0',
-                  'last:mr-0',
-                  {
-                    'bg-primary': button.color === 'primary',
-                    'bg-secondary': button.color === 'secondary',
-                    'text-primary': button.color === 'secondary',
-                    'text-secondary': button.color === 'primary',
-                  },
-                )}
+                className={`border-0 flex-1 font-bold mx-2 py-3.5 rounded-full text-center text-xs first:ml-0 last:mr-0
+                  ${
+                    button.color === 'primary'
+                      ? 'bg-primary text-secondary'
+                      : ''
+                  }
+                  ${
+                    button.color === 'secondary'
+                      ? 'bg-secondary text-primary'
+                      : ''
+                  }
+                `}
                 type="button"
                 onClick={(e): Promise<void> | void =>
                   events.handleButtonClick(e, button.onClick)

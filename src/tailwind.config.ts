@@ -108,12 +108,5 @@ export default {
       },
     },
   },
-  // Akira: FIXME: should be removed, ref: https://tailwindcss.com/docs/upgrade-guide#remove-variant-configuration
-  // currently seems be depenented by tailwindcss-classnames.
-  variants: {
-    extend: {
-      margin: ['first', 'last'],
-    },
-  },
   plugins: [],
 };

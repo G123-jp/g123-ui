@@ -1,5 +1,5 @@
 // FIXME: Akira
-// .js for tailwind CLI(https://github.com/muhammadsammy/tailwindcss-classnames#using-the-cli)
+// .js for postcss
 // which require a commonjs module.
 // .ts for rollup to compile tailwind.config and export it.
 // both of their's content are duplicated.
@@ -112,13 +112,6 @@ module.exports = {
       transitionProperty: {
         height: 'height',
       },
-    },
-  },
-  // Akira: FIXME: should be removed, ref: https://tailwindcss.com/docs/upgrade-guide#remove-variant-configuration
-  // currently seems be depenented by tailwindcss-classnames.
-  variants: {
-    extend: {
-      margin: ['first', 'last'],
     },
   },
   plugins: [],

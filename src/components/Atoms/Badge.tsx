@@ -1,4 +1,3 @@
-import { classnames } from '@/tailwindcss-classnames';
 import React, { ReactNode } from 'react';
 
 type Props = {
@@ -23,21 +22,10 @@ const Badge: React.VFC<Props> = ({
   }
 
   return content ? (
-    <div className={classnames('relative', 'flex', 'w-fit')}>
+    <div className="flex relative w-fit">
       {children}
       <div
-        className={classnames(
-          'absolute',
-          'border-2',
-          'rounded-lg',
-          'text-xxs',
-          'font-extrabold',
-          'whitespace-nowrap',
-          // TODO: styling by status
-          'text-white',
-          'border-white',
-          'bg-danger',
-        )}
+        className="absolute font-extrabold text-white whitespace-nowrap rounded-lg border-2 border-white text-xxs bg-danger"
         style={{
           padding: '1px 3px',
           top: `${offsetTop}px`,
@@ -48,16 +36,10 @@ const Badge: React.VFC<Props> = ({
       </div>
     </div>
   ) : (
-    <div className={classnames('relative', 'flex', 'w-fit')}>
+    <div className="flex relative w-fit">
       {children}
       <div
-        className={classnames(
-          'absolute',
-          'w-2',
-          'h-2',
-          'rounded-full',
-          'bg-danger',
-        )}
+        className="absolute w-2 h-2 rounded-full bg-danger"
         style={{ top: `${offsetTop}px`, right: `${offsetRight}px` }}
       />
     </div>

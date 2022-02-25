@@ -1,4 +1,3 @@
-import { classnames } from '@/tailwindcss-classnames';
 import React, { useCallback } from 'react';
 
 type Props = {
@@ -17,26 +16,20 @@ const Switch: React.VFC<Props> = ({ checked, onSwitch }) => {
   );
 
   return (
-    <div
-      className={classnames('flex', 'items-center', 'justify-center', 'w-fit')}
-    >
-      <label
-        className={classnames('flex', 'items-center', 'cursor-pointer')}
-        htmlFor="toggleB"
-      >
+    <div className="flex justify-center items-center w-fit">
+      <label className="flex items-center cursor-pointer" htmlFor="toggleB">
         <div className="relative">
           <input checked={checked} className="sr-only" type="checkbox" />
           <div
             className={`${
               checked ? 'bg-secondary' : 'bg-gray-100'
-            } ${classnames('block', 'w-10', 'h-6', 'rounded-full')}`}
+            } block w-10 h-6 rounded-full`}
           />
           <div
             aria-hidden
-            className={classnames('absolute', 'rounded-full', 'transition', {
-              'bg-primary': checked,
-              'bg-white': !checked,
-            })}
+            className={`absolute rounded-full transition ${
+              checked ? 'bg-primary' : 'bg-white'
+            }`}
             role="button"
             style={{
               width: '18px',

@@ -1,5 +1,4 @@
 /* eslint-disable react/button-has-type */
-import { classnames } from '@/tailwindcss-classnames';
 import React, { ReactNode, useCallback } from 'react';
 
 enum HtmlType {
@@ -49,53 +48,71 @@ const Button: React.VFC<Props> = ({
     onClick && onClick();
   }, [onClick]);
 
+  const buildColorClasses = useCallback((): string => {
+    switch (type) {
+      case Type.primary:
+        return 'text-primary bg-highlight border-transparent';
+      case Type.secondary:
+        return 'text-primary bg-secondary';
+      case Type.danger:
+        return 'text-white bg-danger';
+      case Type.text:
+        return 'text-primary bg-transparent';
+      case Type.default:
+        return 'text-white bg-primary border-transparent';
+      default:
+        return 'text-white bg-primary border-transparent';
+    }
+  }, [type]);
+
+  const buildBlockClasses = useCallback((): string => {
+    return block ? 'w-full' : '';
+  }, [block]);
+
+  const buildSizeClasses = useCallback((): string => {
+    return `
+    ${
+      {
+        [Size.small]: 'h-6 py-1.5',
+        [Size.middle]: 'h-8 py-2',
+        [Size.large]: 'h-12 py-3',
+      }[size]
+    }
+    ${
+      type === Type.text
+        ? 'px-0'
+        : { [Size.small]: 'px-3', [Size.middle]: 'px-5', [Size.large]: 'px-7' }[
+            size
+          ]
+    }
+    `;
+  }, [size, type]);
+
+  const buildFontClasses = useCallback((): string => {
+    switch (size) {
+      case Size.small:
+        return 'text-xxs leading-3';
+      case Size.middle:
+        return 'text-xs leading-4';
+      default:
+        return '';
+    }
+  }, [size]);
+
+  const buildUxClasses = useCallback((): string => {
+    return disabled ? 'cursor-not-allowed' : 'cursor-pointer';
+  }, [disabled]);
+
   return (
     <button
-      className={`${classnames('rounded-full', 'text-center', 'font-normal', {
-        // Color
-        'text-white': type === Type.default || type === Type.danger,
-
-        'bg-primary': type === Type.default,
-        'bg-secondary': type === Type.secondary,
-        'bg-danger': type === Type.danger,
-        'bg-transparent': type === Type.text,
-
-        'bg-highlight': type === Type.primary,
-
-        'text-primary':
-          type === Type.primary ||
-          type === Type.secondary ||
-          type === Type.text,
-
-        'border-transparent': type === Type.default || type === Type.primary,
-
-        // Size
-        'w-full': block,
-
-        'h-6': size === Size.small,
-        'py-1.5': size === Size.small,
-
-        'h-8': size === Size.middle,
-        'py-2': size === Size.middle,
-
-        'h-12': size === Size.large,
-        'py-3': size === Size.large,
-
-        'px-0': type === Type.text,
-        'px-3': type !== Type.text && size === Size.small,
-        'px-5': type !== Type.text && size === Size.middle,
-        'px-7': type !== Type.text && size === Size.large,
-
-        // Font
-        'text-xxs': size === Size.small,
-        'leading-3': size === Size.small,
-        'text-xs': size === Size.middle,
-        'leading-4': size === Size.middle,
-
-        // UX
-        'cursor-pointer': !disabled,
-        'cursor-not-allowed': disabled,
-      })} ${className}`}
+      className={`rounded-full text-center font-normal
+        ${buildColorClasses()}
+        ${buildBlockClasses()}
+        ${buildSizeClasses()}
+        ${buildFontClasses()}
+        ${buildUxClasses()}
+        ${className}
+      `}
       disabled={disabled}
       type={htmlType}
       {...(!disabled && onClick && { onClick: handleClick })}

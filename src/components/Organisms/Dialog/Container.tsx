@@ -56,7 +56,7 @@ const Container: React.VFC = () => {
   };
 
   return (
-    <div className="dialog-container">
+    <div>
       {Object.keys(dialogs).map((key) => {
         const options = dialogs[key];
 

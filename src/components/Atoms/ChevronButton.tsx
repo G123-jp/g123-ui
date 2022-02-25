@@ -1,4 +1,3 @@
-import { classnames } from '@/tailwindcss-classnames';
 import { isValidHexColor, isValidHtmlColor } from '@/utils';
 import React, { useCallback } from 'react';
 
@@ -51,21 +50,9 @@ const ChevronButton: React.VFC<Props> = ({
   return (
     <button
       aria-label={`chevron-${type}-button`}
-      className={`${classnames(
-        'flex',
-        'content-center',
-        'items-center',
-        'p-0',
-        'border-0',
-        'box-border',
-        'w-6',
-        'h-6',
-        {
-          'cursor-pointer': !disabled,
-          'cursor-not-allowed': disabled,
-          'select-none': disabled,
-        },
-      )} ${className}`}
+      className={`flex content-center items-center p-0 border-0 box-border w-6 h-6 ${
+        disabled ? 'cursor-not-allowed select-none' : 'cursor-pointer'
+      } ${className}`}
       type="button"
       {...(style && { style })}
       {...(!disabled && onClick && { onClick: handleClick })}

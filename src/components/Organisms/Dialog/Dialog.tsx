@@ -95,7 +95,7 @@ const Dialog: React.VFC<Props> = (props) => {
     >
       <div
         aria-label="Close Dialog"
-        className="fixed top-0 w-full h-full bg-black bg-opacity-30 backdrop-blur transition-opacity"
+        className="fixed top-0 w-full h-full bg-black/30 backdrop-blur transition-opacity"
         role="button"
         tabIndex={0}
         onClick={events.handleBackdropClick}

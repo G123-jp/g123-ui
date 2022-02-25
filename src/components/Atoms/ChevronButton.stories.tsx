@@ -20,7 +20,7 @@ export default {
 } as ComponentMeta<typeof ChevronButton>;
 
 const Template: ComponentStory<typeof ChevronButton> = (args) => (
-  <div className="text-default">
+  <div>
     <ChevronButton type={ChevronButtonType.up} />
     <ChevronButton className="text-primary" type={ChevronButtonType.right} />
     <ChevronButton className="text-secondary" type={ChevronButtonType.down} />

@@ -31,22 +31,7 @@ const Content: React.VFC<{ children: ReactNode }> = ({ children }) => {
   return (
     <div
       aria-hidden="true"
-      className={`
-        animate-slide-in-bottom
-        block
-        box-border
-        bg-white
-        fixed
-        left-0
-        right-0
-        -bottom-3
-        z-50
-        w-full
-        overflow-x-hidden
-        overflow-y-hidden
-        rounded-t-xl
-        rounded-b-none
-      `}
+      className="box-border block overflow-hidden fixed inset-x-0 -bottom-3 z-50 w-full bg-white rounded-t-xl rounded-b-none animate-slide-in-bottom"
       style={{ height: '36rem' }}
       onClick={(e: React.MouseEvent): void => {
         e.preventDefault();

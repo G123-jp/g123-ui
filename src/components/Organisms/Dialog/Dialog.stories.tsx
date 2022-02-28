@@ -14,7 +14,7 @@ const Template: ComponentStory<typeof Dialog> = () => (
   <div className="flex flex-col gap-y-8 w-full h-full">
     <DialogContainer />
 
-    <div className="flex gap-2 w-full h-full items-center">
+    <div className="flex gap-2 items-center w-full h-full">
       <h2>Size:</h2>
       <Button
         size={ButtonSize.small}

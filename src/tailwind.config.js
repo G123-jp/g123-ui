@@ -1,9 +1,3 @@
-// FIXME: Akira
-// .js for postcss
-// which require a commonjs module.
-// .ts for rollup to compile tailwind.config and export it.
-// both of their's content are duplicated.
-
 module.exports = {
   content: ['./src/components/**/*.tsx'],
   theme: {

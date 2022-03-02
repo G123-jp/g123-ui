@@ -1,4 +1,4 @@
-import tailwindConfig from './tailwind.config';
+import * as tailwindConfig from './tailwind.config.js';
 
 export { tailwindConfig };
 

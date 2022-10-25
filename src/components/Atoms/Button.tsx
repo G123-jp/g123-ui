@@ -17,6 +17,7 @@ enum Type {
   default = 'default',
   primary = 'primary',
   secondary = 'secondary',
+  inactive = 'inactive',
   danger = 'danger',
   text = 'text',
 }
@@ -54,6 +55,8 @@ const Button: React.VFC<Props> = ({
         return 'text-primary bg-highlight border-transparent';
       case Type.secondary:
         return 'text-primary bg-secondary';
+      case Type.inactive:
+        return 'text-zinc-500 bg-zinc-100';
       case Type.danger:
         return 'text-white bg-danger';
       case Type.text:
@@ -105,7 +108,7 @@ const Button: React.VFC<Props> = ({
 
   return (
     <button
-      className={`rounded-full text-center font-normal
+      className={`rounded-full text-center font-semibold
         ${buildColorClasses()}
         ${buildBlockClasses()}
         ${buildSizeClasses()}

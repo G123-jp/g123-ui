@@ -34,6 +34,7 @@ const Template: ComponentStory<typeof Badge> = () => (
         <Button type={ButtonType.primary}>Primary</Button>
         <Button type={ButtonType.danger}>Danger</Button>
         <Button type={ButtonType.secondary}>Secondary</Button>
+        <Button type={ButtonType.inactive}>Inactive</Button>
         <Button type={ButtonType.text}>Text</Button>
       </div>
       {/* Button Size */}

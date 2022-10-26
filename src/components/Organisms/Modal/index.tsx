@@ -56,7 +56,7 @@ const Content: React.VFC<ContentProps> = ({
         animate-slide-in-bottom
         ${className}
       `}
-      style={{ height: '36rem', ...(style && { style }) }}
+      style={{ height: '38rem', ...(style && { style }) }}
       onClick={(e: React.MouseEvent): void => {
         e.preventDefault();
         e.stopPropagation();

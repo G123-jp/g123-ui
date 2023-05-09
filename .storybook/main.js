@@ -1,9 +1,7 @@
 const path = require('path');
-
 module.exports = {
   webpackFinal: async (config, { configType }) => {
     config.resolve.modules.push(path.resolve(__dirname, '../src'));
-
     config.resolve.alias = {
       ...config.resolve.alias,
       '@': path.resolve(__dirname, '../src'),
@@ -23,7 +21,6 @@ module.exports = {
           test: /\.(ico|jpg|jpeg|png|apng|gif|eot|otf|webp|ttf|woff|woff2|cur|ani|pdf)(\?.*)?$/,
         };
       }
-
       return rule;
     });
 
@@ -40,7 +37,6 @@ module.exports = {
       issuer: /\.[jt]sx?$/,
       use: ['@svgr/webpack'],
     });
-
     return config;
   },
   stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
@@ -48,17 +44,22 @@ module.exports = {
     '@storybook/addon-links',
     '@storybook/addon-essentials',
     {
-      name: '@storybook/addon-postcss',
+      name: '@storybook/addon-styling',
       options: {
-        postcssLoaderOptions: {
+        postCss: {
           implementation: require('postcss'),
         },
       },
     },
   ],
-  framework: '@storybook/react',
-  core: {
-    builder: 'webpack5',
+  framework: {
+    name: '@storybook/react-webpack5',
+    options: {},
   },
-  typescript: { reactDocgen: false },
+  typescript: {
+    reactDocgen: false,
+  },
+  docs: {
+    autodocs: true,
+  },
 };

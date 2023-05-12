@@ -4,7 +4,7 @@ import React from 'react';
 import AvatarNormalSvg from './images/avatar_normal.svg';
 
 type Props = {
-  isGuest?: boolean;
+  // isGuest?: boolean;
   size?: number | string;
 };
 

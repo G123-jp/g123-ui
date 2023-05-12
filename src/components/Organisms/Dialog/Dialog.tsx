@@ -87,23 +87,24 @@ const Dialog: React.VFC<Props> = (props) => {
 
   return (
     <div
-      className={`fixed flex items-center justify-center min-h-screen top-0 bottom-0 left-0 right-0 z-50
-        ${destroying ? 'animate-fade-out-bottom' : 'animate-fade-in-bottom'}
+      className={`fixed inset-0 z-50 flex min-h-screen items-center justify-center${
+        destroying ? 'animate-fade-out-bottom' : 'animate-fade-in-bottom'
+      }
         ${destroyed ? 'opacity-0' : ''}
       `}
       onAnimationEnd={events.handleDialogAnimationEnd}
     >
       <div
         aria-label="Close Dialog"
-        className="fixed top-0 w-full h-full bg-black/30 backdrop-blur transition-opacity"
+        className="fixed top-0 h-full w-full bg-black/30 backdrop-blur transition-opacity"
         role="button"
         tabIndex={0}
         onClick={events.handleBackdropClick}
         onKeyPress={events.handleBackdropKeyPress}
       />
 
-      <div className="inline-block overflow-hidden z-50 mx-8 w-full max-w-xs bg-white rounded-lg shadow-lg">
-        <header className="flex relative justify-center items-center px-4 pt-4">
+      <div className="z-50 mx-8 inline-block w-full max-w-xs overflow-hidden rounded-lg bg-white shadow-lg">
+        <header className="relative flex items-center justify-center px-4 pt-4">
           <div className="flex-1" />
 
           {options.logo === true && <Logo />}
@@ -126,7 +127,7 @@ const Dialog: React.VFC<Props> = (props) => {
         )}
 
         <div
-          className={`text-center px-10 pt-2 pb-3 break-words
+          className={`break-words px-10 pb-3 pt-2 text-center
             ${options.logo && options.icon ? 'pt-4' : ''}
             ${!buttons || buttons.length === 0 ? 'pb-16' : ''}
           `}
@@ -135,10 +136,10 @@ const Dialog: React.VFC<Props> = (props) => {
         </div>
 
         {buttons && buttons.length > 0 && (
-          <footer className="flex px-8 pt-3 pb-5">
+          <footer className="flex px-8 pb-5 pt-3">
             {buttons.map((button) => (
               <button
-                className={`border-0 flex-1 font-bold mx-2 py-3.5 rounded-full text-center text-xs first:ml-0 last:mr-0
+                className={`mx-2 flex-1 rounded-full border-0 py-3.5 text-center text-xs font-bold first:ml-0 last:mr-0
                   ${
                     button.color === 'primary'
                       ? 'bg-primary text-secondary'

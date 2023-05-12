@@ -12,7 +12,7 @@ const CloseButton: React.VFC<Props> = ({ style, className = '', onClose }) => {
   return (
     <button
       aria-label="Close Button"
-      className={`cursor-pointer flex content-center items-center p-0 border-0 box-border w-6 h-6 ${className}`}
+      className={`box-border flex h-6 w-6 cursor-pointer content-center items-center border-0 p-0 ${className}`}
       {...(style && { style })}
       type="button"
       onClick={onClose}

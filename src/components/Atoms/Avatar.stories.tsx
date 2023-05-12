@@ -1,4 +1,4 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { StoryFn, Meta } from '@storybook/react';
 import React from 'react';
 
 import Avatar from './Avatar';
@@ -9,10 +9,10 @@ export default {
   argTypes: {
     size: { control: 'text', defaultValue: '48' },
   },
-} as ComponentMeta<typeof Avatar>;
+} as Meta<typeof Avatar>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Avatar> = (args) => <Avatar {...args} />;
+const Template: StoryFn<typeof Avatar> = (args) => <Avatar {...args} />;
 
 export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args

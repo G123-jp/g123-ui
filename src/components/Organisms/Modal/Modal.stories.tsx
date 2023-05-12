@@ -1,5 +1,5 @@
 import { Logo, Avatar } from '@/components/Atoms';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { StoryFn, Meta } from '@storybook/react';
 import React from 'react';
 
 import Modal from '.';
@@ -10,11 +10,11 @@ export default {
   argTypes: {
     isOpen: { control: 'boolean', defaultValue: false },
   },
-} as ComponentMeta<typeof Modal>;
+} as Meta<typeof Modal>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Modal> = (args) => (
-  <div className="w-full h-full">
+const Template: StoryFn<typeof Modal> = (args) => (
+  <div className="h-full w-full">
     <Modal {...args}>
       <Logo />
       <Avatar />

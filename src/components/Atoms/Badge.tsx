@@ -22,10 +22,10 @@ const Badge: React.VFC<Props> = ({
   }
 
   return content ? (
-    <div className="flex relative w-fit">
+    <div className="relative flex w-fit">
       {children}
       <div
-        className="absolute text-xxs font-extrabold text-white whitespace-nowrap bg-danger rounded-lg border-2 border-white"
+        className="absolute whitespace-nowrap rounded-lg border-2 border-white bg-danger text-xxs font-extrabold text-white"
         style={{
           padding: '1px 3px',
           top: `${offsetTop}px`,
@@ -36,10 +36,10 @@ const Badge: React.VFC<Props> = ({
       </div>
     </div>
   ) : (
-    <div className="flex relative w-fit">
+    <div className="relative flex w-fit">
       {children}
       <div
-        className="absolute w-2 h-2 bg-danger rounded-full"
+        className="absolute h-2 w-2 rounded-full bg-danger"
         style={{ top: `${offsetTop}px`, right: `${offsetRight}px` }}
       />
     </div>

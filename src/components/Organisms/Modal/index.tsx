@@ -18,7 +18,7 @@ const Wrapper: React.VFC<WrapperProps> = ({ isOpen, children }) => {
 
   return (
     <div
-      className={`translate-height transition-all block w-full duration-300 ease-out ${
+      className={`block w-full transition-all duration-300 ease-out ${
         drawerOpen ? 'h-full' : 'h-0'
       }`}
     >
@@ -42,18 +42,18 @@ const Content: React.VFC<ContentProps> = ({
     <div
       aria-hidden="true"
       className={`
-        box-border
-        block
-        overflow-hidden
         fixed
         inset-x-0
         -bottom-3
         z-50
+        box-border
+        block
         w-full
-        bg-white
-        rounded-t-xl
-        rounded-b-none
         animate-slide-in-bottom
+        overflow-hidden
+        rounded-b-none
+        rounded-t-xl
+        bg-white
         ${className}
       `}
       style={{ height: '38rem', ...(style && { style }) }}

@@ -25,12 +25,13 @@ export default {
   },
 } as Meta<typeof Button>;
 
-const Template: StoryFn<typeof Button> = (args) => (
-  <Button {...args}>Button</Button>
+const Template: StoryFn<typeof Button> = ({ children, ...args }) => (
+  <Button {...args}>{children ?? 'Button'}</Button>
 );
 
 export const Default = Template.bind({
+  children: 'Button',
   htmlType: ButtonHtmlType.button,
-  size: ButtonSize.middle,
+  size: ButtonSize.large,
   type: ButtonType.default,
 });

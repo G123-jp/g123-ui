@@ -19,14 +19,26 @@ export default {
   },
 } as Meta<typeof ChevronButton>;
 
-const Template: StoryFn<typeof ChevronButton> = (args) => (
-  <div>
+const Template: StoryFn<typeof ChevronButton> = ({
+  type,
+  color,
+  disabled,
+  className,
+  style,
+}) => (
+  <>
     <ChevronButton type={ChevronButtonType.up} />
     <ChevronButton className="text-primary" type={ChevronButtonType.right} />
     <ChevronButton className="text-secondary" type={ChevronButtonType.down} />
     <ChevronButton className="text-danger" type={ChevronButtonType.left} />
-    <ChevronButton {...args} />
-  </div>
+    <ChevronButton
+      type={type ?? ChevronButtonType.forward}
+      color={color ?? ''}
+      disabled={disabled ?? false}
+      className={className ?? ''}
+      style={style ?? {}}
+    />
+  </>
 );
 
 export const Default = Template.bind({});

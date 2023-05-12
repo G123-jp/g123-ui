@@ -1,4 +1,4 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { StoryFn, Meta } from '@storybook/react';
 import React from 'react';
 
 import ChevronButton from './ChevronButton';
@@ -17,16 +17,28 @@ export default {
     color: { control: 'color', defaultValue: '' },
     disabled: { control: 'boolean', defaultValue: false },
   },
-} as ComponentMeta<typeof ChevronButton>;
+} as Meta<typeof ChevronButton>;
 
-const Template: ComponentStory<typeof ChevronButton> = (args) => (
-  <div>
+const Template: StoryFn<typeof ChevronButton> = ({
+  type,
+  color,
+  disabled,
+  className,
+  style,
+}) => (
+  <>
     <ChevronButton type={ChevronButtonType.up} />
     <ChevronButton className="text-primary" type={ChevronButtonType.right} />
     <ChevronButton className="text-secondary" type={ChevronButtonType.down} />
     <ChevronButton className="text-danger" type={ChevronButtonType.left} />
-    <ChevronButton {...args} />
-  </div>
+    <ChevronButton
+      className={className ?? ''}
+      color={color ?? ''}
+      disabled={disabled ?? false}
+      style={style ?? {}}
+      type={type ?? ChevronButtonType.forward}
+    />
+  </>
 );
 
 export const Default = Template.bind({});

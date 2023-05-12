@@ -1,4 +1,4 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { StoryFn, Meta } from '@storybook/react';
 import React from 'react';
 
 import Button, { ButtonHtmlType } from './Button';
@@ -23,12 +23,15 @@ export default {
       defaultValue: ButtonSize.middle,
     },
   },
-} as ComponentMeta<typeof Button>;
+} as Meta<typeof Button>;
 
-const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
+const Template: StoryFn<typeof Button> = ({ children, ...args }) => (
+  <Button {...args}>{children ?? 'Button'}</Button>
+);
 
 export const Default = Template.bind({
+  children: 'Button',
   htmlType: ButtonHtmlType.button,
-  size: ButtonSize.middle,
+  size: ButtonSize.large,
   type: ButtonType.default,
 });

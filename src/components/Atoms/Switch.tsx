@@ -16,14 +16,14 @@ const Switch: React.VFC<Props> = ({ checked, onSwitch }) => {
   );
 
   return (
-    <div className="flex justify-center items-center w-fit">
-      <label className="flex items-center cursor-pointer" htmlFor="toggleB">
+    <div className="flex w-fit items-center justify-center">
+      <label className="flex cursor-pointer items-center" htmlFor="toggleB">
         <div className="relative">
           <input checked={checked} className="sr-only" type="checkbox" />
           <div
             className={`${
               checked ? 'bg-secondary' : 'bg-gray-100'
-            } block w-10 h-6 rounded-full`}
+            } block h-6 w-10 rounded-full`}
           />
           <div
             aria-hidden

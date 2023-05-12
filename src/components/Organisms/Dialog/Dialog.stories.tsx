@@ -1,5 +1,5 @@
 import { Button, ButtonType, ButtonSize } from '@/components/Atoms';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { StoryFn, Meta } from '@storybook/react';
 import React from 'react';
 
 import Dialog, { dialog, DialogContainer } from '.';
@@ -7,14 +7,14 @@ import Dialog, { dialog, DialogContainer } from '.';
 export default {
   title: 'Organisms/Dialog',
   component: Dialog,
-} as ComponentMeta<typeof Dialog>;
+} as Meta<typeof Dialog>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof Dialog> = () => (
-  <div className="flex flex-col gap-y-8 w-full h-full">
+const Template: StoryFn<typeof Dialog> = () => (
+  <div className="flex h-full w-full flex-col gap-y-8">
     <DialogContainer />
 
-    <div className="flex gap-2 items-center w-full h-full">
+    <div className="flex h-full w-full items-center gap-2">
       <h2>Size:</h2>
       <Button
         size={ButtonSize.small}
@@ -59,7 +59,7 @@ const Template: ComponentStory<typeof Dialog> = () => (
       </Button>
     </div>
 
-    <div className="flex gap-2 w-full h-full">
+    <div className="flex h-full w-full gap-2">
       <h2>Icon&Logo:</h2>
       <Button
         onClick={(): void => {

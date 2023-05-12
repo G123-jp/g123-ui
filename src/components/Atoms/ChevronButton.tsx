@@ -50,7 +50,7 @@ const ChevronButton: React.VFC<Props> = ({
   return (
     <button
       aria-label={`chevron-${type}-button`}
-      className={`flex content-center items-center p-0 border-0 box-border w-6 h-6 ${
+      className={`box-border flex h-6 w-6 content-center items-center border-0 p-0 ${
         disabled ? 'cursor-not-allowed select-none' : 'cursor-pointer'
       } ${className}`}
       type="button"

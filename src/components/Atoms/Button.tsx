@@ -103,6 +103,7 @@ const Button: React.VFC<Props> = ({
   }, [size]);
 
   const buildUxClasses = useCallback((): string => {
+    // TODO: some visual feedback for disabled buttons?
     return disabled ? 'cursor-not-allowed' : 'cursor-pointer';
   }, [disabled]);
 

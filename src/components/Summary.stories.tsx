@@ -10,18 +10,18 @@ import {
   Logo,
   Switch,
 } from '@/components/Atoms';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { StoryFn, Meta } from '@storybook/react';
 import React from 'react';
 
 export default {
   title: 'Summary',
   component: Badge,
-} as ComponentMeta<typeof Badge>;
+} as Meta<typeof Badge>;
 
-const Template: ComponentStory<typeof Badge> = () => (
+const Template: StoryFn<typeof Badge> = () => (
   <div className="flex flex-col gap-4">
     {/* Avatar & Logo */}
-    <div className="flex gap-2 items-center">
+    <div className="flex items-center gap-2">
       <Logo />
       <Avatar />
     </div>
@@ -38,14 +38,14 @@ const Template: ComponentStory<typeof Badge> = () => (
         <Button type={ButtonType.text}>Text</Button>
       </div>
       {/* Button Size */}
-      <div className="flex gap-2 items-center">
+      <div className="flex items-center gap-2">
         <Button size={ButtonSize.small}>Small</Button>
         <Button size={ButtonSize.middle}>Middle</Button>
         <Button size={ButtonSize.large}>Large</Button>
         <Button block>Block</Button>
       </div>
       {/* UX */}
-      <div className="flex gap-2 items-center">
+      <div className="flex items-center gap-2">
         <Button>Normal</Button>
         <Button disabled>Disabled</Button>
       </div>

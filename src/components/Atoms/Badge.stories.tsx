@@ -1,4 +1,4 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { StoryFn, Meta } from '@storybook/react';
 import React from 'react';
 
 import Badge from './Badge';
@@ -13,9 +13,9 @@ export default {
     offsetTop: { control: 'number', defaultValue: 0 },
     offsetRight: { control: 'number', defaultValue: 0 },
   },
-} as ComponentMeta<typeof Badge>;
+} as Meta<typeof Badge>;
 
-const Template: ComponentStory<typeof Badge> = (args) => (
+const Template: StoryFn<typeof Badge> = (args) => (
   <Badge {...args}>
     <Button>G123 Button</Button>
   </Badge>

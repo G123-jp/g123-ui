@@ -32,11 +32,11 @@ const Template: StoryFn<typeof ChevronButton> = ({
     <ChevronButton className="text-secondary" type={ChevronButtonType.down} />
     <ChevronButton className="text-danger" type={ChevronButtonType.left} />
     <ChevronButton
-      type={type ?? ChevronButtonType.forward}
+      className={className ?? ''}
       color={color ?? ''}
       disabled={disabled ?? false}
-      className={className ?? ''}
       style={style ?? {}}
+      type={type ?? ChevronButtonType.forward}
     />
   </>
 );

@@ -10,7 +10,11 @@ Reuseable UI based on [G123 Design System](https://www.figma.com/file/U4LsgpPqBk
 ## 📦 Install
 
 ```bash
+# yarn:
 yarn add @g123jp/g123-ui
+
+# pnpm:
+pnpm i -D @g123jp/g123-ui
 ```
 
 ## 🔨 Usage
@@ -67,7 +71,11 @@ yarn add @g123jp/g123-ui
 - ### install
 
   ```bash
+  # yarn:
   yarn
+
+  # pnpm:
+  pnpm install
   ```
 
 - ### build
@@ -75,11 +83,19 @@ yarn add @g123jp/g123-ui
   > ⛑: **Make sure run build before publish it.**
 
   ```bash
+  # yarn:
   yarn build
+
+  # pnpm:
+  pnpm build
   ```
 
 - ### 🤹🏼 check with [storybook](https://storybook.js.org/)
   ```bash
+  # yarn
   yarn storybook
+
+  #yarn
+  pnpm storybook
   ```
   <img width="422" alt="image" src="https://user-images.githubusercontent.com/1228449/154028955-b1e3e8ea-982f-4bb1-bc37-56ba8be74ff0.png">

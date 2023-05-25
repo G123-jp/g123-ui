@@ -3,7 +3,7 @@
 
 Reuseable UI based on [G123 Design System](https://www.figma.com/file/U4LsgpPqBkL5FX2UNUDm9o/G123-Design-System) and [Atomic Design](https://atomicdesign.bradfrost.com/)
 
-  <img width="619" alt="image" src="https://user-images.githubusercontent.com/1228449/197720965-e5c2ec63-dc83-43ca-a23d-d1d1bcbf352c.png">
+  <img width="733" alt="image" src="https://github.com/G123-jp/g123-ui/assets/1228449/95dc0547-c65c-4b28-bf1f-c19d0fa2d962">
   
 </div>
 
@@ -82,4 +82,4 @@ yarn add @g123jp/g123-ui
   ```bash
   yarn storybook
   ```
-  <img width="422" alt="image" src="https://user-images.githubusercontent.com/1228449/154028955-b1e3e8ea-982f-4bb1-bc37-56ba8be74ff0.png">
+  <img width="480" alt="image" src="https://github.com/G123-jp/g123-ui/assets/1228449/a9172088-4a66-49d7-ae54-ae02c3bcd9f8">

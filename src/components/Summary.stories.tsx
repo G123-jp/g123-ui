@@ -10,6 +10,7 @@ import {
   Logo,
   Switch,
 } from '@/components/Atoms';
+import { Carousel } from '@/components/Molecules';
 import { StoryFn, Meta } from '@storybook/react';
 import React from 'react';
 
@@ -24,6 +25,26 @@ const Template: StoryFn<typeof Badge> = () => (
     <div className="flex items-center gap-2">
       <Logo />
       <Avatar />
+    </div>
+
+    <div className="h-full w-full">
+      <Carousel className="w-72 gap-x-4 py-4">
+        <Carousel.Item className="rounded bg-primary">
+          <h1 className="flex h-20 w-60 items-center justify-center gap-x-2">
+            <Logo /> 1
+          </h1>
+        </Carousel.Item>
+        <Carousel.Item className="rounded bg-secondary">
+          <h1 className="flex h-20 w-60 items-center justify-center gap-x-2">
+            <Logo /> 2
+          </h1>
+        </Carousel.Item>
+        <Carousel.Item className="rounded bg-highlight">
+          <h1 className="flex h-20 w-60 items-center justify-center gap-x-2">
+            <Logo /> 3
+          </h1>
+        </Carousel.Item>
+      </Carousel>
     </div>
 
     {/* Button */}

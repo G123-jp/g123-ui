@@ -46,6 +46,11 @@ yarn add @g123jp/g123-ui
       // ... put your content here
       './node_modules/@g123jp/g123-ui/dist/*.js',
     ],
+    plugins: [
+      ...g123UI.tailwindPlugins,
+      // ... put your plugins here
+    ]
+    // ... your other configs
   };
   ```
 

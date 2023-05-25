@@ -108,5 +108,6 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  // eslint-disable-next-line global-require, import/no-extraneous-dependencies
+  plugins: [require('tailwind-scrollbar')],
 };

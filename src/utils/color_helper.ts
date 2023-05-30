@@ -1,4 +1,4 @@
-export const pallete = {
+export const palette = {
   primary: '#136c72',
   secondary: '#d9ede2',
   highlight: '#e3ff34',

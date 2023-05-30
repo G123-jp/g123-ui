@@ -9,7 +9,9 @@ export default {
 } as Meta<typeof Logo>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: StoryFn<typeof Logo> = (args) => <Logo {...args} />;
+const Template: StoryFn<typeof Logo> = (args) => (
+  <Logo {...args} className="fill-primary" />
+);
 
 export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args

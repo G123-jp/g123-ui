@@ -10,11 +10,11 @@ type Props = {
 const Logo: React.VFC<Props> = ({ style, className = '' }) => {
   return (
     <LogoSvg
-      className={className}
+      className={className || 'fill-current'}
       height="14"
-      style={{ ...style }}
       viewBox="0 0 68 24"
       width="42"
+      {...(style && { style })}
     />
   );
 };

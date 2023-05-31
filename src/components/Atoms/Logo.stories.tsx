@@ -10,7 +10,12 @@ export default {
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: StoryFn<typeof Logo> = (args) => (
-  <Logo {...args} className="fill-primary" />
+  <div className="flex flex-col gap-y-4">
+    <Logo {...args} />
+    <Logo {...args} className="fill-primary" />
+    <Logo {...args} className="w-12" />
+    <Logo {...args} className="w-20 fill-highlight" />
+  </div>
 );
 
 export const Default = Template.bind({});

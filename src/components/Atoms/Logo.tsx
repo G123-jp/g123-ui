@@ -8,7 +8,7 @@ type Props = {
 };
 
 const regexForTailwindWidth =
-  /\b(w-(\d{1,2}|\d\.\d|\d{1,2}\/\d{1,2}|auto|px|full|screen|min|max|fit))\b/g;
+  /\b(w-(\d{1,2}|\d\.\d|\d{1,2}\/\d{1,2}|auto|px|full|screen|min|max|fit))\b/;
 
 const Logo: React.VFC<Props> = ({ style, className = '' }) => {
   const hasCustomizedWidth = useMemo(() => {

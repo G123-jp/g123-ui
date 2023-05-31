@@ -13,8 +13,8 @@ const Template: StoryFn<typeof Logo> = (args) => (
   <div className="flex flex-col gap-y-4">
     <Logo {...args} />
     <Logo {...args} className="fill-primary" />
-    <Logo {...args} className="w-20" />
-    <Logo {...args} className="w-20" />
+    <Logo {...args} className="w-12" />
+    <Logo {...args} className="w-20 fill-highlight" />
   </div>
 );
 

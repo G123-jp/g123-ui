@@ -45,7 +45,7 @@ module.exports = {
       spacing: {
         15: '3.75rem',
       },
-      // Akira: tailwind defualt colors + g123 pallate
+      // Akira: tailwind defualt colors + g123 palette
       colors: {
         transparent: 'transparent',
         current: 'currentColor',

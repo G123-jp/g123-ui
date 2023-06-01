@@ -11,4 +11,4 @@ export { default as Badge } from './Badge';
 
 export { default as Avatar } from './Avatar';
 
-export { default as icons } from './icons';
+export { default as Icon } from './icons';

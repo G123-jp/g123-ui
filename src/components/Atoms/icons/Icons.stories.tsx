@@ -1,16 +1,7 @@
 import { StoryFn, Meta } from '@storybook/react';
 import React from 'react';
 
-import icons from '.';
-
-const {
-  EarthIcon,
-  NotificationIcon,
-  HomeIcon,
-  GameIcon,
-  UserCircleIcon,
-  ChatBubbleIcon,
-} = icons;
+import Icon from '.';
 
 export default {
   title: 'Atoms/Icons',
@@ -25,12 +16,12 @@ export default {
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: StoryFn = (args) => (
   <div className="flex gap-4 text-neutral-800">
-    <EarthIcon {...args} />
-    <NotificationIcon {...args} />
-    <HomeIcon {...args} />
-    <GameIcon {...args} />
-    <UserCircleIcon {...args} />
-    <ChatBubbleIcon {...args} />
+    <Icon.EarthIcon {...args} />
+    <Icon.NotificationIcon {...args} />
+    <Icon.HomeIcon {...args} />
+    <Icon.GameIcon {...args} />
+    <Icon.UserCircleIcon {...args} />
+    <Icon.ChatBubbleIcon {...args} />
   </div>
 );
 

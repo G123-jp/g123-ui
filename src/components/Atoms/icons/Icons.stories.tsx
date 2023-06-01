@@ -1,14 +1,6 @@
 import { StoryFn, Meta } from '@storybook/react';
 import React from 'react';
 
-// import {
-//   EarthIcon,
-//   NotificationIcon,
-//   HomeIcon,
-//   GameIcon,
-//   UserCircleIcon,
-//   ChatBubbleIcon,
-// } from '.';
 import icons from '.';
 
 const {
@@ -44,4 +36,6 @@ const Template: StoryFn = (args) => (
 
 export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
-Default.args = {};
+Default.args = {
+  className: 'stroke-primary fill-highlight',
+};

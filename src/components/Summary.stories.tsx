@@ -16,10 +16,9 @@ import React from 'react';
 
 export default {
   title: 'Summary',
-  component: Badge,
-} as Meta<typeof Badge>;
+} as Meta;
 
-const Template: StoryFn<typeof Badge> = () => (
+const Template: StoryFn = () => (
   <div className="flex flex-col gap-4">
     {/* Avatar & Logo */}
     <div className="flex items-center gap-2">

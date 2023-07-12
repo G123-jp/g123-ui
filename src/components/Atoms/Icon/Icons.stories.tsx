@@ -6,19 +6,19 @@ import {
   HomeOutlined,
   GameOutlined,
   ChatOutlined,
-  EarchOutlined,
+  EarthOutlined,
   ProfileOutlined,
   NotificationFilled,
   HomeFilled,
   GameFilled,
   ChatFilled,
-  EarchFilled,
+  EarthFilled,
   ProfileFilled,
   NotificationTwoTone,
   HomeTwoTone,
   GameTwoTone,
   ChatTwoTone,
-  EarchTwoTone,
+  EarthTwoTone,
   ProfileTwoTone,
 } from '.';
 
@@ -41,7 +41,7 @@ const Template: StoryFn = (args) => (
       <HomeOutlined className="text-blue-500" />
       <GameOutlined className="text-highlight" style={{ color: 'orange' }} />
       <ChatOutlined />
-      <EarchOutlined />
+      <EarthOutlined />
       <ProfileOutlined />
     </div>
 
@@ -51,7 +51,7 @@ const Template: StoryFn = (args) => (
       <HomeFilled className="text-blue-500" />
       <GameFilled className="text-highlight" style={{ color: 'orange' }} />
       <ChatFilled />
-      <EarchFilled />
+      <EarthFilled />
       <ProfileFilled />
     </div>
 
@@ -61,7 +61,7 @@ const Template: StoryFn = (args) => (
       <HomeTwoTone className="text-blue-500" />
       <GameTwoTone className="text-highlight" style={{ color: 'orange' }} />
       <ChatTwoTone />
-      <EarchTwoTone />
+      <EarthTwoTone />
       <ProfileTwoTone />
     </div>
   </div>

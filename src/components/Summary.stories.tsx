@@ -9,35 +9,17 @@ import {
   CloseButton,
   Logo,
   Switch,
-  Icon,
 } from '@/components/Atoms';
 import { Carousel } from '@/components/Molecules';
 import { StoryFn, Meta } from '@storybook/react';
 import React from 'react';
 
-import {
-  NotificationOutlined,
-  HomeOutlined,
-  GameOutlined,
-  ChatOutlined,
-  EarthOutlined,
-  ProfileOutlined,
-  NotificationFilled,
-  HomeFilled,
-  GameFilled,
-  ChatFilled,
-  EarthFilled,
-  ProfileFilled,
-  ChatTwoTone,
-  EarthTwoTone,
-} from './Atoms/Icon';
-
-const { ProfileTwoTone, NotificationTwoTone, HomeTwoTone, GameTwoTone } = Icon;
 export default {
   title: 'Summary',
-} as Meta;
+  component: Badge,
+} as Meta<typeof Badge>;
 
-const Template: StoryFn = () => (
+const Template: StoryFn<typeof Badge> = () => (
   <div className="flex flex-col gap-4">
     {/* Avatar & Logo */}
     <div className="flex items-center gap-2">
@@ -132,36 +114,6 @@ const Template: StoryFn = () => (
           console.info(`G123 Switch ${checked}`);
         }}
       />
-    </div>
-
-    {/* Icons */}
-    <div className="flex flex-col gap-2">
-      <div className="flex gap-4 text-neutral-800">
-        <NotificationOutlined />
-        <HomeOutlined className="text-blue-500" />
-        <GameOutlined className="text-highlight" style={{ color: 'orange' }} />
-        <ChatOutlined />
-        <EarthOutlined />
-        <ProfileOutlined />
-      </div>
-
-      <div className="flex gap-4 text-neutral-800">
-        <NotificationFilled />
-        <HomeFilled className="text-blue-500" />
-        <GameFilled className="text-highlight" style={{ color: 'orange' }} />
-        <ChatFilled />
-        <EarthFilled />
-        <ProfileFilled />
-      </div>
-
-      <div className="flex gap-4 text-neutral-800">
-        <NotificationTwoTone />
-        <HomeTwoTone className="text-blue-500" />
-        <GameTwoTone className="text-highlight" style={{ color: 'orange' }} />
-        <ChatTwoTone />
-        <EarthTwoTone />
-        <ProfileTwoTone />
-      </div>
     </div>
   </div>
 );

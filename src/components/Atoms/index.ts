@@ -10,3 +10,5 @@ export { default as ChevronButton, ChevronButtonType } from './ChevronButton';
 export { default as Badge } from './Badge';
 
 export { default as Avatar } from './Avatar';
+
+export * as Icon from './Icon';

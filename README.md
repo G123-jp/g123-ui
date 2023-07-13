@@ -3,8 +3,8 @@
 
 Reuseable UI based on [G123 Design System](https://www.figma.com/file/U4LsgpPqBkL5FX2UNUDm9o/G123-Design-System) and [Atomic Design](https://atomicdesign.bradfrost.com/)
 
-  <img width="733" alt="image" src="https://github.com/G123-jp/g123-ui/assets/1228449/95dc0547-c65c-4b28-bf1f-c19d0fa2d962">
-  
+  <img width="733" alt="image" src="https://github.com/G123-jp/g123-ui/assets/1228449/8e6c7a60-1431-4a16-af22-d609f30b914d">
+
 </div>
 
 ## 📦 Install

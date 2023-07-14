@@ -1,13 +1,3 @@
-// import GameOutlined from './GameOutlined';
-// import HomeOutlined from './HomeOutlined';
-// import NotificationOutlined from './NotificationOutlined';
-
-// export default {
-//   GameOutlined,
-//   HomeOutlined,
-//   NotificationOutlined,
-// };
-
 export { default as ChatOutlined } from './icons/ChatOutlined';
 export { default as EarthOutlined } from './icons/EarthOutlined';
 export { default as GameOutlined } from './icons/GameOutlined';

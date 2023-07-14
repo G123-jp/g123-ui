@@ -68,12 +68,14 @@ const Template: StoryFn = () => (
     {/* Button */}
     <div className="flex flex-col gap-2">
       {/* Button Type */}
-      <div className="flex gap-2">
-        <Button>Default</Button>
+      <div className="flex items-center gap-2">
+        <Button type={ButtonType.highlight}>Highlight</Button>
         <Button type={ButtonType.primary}>Primary</Button>
-        <Button type={ButtonType.danger}>Danger</Button>
+        <Button>Default</Button>
         <Button type={ButtonType.secondary}>Secondary</Button>
-        <Button type={ButtonType.inactive}>Inactive</Button>
+        <Button type={ButtonType.stroke}>Stroke</Button>
+        <Button type={ButtonType.danger}>Danger</Button>
+        <Button type={ButtonType.link}>Link</Button>
         <Button type={ButtonType.text}>Text</Button>
       </div>
       {/* Button Size */}
@@ -81,6 +83,15 @@ const Template: StoryFn = () => (
         <Button size={ButtonSize.small}>Small</Button>
         <Button size={ButtonSize.middle}>Middle</Button>
         <Button size={ButtonSize.large}>Large</Button>
+        <Button size={ButtonSize.small} type={ButtonType.link}>
+          Small
+        </Button>
+        <Button size={ButtonSize.middle} type={ButtonType.link}>
+          Middle
+        </Button>
+        <Button size={ButtonSize.large} type={ButtonType.link}>
+          Large
+        </Button>
         <Button block>Block</Button>
       </div>
       {/* UX */}
@@ -98,7 +109,7 @@ const Template: StoryFn = () => (
       <Badge show>
         <Button>Badge Dot</Button>
       </Badge>
-      <Badge offsetRight={110} offsetTop={25} show>
+      <Badge offsetRight={-3} offsetTop={28} show>
         <Button>Badge Offsets</Button>
       </Badge>
     </div>

@@ -26,7 +26,7 @@
     "@babel/preset-env": "^7.21.5",
     "@babel/preset-react": "^7.18.6",
     "@babel/preset-typescript": "^7.21.5",
-    "@g123jp/eslint-config-react": "^1.0.0",
+    "@g123jp/eslint-config-react": "^1.1.4",
     "@g123jp/prettier-config-recommended": "^1.1.0",
     "@rollup/plugin-commonjs": "^24.0.1",
     "@rollup/plugin-image": "^3.0.2",
@@ -53,11 +53,11 @@
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.26.1",
     "eslint-plugin-react-hooks": "^4.2.0",
-    "eslint-plugin-tailwindcss": "^3.12.0",
+    "eslint-plugin-tailwindcss": "^3.13.0",
     "postcss": "^8.4.5",
     "prettier": "^2.4.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
     "rollup": "^2.79.1",
     "rollup-plugin-postcss": "^4.0.2",
     "rollup-plugin-terser": "^7.0.2",
@@ -107,5 +107,7 @@
       "es6": true
     }
   },
-  "dependencies": {}
+  "dependencies": {
+    "classnames": "^2.3.2"
+  }
 }

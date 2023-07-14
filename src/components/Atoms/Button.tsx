@@ -58,90 +58,14 @@ const Button: React.VFC<Props> = ({
   style,
   onClick,
 }) => {
-  const handleClick = useCallback(() => {
-    onClick && onClick();
-  }, [onClick]);
-
-  // const buildColorClasses = useCallback((): string => {
-  //   switch (type) {
-  //     case Type.primary:
-  //       return 'text-font-overlay bg-brand-tertiary-base border-transparent';
-  //     case Type.inactive: // 1.x: maybe DEPRECATED in the future
-  //       return 'text-zinc-500 bg-zinc-100';
-  //     case Type.danger: // 2.x: TODO in Design System
-  //       return 'text-white bg-danger';
-  //     case Type.text:
-  //       return 'text-font-primary bg-transparent border-transparent';
-  //     case Type.highlight:
-  //       return 'text-font-primary bg-brand-primary-base border-transparent';
-  //     case Type.stroke:
-  //       return 'text-font-primary bg-transparent border-2 border-solid border-brand-tertiary-base';
-  //     case Type.link:
-  //       return 'text-link-default bg-transparent border-transparent';
-
-  //     // Akira: default equals to secondary
-  //     case Type.secondary:
-  //     case Type.default:
-  //       return 'text-font-primary bg-brand-tertiary-container border-transparent';
-  //     default:
-  //       return 'text-font-primary bg-brand-tertiary-container border-transparent';
-  //   }
-  // }, [type]);
-
-  // const buildBlockClasses = useCallback((): string => {
-  //   return block ? 'w-full' : '';
-  // }, [block]);
-
-  // const buildSizeClasses = useCallback((): string => {
-  //   return `
-  //   ${
-  //     {
-  //       [Size.small]: 'h-6 py-1.5',
-  //       [Size.middle]: 'h-8 py-2',
-  //       [Size.default]: 'h-8 py-2',
-  //       [Size.large]: 'h-12 py-3',
-  //     }[size]
-  //   }
-  //   ${
-  //     type === Type.text
-  //       ? 'px-0'
-  //       : {
-  //           [Size.small]: 'px-3',
-  //           [Size.middle]: 'px-5',
-  //           [Size.default]: 'px-5',
-  //           [Size.large]: 'px-7',
-  //         }[size]
-  //   }
-  //   `;
-  // }, [size, type]);
-
-  // const buildFontClasses = useCallback((): string => {
-  //   switch (type) {
-  //     case Type.text:
-  //     case Type.link:
-  //       return 'text-link-default bg-transparent border-transparent';
-
-  //     case Type.primary:
-  //     case Type.secondary:
-  //     case Type.inactive: // 1.x: maybe DEPRECATED in the future
-  //     case Type.danger: // 2.x: TODO in Design System
-  //     case Type.highlight:
-  //     case Type.stroke:
-  //     case Type.default:
-  //     default:
-  //       return 'text-font-primary bg-brand-tertiary-container border-transparent';
-  //   }
-  // }, [type]);
-
-  // const buildUxClasses = useCallback((): string => {
-  //   // TODO: some visual feedback for disabled buttons?
-  //   return disabled ? 'cursor-not-allowed' : 'cursor-pointer';
-  // }, [disabled]);
-
   const isInline = useMemo(
     () => type === Type.link || type === Type.text,
     [type],
   );
+
+  const handleClick = useCallback(() => {
+    onClick && onClick();
+  }, [onClick]);
 
   return (
     <button
@@ -184,6 +108,7 @@ const Button: React.VFC<Props> = ({
           // disabled
           '!text-font-disabled': disabled,
         },
+
         // Size
         {
           'w-fit rounded-full px-sm': !isInline,
@@ -199,6 +124,7 @@ const Button: React.VFC<Props> = ({
             (size === Size.middle || size === Size.default) && isInline,
           'rounded px-sm py-xs': size === Size.large && isInline,
         },
+
         // Font
         {
           'text-center text-xs font-semibold': true,
@@ -206,10 +132,18 @@ const Button: React.VFC<Props> = ({
             isInline && (size === Size.middle || size === Size.default),
           '!text-base': isInline && size === Size.large,
         },
+
         // Block
         {
           '!w-full': block,
         },
+
+        // UX
+        {
+          'cursor-pointer': !disabled,
+          'cursor-not-allowed': disabled,
+        },
+
         className,
       )}
       disabled={disabled}

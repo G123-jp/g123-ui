@@ -15,6 +15,8 @@ export const palette = {
   'brand-secondary-secondary': '#89b5b8',
   'brand-secondary-container': '#d9ede2',
   'brand-secondary-bg': '#eef6ef',
+  'brand-tertiary-base': '#262626',
+  'brand-tertiary-container': '#f0f0f0',
   // Font
   'font-primary': '#262626',
   'font-secondary': '#8c8c8c',

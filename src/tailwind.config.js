@@ -44,6 +44,18 @@ module.exports = {
       // Akira: ref: https://tailwindcss.com/docs/customizing-spacing
       spacing: {
         15: '3.75rem',
+
+        // Akira: G123 Design System: Style&Layout
+        // ref: https://www.figma.com/file/jbFjQ7abHxF8WybpmMBiGn/G123-Design-system?type=design&node-id=234-1546&mode=design&t=1kso8yJOWrA9umkH-0
+        xxs: '0.25rem',
+        '2xs': '0.25rem',
+        xs: '0.5rem',
+        sm: '0.75rem',
+        md: '1rem',
+        xl: '2rem',
+        '2xl': '2.5rem',
+        '3xl': '4rem',
+        '4xl': '5rem',
       },
       // Akira: tailwind defualt colors + g123 palette
       colors: {
@@ -66,6 +78,8 @@ module.exports = {
         'brand-secondary-secondary': '#89b5b8',
         'brand-secondary-container': '#d9ede2',
         'brand-secondary-bg': '#eef6ef',
+        'brand-tertiary-base': '#262626',
+        'brand-tertiary-container': '#f0f0f0',
         // Font
         'font-primary': '#262626',
         'font-secondary': '#8c8c8c',

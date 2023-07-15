@@ -67,7 +67,7 @@ const Template: StoryFn = () => (
 
     {/* Button */}
     <div className="flex flex-col gap-2">
-      {/* Button Type */}
+      {/* Button Type: Basic */}
       <div className="flex items-center gap-2">
         <Button type={ButtonType.highlight}>Highlight</Button>
         <Button type={ButtonType.primary}>Primary</Button>
@@ -78,20 +78,98 @@ const Template: StoryFn = () => (
         <Button type={ButtonType.link}>Link</Button>
         <Button type={ButtonType.text}>Text</Button>
       </div>
-      {/* Button Size */}
+
+      {/* Button Type: Icon Only */}
       <div className="flex items-center gap-2">
-        <Button size={ButtonSize.small}>Small</Button>
-        <Button size={ButtonSize.middle}>Middle</Button>
-        <Button size={ButtonSize.large}>Large</Button>
-        <Button size={ButtonSize.small} type={ButtonType.link}>
-          Small
+        <Button icon={<ChatOutlined />} type={ButtonType.highlight} />
+        <Button icon={<ChatOutlined />} type={ButtonType.primary} />
+        <Button icon={<ChatOutlined />} />
+        <Button icon={<ChatOutlined />} type={ButtonType.secondary} />
+        <Button icon={<ChatOutlined />} type={ButtonType.stroke} />
+        <Button icon={<ChatOutlined />} type={ButtonType.danger} />
+        <Button icon={<ChatOutlined />} type={ButtonType.link} />
+        <Button icon={<ChatOutlined />} type={ButtonType.text} />
+      </div>
+
+      {/* Button Type: With Icon */}
+      <div className="flex items-center gap-2">
+        <Button icon={<ChatOutlined />} type={ButtonType.highlight}>
+          Highlight
         </Button>
-        <Button size={ButtonSize.middle} type={ButtonType.link}>
-          Middle
+        <Button icon={<ChatOutlined />} type={ButtonType.primary}>
+          Primary
         </Button>
-        <Button size={ButtonSize.large} type={ButtonType.link}>
-          Large
+        <Button icon={<ChatOutlined />}>Default</Button>
+        <Button icon={<ChatOutlined />} type={ButtonType.secondary}>
+          Secondary
         </Button>
+        <Button icon={<ChatOutlined />} type={ButtonType.stroke}>
+          Stroke
+        </Button>
+        <Button icon={<ChatOutlined />} type={ButtonType.danger}>
+          Danger
+        </Button>
+        <Button icon={<ChatOutlined />} type={ButtonType.link}>
+          Link
+        </Button>
+        <Button icon={<ChatOutlined />} type={ButtonType.text}>
+          Text
+        </Button>
+      </div>
+
+      {/* Button Size */}
+      <div className="flex flex-col gap-2">
+        {/* Button Size: Basic & Inline */}
+        <div className="flex items-center gap-2">
+          <Button size={ButtonSize.small}>Small</Button>
+          <Button size={ButtonSize.middle}>Middle</Button>
+          <Button size={ButtonSize.large}>Large</Button>
+          <Button size={ButtonSize.small} type={ButtonType.link}>
+            Small
+          </Button>
+          <Button size={ButtonSize.middle} type={ButtonType.link}>
+            Middle
+          </Button>
+          <Button size={ButtonSize.large} type={ButtonType.link}>
+            Large
+          </Button>
+        </div>
+        {/* Button Size: Only Icon & With Icon & Inline With Icon */}
+        <div className="flex items-center gap-2">
+          <Button icon={<ChatOutlined />} size={ButtonSize.small} />
+          <Button icon={<ChatOutlined />} size={ButtonSize.middle} />
+          <Button icon={<ChatOutlined />} size={ButtonSize.large} />
+          <Button icon={<ChatOutlined />} size={ButtonSize.small}>
+            Small
+          </Button>
+          <Button icon={<ChatOutlined />} size={ButtonSize.middle}>
+            Middle
+          </Button>
+          <Button icon={<ChatOutlined />} size={ButtonSize.large}>
+            Large
+          </Button>
+          <Button
+            icon={<ChatOutlined />}
+            size={ButtonSize.small}
+            type={ButtonType.link}
+          >
+            Small
+          </Button>
+          <Button
+            icon={<ChatOutlined />}
+            size={ButtonSize.middle}
+            type={ButtonType.link}
+          >
+            Middle
+          </Button>
+          <Button
+            icon={<ChatOutlined />}
+            size={ButtonSize.large}
+            type={ButtonType.link}
+          >
+            Large
+          </Button>
+        </div>
         <Button block>Block</Button>
       </div>
       {/* UX */}

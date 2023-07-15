@@ -52,7 +52,7 @@ const Button: React.VFC<Props> = ({
   disabled = false,
   block = false,
   htmlType = HtmlType.button,
-  // icon,
+  icon,
   children,
   className = '',
   style,
@@ -63,6 +63,10 @@ const Button: React.VFC<Props> = ({
     [type],
   );
 
+  const isOnlyIcon = useMemo(() => !children && !!icon, [children, icon]);
+
+  const isWithIcon = useMemo(() => !!children && !!icon, [children, icon]);
+
   const handleClick = useCallback(() => {
     onClick && onClick();
   }, [onClick]);
@@ -70,7 +74,7 @@ const Button: React.VFC<Props> = ({
   return (
     <button
       className={classnames(
-        'inline-flex items-center justify-center',
+        'inline-flex items-center justify-center gap-x-1',
         // Color
         {
           // normal
@@ -111,18 +115,30 @@ const Button: React.VFC<Props> = ({
 
         // Size
         {
-          'w-fit rounded-full px-sm': !isInline,
-          'h-6 min-w-[4.25rem]': size === Size.small && !isInline,
+          // basic & with icon
+          'w-fit rounded-full px-sm': !isInline && !isOnlyIcon,
+          'h-6 min-w-[4.25rem] gap-x-0':
+            size === Size.small && !isInline && !isOnlyIcon,
           'h-10 min-w-[5rem]':
-            (size === Size.middle || size === Size.default) && !isInline,
-          'h-16 min-w-[6.25rem]': size === Size.large && !isInline,
+            (size === Size.middle || size === Size.default) &&
+            !isInline &&
+            !isOnlyIcon,
+          'h-16 min-w-[6.25rem]':
+            size === Size.large && !isInline && !isOnlyIcon,
 
           // inline: text & link
-          'h-fit min-w-0': isInline,
+          'h-fit w-fit': isInline,
           'rounded-sm px-xs py-xxs': size === Size.small && isInline,
           'rounded-sm p-xs':
             (size === Size.middle || size === Size.default) && isInline,
           'rounded px-sm py-xs': size === Size.large && isInline,
+
+          // icon only
+          'rounded-full': isOnlyIcon,
+          // '!p-xxs': size === Size.small && isOnlyIcon,
+          '!p-xs':
+            (size === Size.middle || size === Size.default) && isOnlyIcon,
+          '!p-5': size === Size.large && isOnlyIcon,
         },
 
         // Font
@@ -151,6 +167,29 @@ const Button: React.VFC<Props> = ({
       {...(!disabled && onClick && { onClick: handleClick })}
       {...(style && { style })}
     >
+      <div>
+        {icon &&
+          icon &&
+          React.isValidElement<{ className: string }>(icon) &&
+          React.cloneElement(icon, {
+            className: classnames(
+              {
+                // ONLY icon
+                'scale-[0.67]': size === Size.small && isOnlyIcon,
+                'scale-100':
+                  (size === Size.middle || size === Size.default) && isOnlyIcon,
+                'scale-[1.8]': size === Size.large && isOnlyIcon,
+              },
+              {
+                // WITH icon
+                'scale-[0.67]': size === Size.small && isWithIcon,
+                'scale-[0.75]':
+                  (size === Size.middle || size === Size.default) && isWithIcon,
+                'scale-100': size === Size.large && isWithIcon,
+              },
+            ),
+          })}
+      </div>
       {children}
     </button>
   );

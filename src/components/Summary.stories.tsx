@@ -4,9 +4,6 @@ import {
   Button,
   ButtonType,
   ButtonSize,
-  ChevronButton,
-  ChevronButtonType,
-  CloseButton,
   Logo,
   Switch,
   Icon,
@@ -30,6 +27,11 @@ import {
   ProfileFilled,
   ChatTwoTone,
   EarthTwoTone,
+  ChevronUpOutlined,
+  ChevronRightOutlined,
+  ChevronDownOutlined,
+  ChevronLeftOutlined,
+  CloseOutlined,
 } from './Atoms/Icon';
 
 const { ProfileTwoTone, NotificationTwoTone, HomeTwoTone, GameTwoTone } = Icon;
@@ -192,19 +194,39 @@ const Template: StoryFn = () => (
       </Badge>
     </div>
 
-    {/* ChevronButton */}
+    {/* ChevronButton (use Icon Button) */}
     <div className="flex gap-2">
-      <ChevronButton type={ChevronButtonType.up} />
-      <ChevronButton className="text-primary" type={ChevronButtonType.right} />
-      <ChevronButton className="text-secondary" type={ChevronButtonType.down} />
-      <ChevronButton className="text-danger" type={ChevronButtonType.left} />
-      <ChevronButton color="#6bff8c" type={ChevronButtonType.forward} />
-      <ChevronButton disabled type={ChevronButtonType.back} />
+      <Button
+        icon={<ChevronUpOutlined className="text-font-primary" />}
+        type={ButtonType.link}
+      />
+      <Button
+        icon={<ChevronRightOutlined className="text-font-primary" />}
+        type={ButtonType.link}
+      />
+      <Button
+        icon={<ChevronDownOutlined className="text-font-primary" />}
+        type={ButtonType.link}
+      />
+      <Button
+        icon={<ChevronLeftOutlined className="text-font-primary" />}
+        type={ButtonType.link}
+      />
+      <Button
+        disabled
+        icon={<ChevronRightOutlined className="text-font-primary" />}
+        type={ButtonType.link}
+      />
     </div>
 
-    {/* CloseButton */}
+    {/* CloseButton (use Icon Button)  */}
     <div className="flex gap-2">
-      <CloseButton onClose={(): void => {}} />
+      <Button
+        icon={<CloseOutlined className="scale-[0.85] text-[#666]" />}
+        size={ButtonSize.small}
+        type={ButtonType.secondary}
+        onClick={(): void => {}}
+      />
     </div>
 
     {/* Switch */}

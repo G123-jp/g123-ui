@@ -8,7 +8,7 @@ export default {
   component: CloseButton,
 } as Meta<typeof CloseButton>;
 
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
+// DEPRECATED: Akira: use <Button icon={<CloseOutlined className="scale-[0.85] text-[#666]" />} size={ButtonSize.small} type={ButtonType.secondary} /> instead
 const Template: StoryFn<typeof CloseButton> = (args) => (
   <CloseButton {...args} />
 );

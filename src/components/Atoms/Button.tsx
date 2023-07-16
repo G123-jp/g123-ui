@@ -173,6 +173,7 @@ const Button: React.VFC<Props> = ({
           React.isValidElement<{ className: string }>(icon) &&
           React.cloneElement(icon, {
             className: classnames(
+              icon.props.className,
               {
                 // ONLY icon
                 'scale-[0.67]': size === Size.small && isOnlyIcon,

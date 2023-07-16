@@ -1,10 +1,10 @@
 import React from 'react';
 
 import Icon, { IconProps } from '../G123Icon';
-import GameSvg from '../svg-images/outlined/chat.svg';
+import SvgImage from '../svg-images/outlined/chat.svg';
 
 const ChatOutlined: React.VFC<IconProps> = (props) => {
-  return <Icon IconSvg={GameSvg} {...props} />;
+  return <Icon IconSvg={SvgImage} {...props} />;
 };
 
 export default ChatOutlined;

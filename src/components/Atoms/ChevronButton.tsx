@@ -33,6 +33,7 @@ type Props = {
   onClick?: (e?: React.MouseEvent) => void | Promise<void>;
 };
 
+// DEPRECATED: Akira: use <Button type={ButtonType.link} icon={Chevron(Down/Up/Left/Right)Outlined} /> instead
 const ChevronButton: React.VFC<Props> = ({
   type,
   color,

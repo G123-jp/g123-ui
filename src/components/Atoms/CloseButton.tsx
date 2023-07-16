@@ -8,6 +8,7 @@ type Props = {
   onClose: (e: React.MouseEvent) => void | Promise<void>;
 };
 
+// DEPRECATED: Akira: use <Button icon={<CloseOutlined className="scale-[0.85] text-[#666]" />} size={ButtonSize.small} type={ButtonType.secondary} /> instead
 const CloseButton: React.VFC<Props> = ({ style, className = '', onClose }) => {
   return (
     <button

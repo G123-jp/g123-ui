@@ -4,7 +4,6 @@ import {
   Button,
   ButtonType,
   ButtonSize,
-  CloseButton,
   Logo,
   Switch,
   Icon,
@@ -32,6 +31,7 @@ import {
   ChevronRightOutlined,
   ChevronDownOutlined,
   ChevronLeftOutlined,
+  CloseOutlined,
 } from './Atoms/Icon';
 
 const { ProfileTwoTone, NotificationTwoTone, HomeTwoTone, GameTwoTone } = Icon;
@@ -194,7 +194,7 @@ const Template: StoryFn = () => (
       </Badge>
     </div>
 
-    {/* ChevronButton(use Icon Button) */}
+    {/* ChevronButton (use Icon Button) */}
     <div className="flex gap-2">
       <Button
         icon={<ChevronUpOutlined className="text-font-primary" />}
@@ -219,9 +219,14 @@ const Template: StoryFn = () => (
       />
     </div>
 
-    {/* CloseButton */}
+    {/* CloseButton (use Icon Button)  */}
     <div className="flex gap-2">
-      <CloseButton onClose={(): void => {}} />
+      <Button
+        icon={<CloseOutlined className="scale-[0.85] text-[#666]" />}
+        size={ButtonSize.small}
+        type={ButtonType.secondary}
+        onClick={(): void => {}}
+      />
     </div>
 
     {/* Switch */}

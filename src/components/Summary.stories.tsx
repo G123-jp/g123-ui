@@ -208,19 +208,71 @@ const Template: StoryFn = () => (
     </div>
 
     {/* Switch */}
-    <div className="flex gap-2">
-      <Switch
-        checked
-        onSwitch={(checked: boolean): void => {
-          console.info(`G123 Switch ${checked}`);
-        }}
-      />
-      <Switch
-        checked={false}
-        onSwitch={(checked: boolean): void => {
-          console.info(`G123 Switch ${checked}`);
-        }}
-      />
+    <div className="flex flex-col gap-2">
+      <div className="flex gap-2">
+        <Switch
+          checked
+          onSwitch={(checked: boolean): void => {
+            console.info(`G123 Switch ${checked}`);
+          }}
+        />
+        <Switch
+          checked
+          disabled
+          onSwitch={(checked: boolean): void => {
+            console.info(`G123 Switch ${checked}`);
+          }}
+        />
+      </div>
+      <div className="flex gap-2">
+        <Switch
+          checked
+          size="small"
+          onSwitch={(checked: boolean): void => {
+            console.info(`G123 Switch ${checked}`);
+          }}
+        />
+        <Switch
+          checked
+          disabled
+          size="small"
+          onSwitch={(checked: boolean): void => {
+            console.info(`G123 Switch ${checked}`);
+          }}
+        />
+      </div>
+      <div className="flex gap-2">
+        <Switch
+          checked={false}
+          onSwitch={(checked: boolean): void => {
+            console.info(`G123 Switch ${checked}`);
+          }}
+        />
+        <Switch
+          checked={false}
+          disabled
+          onSwitch={(checked: boolean): void => {
+            console.info(`G123 Switch ${checked}`);
+          }}
+        />
+      </div>
+      <div className="flex gap-2">
+        <Switch
+          checked={false}
+          size="small"
+          onSwitch={(checked: boolean): void => {
+            console.info(`G123 Switch ${checked}`);
+          }}
+        />
+        <Switch
+          checked={false}
+          disabled
+          size="small"
+          onSwitch={(checked: boolean): void => {
+            console.info(`G123 Switch ${checked}`);
+          }}
+        />
+      </div>
     </div>
 
     {/* Icons */}

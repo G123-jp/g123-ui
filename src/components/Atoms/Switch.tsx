@@ -1,13 +1,19 @@
+import classnames from 'classnames';
 import React, { useCallback } from 'react';
 
 type Props = {
   checked: boolean;
-  // TODO: Akira
-  // disabled?: boolean;
+  size?: 'small' | 'default';
+  disabled?: boolean;
   onSwitch: (checked: boolean) => void | Promise<void>;
 };
 
-const Switch: React.VFC<Props> = ({ checked, onSwitch }) => {
+const Switch: React.VFC<Props> = ({
+  checked,
+  size = 'default',
+  disabled = false,
+  onSwitch,
+}) => {
   const handleChange = useCallback(
     (value: boolean) => {
       onSwitch && onSwitch(value);
@@ -17,26 +23,29 @@ const Switch: React.VFC<Props> = ({ checked, onSwitch }) => {
 
   return (
     <div className="flex w-fit items-center justify-center">
-      <label className="flex cursor-pointer items-center" htmlFor="toggleB">
+      <label className="flex cursor-pointer items-center" htmlFor="switch">
         <div className="relative">
           <input checked={checked} className="sr-only" type="checkbox" />
           <div
-            className={`${
-              checked ? 'bg-secondary' : 'bg-gray-100'
-            } block h-6 w-10 rounded-full`}
+            className={classnames('block rounded-full', {
+              'h-6 w-11': size === 'default',
+              'h-4 w-7': size === 'small',
+              'bg-brand-primary-base': checked,
+              'bg-font-disabled': !checked,
+              'opacity-50': disabled,
+            })}
           />
           <div
             aria-hidden
-            className={`absolute rounded-full transition ${
-              checked ? 'bg-primary' : 'bg-white'
-            }`}
+            className={classnames('absolute rounded-full bg-white transition', {
+              'top-[3px] h-[1.125rem] w-[1.125rem]': size === 'default',
+              'right-[3px]': size === 'default' && checked,
+              'left-[3px]': size === 'default' && !checked,
+              'top-0.5 h-3 w-3': size === 'small',
+              'right-0.5': size === 'small' && checked,
+              'left-0.5': size === 'small' && !checked,
+            })}
             role="button"
-            style={{
-              width: '18px',
-              height: '18px',
-              top: '3px',
-              ...(checked ? { right: '3px' } : { left: '3px' }),
-            }}
             onClick={(): void => {
               handleChange(!checked);
             }}

@@ -19,6 +19,7 @@ export default {
   },
 } as Meta<typeof ChevronButton>;
 
+// DEPRECATED: Akira: use <Button type={ButtonType.link} icon={Chevron(Down/Up/Left/Right)Outlined} /> instead
 const Template: StoryFn<typeof ChevronButton> = ({
   type,
   color,

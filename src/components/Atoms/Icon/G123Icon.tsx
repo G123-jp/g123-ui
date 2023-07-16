@@ -16,7 +16,9 @@ const G123Icon: React.VFC<InternalProps> = ({
   style,
   className = '',
 }) => {
-  return <IconSvg className={className} {...(style && { style })} />;
+  return (
+    <IconSvg {...(className && { className })} {...(style && { style })} />
+  );
 };
 
 export default G123Icon;

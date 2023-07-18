@@ -192,6 +192,12 @@ const Template: StoryFn = () => (
       <Badge offsetRight={-3} offsetTop={28} show>
         <Button>Badge Offsets</Button>
       </Badge>
+      <Badge content="G123 Badge" isOverlay={false} show>
+        <Button>Badge Content without overlay</Button>
+      </Badge>
+      <Badge isOverlay={false} show>
+        <Button>Badge Dot without overlay</Button>
+      </Badge>
     </div>
 
     {/* ChevronButton (use Icon Button) */}

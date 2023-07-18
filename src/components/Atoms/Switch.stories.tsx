@@ -8,6 +8,12 @@ export default {
   component: Switch,
   argTypes: {
     checked: { control: 'boolean', defaultValue: false },
+    size: {
+      options: Object.values(['default', 'small']),
+      control: 'select',
+      defaultValue: 'default',
+    },
+    disabled: { control: 'boolean', defaultValue: false },
     onClick: { action: 'clicked' },
   },
 } as Meta<typeof Switch>;
@@ -17,4 +23,4 @@ const Template: StoryFn<typeof Switch> = (args) => <Switch {...args} />;
 
 export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
-Default.args = {};
+Default.args = { checked: true, size: 'default', disabled: false };

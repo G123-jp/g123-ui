@@ -1,7 +1,7 @@
 import { StoryFn, Meta } from '@storybook/react';
 import React from 'react';
 
-import Button, { ButtonHtmlType } from './Button';
+import Button from './Button';
 
 import { ButtonSize, ButtonType } from '.';
 
@@ -29,9 +29,12 @@ const Template: StoryFn<typeof Button> = ({ children, ...args }) => (
   <Button {...args}>{children ?? 'Button'}</Button>
 );
 
-export const Default = Template.bind({
+export const Default = Template.bind({});
+// More on args: https://storybook.js.org/docs/react/writing-stories/args
+Default.args = {
   children: 'Button',
-  htmlType: ButtonHtmlType.button,
-  size: ButtonSize.large,
+  size: ButtonSize.default,
   type: ButtonType.default,
-});
+  block: false,
+  disabled: false,
+};

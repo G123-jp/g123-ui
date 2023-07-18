@@ -1,17 +1,31 @@
-import { isValidCssSize } from '@/utils';
 import React from 'react';
 
-import AvatarNormalSvg from './images/avatar_normal.svg';
+import AvatarColorfulSmallSvg from './images/avatar-colorful-small.svg';
+import AvatarColorfulSvg from './images/avatar-colorful.svg';
+import AvatarCsSmallSvg from './images/avatar-cs-small.svg';
+import AvatarCsSvg from './images/avatar-cs.svg';
+import AvatarDefaultSmallSvg from './images/avatar-default-small.svg';
+import AvatarDefaultSvg from './images/avatar-default.svg';
 
 type Props = {
-  // isGuest?: boolean;
-  size?: number | string;
+  type?: 'default' | 'colorful' | 'cs';
+  size?: 'default' | 'small';
 };
 
-const Avatar: React.VFC<Props> = ({ size = 48 }) => {
-  const validSize = isValidCssSize(size) ? size : 48;
+const Avatar: React.VFC<Props> = ({ type = 'default', size = 'default' }) => {
+  if (type === 'colorful') {
+    return size === 'small' ? (
+      <AvatarColorfulSmallSvg />
+    ) : (
+      <AvatarColorfulSvg />
+    );
+  }
 
-  return <AvatarNormalSvg height={validSize} width={validSize} />;
+  if (type === 'cs') {
+    return size === 'small' ? <AvatarCsSmallSvg /> : <AvatarCsSvg />;
+  }
+
+  return size === 'small' ? <AvatarDefaultSmallSvg /> : <AvatarDefaultSvg />;
 };
 
 export default Avatar;

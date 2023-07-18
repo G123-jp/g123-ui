@@ -45,6 +45,11 @@ const Template: StoryFn = () => (
     <div className="flex items-center gap-2">
       <Logo />
       <Avatar />
+      <Avatar type="colorful" />
+      <Avatar type="cs" />
+      <Avatar size="small" />
+      <Avatar size="small" type="colorful" />
+      <Avatar size="small" type="cs" />
     </div>
 
     <div className="h-full w-full">
@@ -191,6 +196,12 @@ const Template: StoryFn = () => (
       </Badge>
       <Badge offsetRight={-3} offsetTop={28} show>
         <Button>Badge Offsets</Button>
+      </Badge>
+      <Badge content="G123 Badge" isOverlay={false} show>
+        <Button>Badge Content without overlay</Button>
+      </Badge>
+      <Badge isOverlay={false} show>
+        <Button>Badge Dot without overlay</Button>
       </Badge>
     </div>
 

@@ -7,7 +7,16 @@ export default {
   title: 'Atoms/Avatar',
   component: Avatar,
   argTypes: {
-    size: { control: 'text', defaultValue: '48' },
+    type: {
+      options: Object.values(['default', 'colorful', 'cs']),
+      control: 'select',
+      defaultValue: 'default',
+    },
+    size: {
+      options: Object.values(['default', 'small']),
+      control: 'select',
+      defaultValue: 'default',
+    },
   },
 } as Meta<typeof Avatar>;
 
@@ -16,4 +25,4 @@ const Template: StoryFn<typeof Avatar> = (args) => <Avatar {...args} />;
 
 export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
-Default.args = {};
+Default.args = { type: 'default', size: 'default' };

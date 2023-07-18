@@ -9,7 +9,7 @@ export default {
   component: Badge,
   argTypes: {
     show: { control: 'boolean', defaultValue: true },
-    content: { control: 'text', defaultValue: 'G123 Badge' },
+    content: { control: 'text', defaultValue: '' },
     offsetTop: { control: 'number', defaultValue: 0 },
     offsetRight: { control: 'number', defaultValue: 0 },
   },
@@ -22,3 +22,11 @@ const Template: StoryFn<typeof Badge> = (args) => (
 );
 
 export const Default = Template.bind({});
+// More on args: https://storybook.js.org/docs/react/writing-stories/args
+Default.args = {
+  show: true,
+  content: '',
+  isOverlay: true,
+  offsetRight: 0,
+  offsetTop: 0,
+};

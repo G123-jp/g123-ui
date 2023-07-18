@@ -45,6 +45,11 @@ const Template: StoryFn = () => (
     <div className="flex items-center gap-2">
       <Logo />
       <Avatar />
+      <Avatar type="colorful" />
+      <Avatar type="cs" />
+      <Avatar size="small" />
+      <Avatar size="small" type="colorful" />
+      <Avatar size="small" type="cs" />
     </div>
 
     <div className="h-full w-full">

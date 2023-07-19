@@ -1,6 +1,7 @@
 /* eslint-disable react/button-has-type */
 import classnames from 'classnames';
 import React, { ReactNode, useCallback, useMemo } from 'react';
+import { twMerge } from 'tailwind-merge';
 
 enum HtmlType {
   button = 'button',
@@ -9,24 +10,24 @@ enum HtmlType {
 }
 
 enum Size {
-  // Akira: for 1.x, Backward Compatibility
+  // Akira: for v1.x, Backward Compatibility
   large = 'large',
   middle = 'middle',
   small = 'small',
 
-  // Akira: 2.x
+  // Akira: v2.x
   default = 'default', // default equals to middle
 }
 
 enum Type {
-  // Akira: for 1.x, Backward Compatibility
+  // Akira: for v1.x, Backward Compatibility
   primary = 'primary',
   secondary = 'secondary',
-  inactive = 'inactive', // 1.x: maybe DEPRECATED in the future
-  danger = 'danger', // 2.x: TODO in Design System
+  inactive = 'inactive', // v1.x: maybe DEPRECATED in the future
+  danger = 'danger', // v2.x: TODO in Design System
   text = 'text',
 
-  // Akira: 2.x
+  // Akira: v2.x
   default = 'default', // default equals to secondary
   highlight = 'highlight',
   stroke = 'stroke',
@@ -73,93 +74,94 @@ const Button: React.VFC<Props> = ({
 
   return (
     <button
-      className={classnames(
-        'inline-flex items-center justify-center gap-x-1',
-        // Color
-        {
-          // normal
-          'border-transparent': true,
-          'bg-brand-tertiary-base text-font-overlay': type === Type.primary,
-          'bg-zinc-100 text-zinc-500': type === Type.inactive, // 1.x: maybe DEPRECATED in the future
-          'bg-danger text-white': type === Type.danger, // 2.x: TODO in Design System
-          'bg-transparent text-font-primary': type === Type.text,
-          'bg-brand-primary-base text-font-primary': type === Type.highlight,
-          'border-2 border-solid !border-brand-tertiary-base bg-transparent text-font-primary':
-            type === Type.stroke,
-          'bg-transparent text-link-default': type === Type.link,
-          'bg-brand-tertiary-container text-font-primary':
-            type === Type.secondary || type === Type.default, // Akira: default equals to secondary
+      className={twMerge(
+        classnames(
+          'inline-flex items-center justify-center gap-x-1',
+          // Color
+          {
+            // normal
+            'border-transparent': true,
+            'bg-brand-tertiary-base text-font-overlay': type === Type.primary,
+            'bg-zinc-100 text-zinc-500': type === Type.inactive, // v1.x: maybe DEPRECATED in the future
+            'bg-danger text-white': type === Type.danger, // v2.x: TODO in Design System
+            'bg-transparent text-font-primary': type === Type.text,
+            'bg-brand-primary-base text-font-primary': type === Type.highlight,
+            'border-2 border-solid !border-brand-tertiary-base bg-transparent text-font-primary':
+              type === Type.stroke,
+            'bg-transparent text-link-default': type === Type.link,
+            'bg-brand-tertiary-container text-font-primary':
+              type === Type.secondary || type === Type.default, // Akira: default equals to secondary
 
-          // hover
-          'hover:bg-font-secondary': type === Type.primary,
-          // '': type === Type.danger, // 2.x: TODO in Design System
-          'hover:bg-brand-primary-container': type === Type.highlight,
-          'hover:text-brand-secondary-secondary': type === Type.link,
-          'hover:bg-surface-tertiary':
-            type === Type.text ||
-            type === Type.stroke ||
-            type === Type.secondary ||
-            type === Type.default, // Akira: default equals to secondary
+            // hover
+            'hover:bg-font-secondary': type === Type.primary,
+            // '': type === Type.danger, // v2.x: TODO in Design System
+            'hover:bg-brand-primary-container': type === Type.highlight,
+            'hover:text-brand-secondary-secondary': type === Type.link,
+            'hover:bg-surface-tertiary':
+              type === Type.text ||
+              type === Type.stroke ||
+              type === Type.secondary ||
+              type === Type.default, // Akira: default equals to secondary
 
-          // active
-          // FIXME: Akira: Missing this color variable
-          'active:bg-[#595959]': type === Type.primary,
-          // '': type === Type.danger, // 2.x: TODO in Design System
-          'active:bg-brand-primary-secondary': type === Type.highlight,
-          'active:bg-font-disabled':
-            type === Type.secondary || type === Type.default, // Akira: default equals to secondary
+            // active
+            // FIXME: Akira: Missing this color variable
+            'active:bg-[#595959]': type === Type.primary,
+            // '': type === Type.danger, // v2.x: TODO in Design System
+            'active:bg-brand-primary-secondary': type === Type.highlight,
+            'active:bg-font-disabled':
+              type === Type.secondary || type === Type.default, // Akira: default equals to secondary
 
-          // disabled
-          '!text-font-disabled': disabled,
-        },
+            // disabled
+            '!text-font-disabled': disabled,
+          },
 
-        // Size
-        {
-          // basic & with icon
-          'w-fit rounded-full px-sm': !isInline && !isOnlyIcon,
-          'h-6 min-w-[4.25rem] gap-x-0':
-            size === Size.small && !isInline && !isOnlyIcon,
-          'h-10 min-w-[5rem]':
-            (size === Size.middle || size === Size.default) &&
-            !isInline &&
-            !isOnlyIcon,
-          'h-16 min-w-[6.25rem]':
-            size === Size.large && !isInline && !isOnlyIcon,
+          // Size
+          {
+            // basic & with icon
+            'w-fit rounded-full px-sm': !isInline && !isOnlyIcon,
+            'h-6 min-w-[4.25rem] gap-x-0':
+              size === Size.small && !isInline && !isOnlyIcon,
+            'h-10 min-w-[5rem]':
+              (size === Size.middle || size === Size.default) &&
+              !isInline &&
+              !isOnlyIcon,
+            'h-16 min-w-[6.25rem]':
+              size === Size.large && !isInline && !isOnlyIcon,
 
-          // inline: text & link
-          'h-fit w-fit': isInline,
-          'rounded-sm px-xs py-xxs': size === Size.small && isInline,
-          'rounded-sm p-xs':
-            (size === Size.middle || size === Size.default) && isInline,
-          'rounded px-sm py-xs': size === Size.large && isInline,
+            // inline: text & link
+            'h-fit w-fit': isInline,
+            'rounded-sm px-xs py-xxs': size === Size.small && isInline,
+            'rounded-sm p-xs':
+              (size === Size.middle || size === Size.default) && isInline,
+            'rounded px-sm py-xs': size === Size.large && isInline,
 
-          // icon only
-          'rounded-full': isOnlyIcon,
-          // '!p-xxs': size === Size.small && isOnlyIcon,
-          '!p-xs':
-            (size === Size.middle || size === Size.default) && isOnlyIcon,
-          '!p-5': size === Size.large && isOnlyIcon,
-        },
+            // icon only
+            'rounded-full': isOnlyIcon,
+            // '!p-xxs': size === Size.small && isOnlyIcon,
+            '!p-xs':
+              (size === Size.middle || size === Size.default) && isOnlyIcon,
+            '!p-5': size === Size.large && isOnlyIcon,
+          },
 
-        // Font
-        {
-          'text-center text-xs font-semibold': true,
-          '!text-sm':
-            isInline && (size === Size.middle || size === Size.default),
-          '!text-base': isInline && size === Size.large,
-        },
+          // Font
+          {
+            'text-center text-xs font-semibold': true,
+            '!text-sm':
+              isInline && (size === Size.middle || size === Size.default),
+            '!text-base': isInline && size === Size.large,
+          },
 
-        // Block
-        {
-          '!w-full': block,
-        },
+          // Block
+          {
+            '!w-full': block,
+          },
 
-        // UX
-        {
-          'cursor-pointer': !disabled,
-          'cursor-not-allowed': disabled,
-        },
-
+          // UX
+          {
+            'cursor-pointer': !disabled,
+            'cursor-not-allowed': disabled,
+          },
+        ),
         className,
       )}
       disabled={disabled}

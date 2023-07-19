@@ -1,4 +1,5 @@
 import React from 'react';
+import { twMerge } from 'tailwind-merge';
 
 type CarouselItemProps = {
   className?: string;
@@ -14,7 +15,7 @@ const CarouselItem: React.VFC<CarouselItemProps> = ({
   return (
     <div
       {...(style && { style })}
-      className={`box-content flex-none snap-center ${className}`}
+      className={twMerge('box-content flex-none snap-center', className)}
     >
       {children}
     </div>
@@ -34,7 +35,10 @@ const InternalCarousel: React.VFC<Props> = ({
 }) => {
   return (
     <div
-      className={`flex snap-x snap-mandatory overflow-x-auto scroll-smooth scrollbar-none ${className}`}
+      className={twMerge(
+        'flex snap-x snap-mandatory overflow-x-auto scroll-smooth scrollbar-none',
+        className,
+      )}
       {...(style && { style })}
     >
       {children}

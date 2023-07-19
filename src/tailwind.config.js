@@ -52,6 +52,7 @@ module.exports = {
         xs: '0.5rem',
         sm: '0.75rem',
         md: '1rem',
+        lg: '1.5rem',
         xl: '2rem',
         '2xl': '2.5rem',
         '3xl': '4rem',
@@ -62,13 +63,13 @@ module.exports = {
         transparent: 'transparent',
         current: 'currentColor',
 
-        // Akira: 1.x palette, maybe DEPRECATED in the future
+        // Akira: v1.x palette, maybe DEPRECATED in the future
         primary: '#136c72',
         secondary: '#d9ede2',
         highlight: '#e3ff34',
         danger: '#ff385c',
 
-        // Akira: 2.x palette, Backward Compatibility
+        // Akira: v2.x palette, Backward Compatibility
         // Brand
         'brand-primary-base': '#e3ff34',
         'brand-primary-secondary': '#d2ef1c',

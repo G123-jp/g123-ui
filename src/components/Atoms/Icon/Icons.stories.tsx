@@ -20,6 +20,12 @@ import {
   ChatTwoTone,
   EarthTwoTone,
   ProfileTwoTone,
+  DownloadOutlined,
+  ChevronUpOutlined,
+  ChevronDownOutlined,
+  ChevronLeftOutlined,
+  ChevronRightOutlined,
+  CloseOutlined,
 } from '.';
 
 export default {
@@ -37,31 +43,37 @@ const Template: StoryFn = (args) => (
   <div className="flex flex-col gap-4 text-neutral-800">
     <h2>Outlined</h2>
     <div className="flex gap-4 text-neutral-800">
-      <NotificationOutlined {...args} />
-      <HomeOutlined className="text-blue-500" />
-      <GameOutlined className="text-highlight" style={{ color: 'orange' }} />
-      <ChatOutlined />
-      <EarthOutlined />
+      <ChatOutlined {...args} />
+      <DownloadOutlined className="text-blue-500" />
+      <EarthOutlined className="text-highlight" style={{ color: 'orange' }} />
+      <GameOutlined />
+      <HomeOutlined />
+      <NotificationOutlined />
       <ProfileOutlined />
+      <ChevronUpOutlined />
+      <ChevronDownOutlined />
+      <ChevronLeftOutlined />
+      <ChevronRightOutlined />
+      <CloseOutlined />
     </div>
 
     <h2>Filled</h2>
     <div className="flex gap-4 text-neutral-800">
-      <NotificationFilled {...args} />
-      <HomeFilled className="text-blue-500" />
+      <ChatFilled {...args} />
+      <EarthFilled className="text-blue-500" />
       <GameFilled className="text-highlight" style={{ color: 'orange' }} />
-      <ChatFilled />
-      <EarthFilled />
+      <HomeFilled />
+      <NotificationFilled />
       <ProfileFilled />
     </div>
 
     <h2>TwoTone</h2>
     <div className="flex gap-4 text-neutral-800">
-      <NotificationTwoTone {...args} />
-      <HomeTwoTone className="text-blue-500" />
+      <ChatTwoTone {...args} />
+      <EarthTwoTone className="text-blue-500" />
       <GameTwoTone className="text-highlight" style={{ color: 'orange' }} />
-      <ChatTwoTone />
-      <EarthTwoTone />
+      <HomeTwoTone />
+      <NotificationTwoTone />
       <ProfileTwoTone />
     </div>
   </div>

@@ -1,5 +1,7 @@
-import { Logo, CloseButton } from '@/components/Atoms';
-import React from 'react';
+import { Logo, Button, ButtonType } from '@/components/Atoms';
+import { CloseOutlined } from '@/components/Atoms/Icon';
+import classnames from 'classnames';
+import React, { ReactNode } from 'react';
 
 import IconExclamation from './icons/exclamation.svg';
 import IconTick from './icons/tick.svg';
@@ -19,7 +21,8 @@ export type DialogButton = {
   text: string;
 };
 
-export type DialogMessage = React.ReactNode | string;
+export type DialogTitle = ReactNode | string;
+export type DialogMessage = ReactNode | string;
 
 export type DialogOption = {
   events?: {
@@ -31,6 +34,7 @@ export type DialogOption = {
 };
 
 type Props = {
+  title?: DialogTitle;
   buttons?: DialogButton[] | undefined;
   destroy: () => void;
   message: DialogMessage;
@@ -38,7 +42,7 @@ type Props = {
 };
 
 const Dialog: React.VFC<Props> = (props) => {
-  const { buttons, message, options, destroy } = props;
+  const { title, buttons, message, options, destroy } = props;
   const [destroyed, setDestroyed] = React.useState(false);
   const [destroying, setDestroying] = React.useState(false);
 
@@ -87,11 +91,14 @@ const Dialog: React.VFC<Props> = (props) => {
 
   return (
     <div
-      className={`fixed inset-0 z-50 flex min-h-screen items-center justify-center${
-        destroying ? 'animate-fade-out-bottom' : 'animate-fade-in-bottom'
-      }
-        ${destroyed ? 'opacity-0' : ''}
-      `}
+      className={classnames(
+        'fixed inset-0 z-50 flex min-h-screen items-center justify-center',
+        {
+          'animate-fade-out-bottom': destroying,
+          'animate-fade-in-bottom': !destroying,
+          'opacity-0': destroyed,
+        },
+      )}
       onAnimationEnd={events.handleDialogAnimationEnd}
     >
       <div
@@ -104,21 +111,33 @@ const Dialog: React.VFC<Props> = (props) => {
       />
 
       <div className="z-50 mx-8 inline-block w-full max-w-xs overflow-hidden rounded-lg bg-white shadow-lg">
-        <header className="relative flex items-center justify-center px-4 pt-4">
-          <div className="flex-1" />
+        <header className="relative flex items-center justify-center">
+          {/* Akira: placeholder */}
+          <div className="h-10 w-10" />
 
-          {options.logo === true && <Logo />}
+          <div className="flex flex-1 items-center justify-center">
+            {options.logo && <Logo />}
+            {title && (
+              <h2 className="flex flex-1 justify-center text-base font-semibold">
+                {title}
+              </h2>
+            )}
+          </div>
 
-          <div className="flex flex-1 justify-end">
-            <CloseButton onClose={events.handleCloseButtonClick} />
+          <div className="flex justify-end">
+            <Button
+              icon={<CloseOutlined className="text-font-primary" />}
+              type={ButtonType.link}
+              onClick={events.handleCloseButtonClick}
+            />
           </div>
         </header>
 
         {options.icon && (
           <div
-            className={`flex items-center justify-center pb-2
-              ${options.logo ? 'pt-12' : ''}
-            `}
+            className={classnames('flex items-center justify-center pb-2', {
+              'pt-4': !!options.logo,
+            })}
           >
             {options.icon === 'exclamation' && <IconExclamation />}
 
@@ -127,10 +146,10 @@ const Dialog: React.VFC<Props> = (props) => {
         )}
 
         <div
-          className={`break-words px-10 pb-3 pt-2 text-center
-            ${options.logo && options.icon ? 'pt-4' : ''}
-            ${!buttons || buttons.length === 0 ? 'pb-16' : ''}
-          `}
+          className={classnames('break-words px-10 pb-3 pt-2 text-center', {
+            'pt-4': options.logo && options.icon,
+            'pb-16': !buttons || buttons.length === 0,
+          })}
         >
           {message}
         </div>
@@ -139,18 +158,13 @@ const Dialog: React.VFC<Props> = (props) => {
           <footer className="flex px-8 pb-5 pt-3">
             {buttons.map((button) => (
               <button
-                className={`mx-2 flex-1 rounded-full border-0 py-3.5 text-center text-xs font-bold first:ml-0 last:mr-0
-                  ${
-                    button.color === 'primary'
-                      ? 'bg-primary text-secondary'
-                      : ''
-                  }
-                  ${
-                    button.color === 'secondary'
-                      ? 'bg-secondary text-primary'
-                      : ''
-                  }
-                `}
+                className={classnames(
+                  'mx-2 flex-1 rounded-full border-0 py-3.5 text-center text-xs font-bold first:ml-0 last:mr-0',
+                  {
+                    'bg-primary text-secondary': button.color === 'primary',
+                    'bg-secondary text-primary': button.color === 'secondary',
+                  },
+                )}
                 type="button"
                 onClick={(e): Promise<void> | void =>
                   events.handleButtonClick(e, button.onClick)

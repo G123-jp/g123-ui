@@ -102,6 +102,15 @@ const Template: StoryFn<typeof Dialog> = () => (
       >
         Alert
       </Button>
+
+      <Button
+        type={ButtonType.stroke}
+        onClick={(): void => {
+          dialog.show(`Simple Dialog`, 'Title');
+        }}
+      >
+        Simple
+      </Button>
     </div>
   </div>
 );

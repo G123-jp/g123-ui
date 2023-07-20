@@ -108,11 +108,14 @@ const Content: React.VFC<ContentProps> = ({
             <div className="mx-auto h-1 w-11 rounded-sm bg-[#bfbfbf]/30" />
           </div>
         )}
-        {onGoBack && (
+        {onGoBack ? (
           <Button
             icon={<ChevronLeftOutlined className="text-font-primary" />}
             type={ButtonType.link}
           />
+        ) : (
+          // Akira: GoBackButton placeholder
+          <div className="h-10 w-10" />
         )}
         <h2 className="flex flex-1 justify-center text-base font-semibold">
           {title}

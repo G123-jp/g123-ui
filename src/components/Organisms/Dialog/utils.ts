@@ -1,4 +1,9 @@
-import type { DialogButton, DialogMessage, DialogOption } from './Dialog';
+import type {
+  DialogButton,
+  DialogMessage,
+  DialogOption,
+  DialogTitle,
+} from './Dialog';
 import { DialogEvent } from './enum';
 import EventManager from './EventManager';
 
@@ -16,7 +21,7 @@ const dialog = {
       },
     ];
 
-    this.show(message, buttons, options);
+    this.show(message, null, buttons, options);
   },
 
   confirm(
@@ -47,12 +52,13 @@ const dialog = {
         },
       ];
 
-      this.show(message, buttons, options);
+      this.show(message, null, buttons, options);
     });
   },
 
   show(
     message: DialogMessage,
+    title?: DialogTitle,
     buttons?: DialogButton[],
     options?: DialogOption,
   ): void {
@@ -62,7 +68,7 @@ const dialog = {
       key = (Math.random() + 1).toString(36).substring(2);
     } while (this.keys.has(key));
 
-    EventManager.emit(DialogEvent.Show, key, message, buttons, options);
+    EventManager.emit(DialogEvent.Show, key, message, title, buttons, options);
   },
 };
 

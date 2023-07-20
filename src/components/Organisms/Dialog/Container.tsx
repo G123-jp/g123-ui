@@ -1,13 +1,19 @@
 import React, { useEffect, useState } from 'react';
 
 import Dialog from './Dialog';
-import type { DialogButton, DialogMessage, DialogOption } from './Dialog';
+import type {
+  DialogButton,
+  DialogMessage,
+  DialogOption,
+  DialogTitle,
+} from './Dialog';
 import { DialogEvent } from './enum';
 import EventManager from './EventManager';
 
 type Option = {
   buttons: DialogButton[];
   message: React.ReactNode | string;
+  title: React.ReactNode | string;
   key: string;
   options: DialogOption;
 };
@@ -31,12 +37,13 @@ const Container: React.VFC = () => {
       (
         key: string,
         message: DialogMessage,
+        title: DialogTitle,
         buttons: DialogButton[],
         options: DialogOption = {},
       ) => {
         const copied = {
           ...dialogs,
-          [key]: { buttons, key, message, options },
+          [key]: { buttons, key, message, title, options },
         };
 
         setDialogs(copied);
@@ -67,6 +74,7 @@ const Container: React.VFC = () => {
             destroy={(): void => destroy(key)}
             message={options.message}
             options={options.options}
+            title={options.title}
           />
         );
       })}

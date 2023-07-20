@@ -107,7 +107,7 @@ module.exports = {
         'surface-tertiary': '#f5f5f5',
         'surface-quaternary': '#f0f0f0',
         // Line
-        'line-border': '#262626',
+        'line-border': '#f5f5f5',
         'line-divider': '#f0f0f0',
       },
       animation: {

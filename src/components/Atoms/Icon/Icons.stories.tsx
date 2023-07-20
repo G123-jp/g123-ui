@@ -26,6 +26,9 @@ import {
   ChevronLeftOutlined,
   ChevronRightOutlined,
   CloseOutlined,
+  CopyOutlined,
+  CopyFilled,
+  CopyTwoTone,
 } from '.';
 
 export default {
@@ -44,8 +47,12 @@ const Template: StoryFn = (args) => (
     <h2>Outlined</h2>
     <div className="flex gap-4 text-neutral-800">
       <ChatOutlined {...args} />
-      <DownloadOutlined className="text-blue-500" />
-      <EarthOutlined className="text-highlight" style={{ color: 'orange' }} />
+      <CopyOutlined className="text-blue-500" />
+      <DownloadOutlined
+        className="text-highlight"
+        style={{ color: 'orange' }}
+      />
+      <EarthOutlined />
       <GameOutlined />
       <HomeOutlined />
       <NotificationOutlined />
@@ -60,8 +67,9 @@ const Template: StoryFn = (args) => (
     <h2>Filled</h2>
     <div className="flex gap-4 text-neutral-800">
       <ChatFilled {...args} />
-      <EarthFilled className="text-blue-500" />
-      <GameFilled className="text-highlight" style={{ color: 'orange' }} />
+      <CopyFilled className="text-blue-500" />
+      <EarthFilled className="text-highlight" style={{ color: 'orange' }} />
+      <GameFilled />
       <HomeFilled />
       <NotificationFilled />
       <ProfileFilled />
@@ -70,8 +78,9 @@ const Template: StoryFn = (args) => (
     <h2>TwoTone</h2>
     <div className="flex gap-4 text-neutral-800">
       <ChatTwoTone {...args} />
-      <EarthTwoTone className="text-blue-500" />
-      <GameTwoTone className="text-highlight" style={{ color: 'orange' }} />
+      <CopyTwoTone className="text-blue-500" />
+      <EarthTwoTone className="text-highlight" style={{ color: 'orange' }} />
+      <GameTwoTone />
       <HomeTwoTone />
       <NotificationTwoTone />
       <ProfileTwoTone />

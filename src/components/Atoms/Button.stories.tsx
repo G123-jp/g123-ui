@@ -22,6 +22,7 @@ export default {
       control: 'select',
       defaultValue: ButtonSize.middle,
     },
+    className: { control: 'text', defaultValue: '' },
   },
 } as Meta<typeof Button>;
 
@@ -37,4 +38,6 @@ Default.args = {
   type: ButtonType.default,
   block: false,
   disabled: false,
+  className: '',
+  style: {},
 };

@@ -44,7 +44,7 @@ type Props = {
   children?: ReactNode;
   className?: string;
   style?: React.CSSProperties;
-  onClick?: (() => void | Promise<void>) | undefined;
+  onClick?: (e?: React.MouseEvent<HTMLButtonElement>) => void | Promise<void>;
 };
 
 const Button: React.VFC<Props> = ({
@@ -68,9 +68,12 @@ const Button: React.VFC<Props> = ({
 
   const isWithIcon = useMemo(() => !!children && !!icon, [children, icon]);
 
-  const handleClick = useCallback(() => {
-    onClick && onClick();
-  }, [onClick]);
+  const handleClick = useCallback(
+    (e: React.MouseEvent<HTMLButtonElement>) => {
+      onClick && onClick(e);
+    },
+    [onClick],
+  );
 
   return (
     <button
@@ -86,7 +89,7 @@ const Button: React.VFC<Props> = ({
             'bg-danger text-white': type === Type.danger, // v2.x: TODO in Design System
             'bg-transparent text-font-primary': type === Type.text,
             'bg-brand-primary-base text-font-primary': type === Type.highlight,
-            'border-2 border-solid !border-brand-tertiary-base bg-transparent text-font-primary':
+            'border-2 border-solid border-brand-tertiary-base bg-transparent text-font-primary':
               type === Type.stroke,
             'bg-transparent text-link-default': type === Type.link,
             'bg-brand-tertiary-container text-font-primary':

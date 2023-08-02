@@ -1,6 +1,8 @@
 import { StoryFn, Meta } from '@storybook/react';
 import React from 'react';
 
+import LoadingOutlined from './icons/LoadingOutlined';
+
 import {
   NotificationOutlined,
   HomeOutlined,
@@ -62,6 +64,7 @@ const Template: StoryFn = (args) => (
       <ChevronLeftOutlined />
       <ChevronRightOutlined />
       <CloseOutlined />
+      <LoadingOutlined className="animate-spin" />
     </div>
 
     <h2>Filled</h2>

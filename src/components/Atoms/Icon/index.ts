@@ -13,6 +13,7 @@ export { default as ChevronDownOutlined } from './icons/ChevronDownOutlined';
 export { default as ChevronLeftOutlined } from './icons/ChevronLeftOutlined';
 export { default as ChevronRightOutlined } from './icons/ChevronRightOutlined';
 export { default as CloseOutlined } from './icons/CloseOutlined';
+export { default as LoadingOutlined } from './icons/LoadingOutlined';
 
 export { default as ChatFilled } from './icons/ChatFilled';
 export { default as CopyFilled } from './icons/CopyFilled';

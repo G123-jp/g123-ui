@@ -145,9 +145,9 @@ const Dialog = ({
       <div
         className={twMerge(
           classnames(
-            'z-50 mx-8 inline-block overflow-hidden',
+            'z-50 inline-block overflow-hidden',
             'rounded-lg bg-white shadow-lg',
-            'w-full min-w-[24rem] max-w-sm', // Akira: 24rem stands for 'sm'
+            'w-fit min-w-[20rem]', // Akira: 20rem stands for 'xs'
           ),
           className,
         )}

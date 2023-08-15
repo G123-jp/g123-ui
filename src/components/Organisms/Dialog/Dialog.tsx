@@ -2,6 +2,7 @@ import { Logo, Button, ButtonType } from '@/components/Atoms';
 import { CloseOutlined } from '@/components/Atoms/Icon';
 import classnames from 'classnames';
 import React, { ReactNode } from 'react';
+import { twMerge } from 'tailwind-merge';
 
 import IconExclamation from './icons/exclamation.svg';
 import IconTick from './icons/tick.svg';
@@ -31,18 +32,38 @@ export type DialogOption = {
   icon?: 'exclamation' | 'tick' | false;
   logo?: boolean;
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
+  maskClassName?: string;
+  maskStyle?: React.CSSProperties;
+  className?: string;
+  style?: React.CSSProperties;
+  contentClassName?: string;
+  contentStyle?: React.CSSProperties;
 };
 
 type Props = {
-  title?: DialogTitle;
-  buttons?: DialogButton[] | undefined;
   destroy: () => void;
   message: DialogMessage;
   options: DialogOption;
+  title?: DialogTitle;
+  buttons?: DialogButton[] | undefined;
 };
 
-const Dialog: React.VFC<Props> = (props) => {
-  const { title, buttons, message, options, destroy } = props;
+const Dialog = ({
+  destroy,
+  message,
+  options: {
+    logo = false,
+    icon = false,
+    maskClassName,
+    maskStyle,
+    className,
+    style,
+    contentClassName,
+    contentStyle,
+  },
+  title,
+  buttons,
+}: Props): JSX.Element => {
   const [destroyed, setDestroyed] = React.useState(false);
   const [destroying, setDestroying] = React.useState(false);
 
@@ -90,6 +111,7 @@ const Dialog: React.VFC<Props> = (props) => {
   }, [destroy, destroyed]);
 
   return (
+    // Dialog Wrapper
     <div
       className={classnames(
         'fixed inset-0 z-50 flex min-h-screen items-center justify-center',
@@ -101,22 +123,39 @@ const Dialog: React.VFC<Props> = (props) => {
       )}
       onAnimationEnd={events.handleDialogAnimationEnd}
     >
+      {/* Dialog Background Mask */}
       <div
         aria-label="Close Dialog"
-        className="fixed top-0 h-full w-full bg-black/30 backdrop-blur transition-opacity"
+        className={twMerge(
+          'fixed top-0 h-full w-full bg-black/30 backdrop-blur transition-opacity',
+          maskClassName,
+        )}
+        {...(maskStyle && { maskStyle })}
         role="button"
         tabIndex={0}
         onClick={events.handleBackdropClick}
         onKeyPress={events.handleBackdropKeyPress}
       />
 
-      <div className="z-50 mx-8 inline-block w-full max-w-xs overflow-hidden rounded-lg bg-white shadow-lg">
+      {/* Dialog */}
+      <div
+        className={twMerge(
+          classnames(
+            'z-50 mx-8 inline-block overflow-hidden',
+            'rounded-lg bg-white shadow-lg',
+            'w-full min-w-[24rem] max-w-sm', // Akira: 24rem stands for 'sm'
+          ),
+          className,
+        )}
+        {...(style && { style })}
+      >
+        {/* Dialog Header */}
         <header className="relative flex items-center justify-center">
           {/* Akira: placeholder */}
           <div className="h-10 w-10" />
 
           <div className="flex flex-1 items-center justify-center">
-            {options.logo && <Logo />}
+            {logo && <Logo />}
             {title && (
               <h2 className="flex flex-1 justify-center text-base font-semibold">
                 {title}
@@ -133,27 +172,34 @@ const Dialog: React.VFC<Props> = (props) => {
           </div>
         </header>
 
-        {options.icon && (
+        {/* Dialog Icon */}
+        {icon && (
           <div
             className={classnames('flex items-center justify-center pb-2', {
-              'pt-4': !!options.logo,
+              'pt-4': !!logo,
             })}
           >
-            {options.icon === 'exclamation' && <IconExclamation />}
+            {icon === 'exclamation' && <IconExclamation />}
 
-            {options.icon === 'tick' && <IconTick />}
+            {icon === 'tick' && <IconTick />}
           </div>
         )}
 
+        {/* Dialog Content */}
         <div
-          className={classnames('break-words px-10 pb-3 pt-2 text-center', {
-            'pt-4': options.logo && options.icon,
-            'pb-16': !buttons || buttons.length === 0,
-          })}
+          className={twMerge(
+            classnames('break-words px-10 pb-3 pt-2 text-center', {
+              'pt-4': logo && icon,
+              'pb-16': !buttons || buttons.length === 0,
+            }),
+            contentClassName,
+          )}
+          {...(contentStyle && { style: contentStyle })}
         >
           {message}
         </div>
 
+        {/* Dialog Action Buttons */}
         {buttons && buttons.length > 0 && (
           <footer className="flex px-8 pb-5 pt-3">
             {buttons.map((button) => (

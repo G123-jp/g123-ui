@@ -1,3 +1,4 @@
+// FIXME: Akira: Legacy of Edward
 import type {
   DialogButton,
   DialogMessage,
@@ -60,7 +61,7 @@ const dialog = {
   show(
     message: DialogMessage,
     title?: DialogTitle,
-    buttons?: DialogButton[],
+    buttons?: DialogButton[] | undefined | null,
     options?: DialogOption,
   ): void {
     let key = '';

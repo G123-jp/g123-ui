@@ -1,3 +1,4 @@
+// FIXME: Akira: Legacy of Edward
 import { Logo, Button, ButtonType } from '@/components/Atoms';
 import { CloseOutlined } from '@/components/Atoms/Icon';
 import classnames from 'classnames';
@@ -16,6 +17,8 @@ export type DialogButtonOnClickFunction = (
   actions: DialogAction,
 ) => Promise<void> | void;
 
+// FIXME: Akira: Legacy of Edward
+// TODO: Akira: use G123 Button
 export type DialogButton = {
   color: 'primary' | 'secondary';
   onClick?: DialogButtonOnClickFunction;
@@ -31,6 +34,7 @@ export type DialogOption = {
   };
   icon?: 'exclamation' | 'tick' | false;
   logo?: boolean;
+  // TODO: Akira: size implementation
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
   maskClassName?: string;
   maskStyle?: React.CSSProperties;
@@ -45,7 +49,7 @@ type Props = {
   message: DialogMessage;
   options: DialogOption;
   title?: DialogTitle;
-  buttons?: DialogButton[] | undefined;
+  buttons?: DialogButton[];
 };
 
 const Dialog = ({
@@ -190,7 +194,7 @@ const Dialog = ({
           className={twMerge(
             classnames('break-words px-10 pb-3 pt-2 text-center', {
               'pt-4': logo && icon,
-              'pb-16': !buttons || buttons.length === 0,
+              'pb-6': !buttons || buttons.length === 0,
             }),
             contentClassName,
           )}

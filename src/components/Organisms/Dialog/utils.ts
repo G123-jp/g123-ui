@@ -56,6 +56,7 @@ const dialog = {
     });
   },
 
+  // FIXME: Akira: simplify this ugly props definition!
   show(
     message: DialogMessage,
     title?: DialogTitle,

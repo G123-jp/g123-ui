@@ -32,14 +32,6 @@ export type DialogOption = {
   icon?: 'exclamation' | 'tick' | false;
   logo?: boolean;
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
-};
-
-type Props = {
-  destroy: () => void;
-  message: DialogMessage;
-  options: DialogOption;
-  title?: DialogTitle;
-  buttons?: DialogButton[] | undefined;
   maskClassName?: string;
   maskStyle?: React.CSSProperties;
   className?: string;
@@ -48,18 +40,29 @@ type Props = {
   contentStyle?: React.CSSProperties;
 };
 
+type Props = {
+  destroy: () => void;
+  message: DialogMessage;
+  options: DialogOption;
+  title?: DialogTitle;
+  buttons?: DialogButton[] | undefined;
+};
+
 const Dialog = ({
   destroy,
   message,
-  options,
+  options: {
+    logo = false,
+    icon = false,
+    maskClassName,
+    maskStyle,
+    className,
+    style,
+    contentClassName,
+    contentStyle,
+  },
   title,
   buttons,
-  maskClassName,
-  maskStyle,
-  className,
-  style,
-  contentClassName,
-  contentStyle,
 }: Props): JSX.Element => {
   const [destroyed, setDestroyed] = React.useState(false);
   const [destroying, setDestroying] = React.useState(false);
@@ -152,7 +155,7 @@ const Dialog = ({
           <div className="h-10 w-10" />
 
           <div className="flex flex-1 items-center justify-center">
-            {options.logo && <Logo />}
+            {logo && <Logo />}
             {title && (
               <h2 className="flex flex-1 justify-center text-base font-semibold">
                 {title}
@@ -170,15 +173,15 @@ const Dialog = ({
         </header>
 
         {/* Dialog Icon */}
-        {options.icon && (
+        {icon && (
           <div
             className={classnames('flex items-center justify-center pb-2', {
-              'pt-4': !!options.logo,
+              'pt-4': !!logo,
             })}
           >
-            {options.icon === 'exclamation' && <IconExclamation />}
+            {icon === 'exclamation' && <IconExclamation />}
 
-            {options.icon === 'tick' && <IconTick />}
+            {icon === 'tick' && <IconTick />}
           </div>
         )}
 
@@ -186,7 +189,7 @@ const Dialog = ({
         <div
           className={twMerge(
             classnames('break-words px-10 pb-3 pt-2 text-center', {
-              'pt-4': options.logo && options.icon,
+              'pt-4': logo && icon,
               'pb-16': !buttons || buttons.length === 0,
             }),
             contentClassName,

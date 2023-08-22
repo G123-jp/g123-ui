@@ -14,6 +14,8 @@ export { default as ChevronLeftOutlined } from './icons/ChevronLeftOutlined';
 export { default as ChevronRightOutlined } from './icons/ChevronRightOutlined';
 export { default as CloseOutlined } from './icons/CloseOutlined';
 export { default as LoadingOutlined } from './icons/LoadingOutlined';
+export { default as StarOutlined } from './icons/StarOutlined';
+export { default as StarHalfOutlined } from './icons/StarHalfOutlined';
 
 export { default as ChatFilled } from './icons/ChatFilled';
 export { default as CopyFilled } from './icons/CopyFilled';
@@ -22,6 +24,8 @@ export { default as GameFilled } from './icons/GameFilled';
 export { default as HomeFilled } from './icons/HomeFilled';
 export { default as NotificationFilled } from './icons/NotificationFilled';
 export { default as ProfileFilled } from './icons/ProfileFilled';
+export { default as StarFilled } from './icons/StarFilled';
+export { default as StarHalfFilled } from './icons/StarHalfFilled';
 
 export { default as ChatTwoTone } from './icons/ChatTwoTone';
 export { default as CopyTwoTone } from './icons/CopyTwoTone';
@@ -30,3 +34,5 @@ export { default as GameTwoTone } from './icons/GameTwoTone';
 export { default as HomeTwoTone } from './icons/HomeTwoTone';
 export { default as NotificationTwoTone } from './icons/NotificationTwoTone';
 export { default as ProfileTwoTone } from './icons/ProfileTwoTone';
+export { default as StarTwoTone } from './icons/StarTwoTone';
+export { default as StarHalfTwoTone } from './icons/StarHalfTwoTone';

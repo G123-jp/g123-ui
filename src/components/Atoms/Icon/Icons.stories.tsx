@@ -1,8 +1,6 @@
 import { StoryFn, Meta } from '@storybook/react';
 import React from 'react';
 
-import LoadingOutlined from './icons/LoadingOutlined';
-
 import {
   NotificationOutlined,
   HomeOutlined,
@@ -31,6 +29,13 @@ import {
   CopyOutlined,
   CopyFilled,
   CopyTwoTone,
+  LoadingOutlined,
+  StarOutlined,
+  StarHalfOutlined,
+  StarHalfFilled,
+  StarFilled,
+  StarHalfTwoTone,
+  StarTwoTone,
 } from '.';
 
 export default {
@@ -50,20 +55,22 @@ const Template: StoryFn = (args) => (
     <div className="flex gap-4 text-neutral-800">
       <ChatOutlined {...args} />
       <CopyOutlined className="text-blue-500" />
-      <DownloadOutlined
-        className="text-highlight"
-        style={{ color: 'orange' }}
-      />
       <EarthOutlined />
       <GameOutlined />
       <HomeOutlined />
       <NotificationOutlined />
       <ProfileOutlined />
+      <StarOutlined />
+      <StarHalfOutlined />
       <ChevronUpOutlined />
       <ChevronDownOutlined />
       <ChevronLeftOutlined />
       <ChevronRightOutlined />
       <CloseOutlined />
+      <DownloadOutlined
+        className="text-highlight"
+        style={{ color: 'orange' }}
+      />
       <LoadingOutlined className="animate-spin" />
     </div>
 
@@ -76,6 +83,8 @@ const Template: StoryFn = (args) => (
       <HomeFilled />
       <NotificationFilled />
       <ProfileFilled />
+      <StarFilled />
+      <StarHalfFilled />
     </div>
 
     <h2>TwoTone</h2>
@@ -87,6 +96,8 @@ const Template: StoryFn = (args) => (
       <HomeTwoTone />
       <NotificationTwoTone />
       <ProfileTwoTone />
+      <StarTwoTone />
+      <StarHalfTwoTone />
     </div>
   </div>
 );

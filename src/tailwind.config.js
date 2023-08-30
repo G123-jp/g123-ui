@@ -112,7 +112,7 @@ module.exports = {
       },
       animation: {
         'fade-in-bottom': 'fade-in-bottom 0.4s ease-out',
-        'fade-out-bottom': 'fade-out-bottom 0.4s ease-out',
+        'fade-out-bottom': 'fade-out-bottom 0.4s ease-out forwards',
         'slide-in-bottom':
           'slide-in-bottom 0.4s cubic-bezier(0.2, 0.8, 0.2, 1)',
         'slide-in-left': 'slide-in-left 0.4s cubic-bezier(0.2, 0.8, 0.2, 1)',

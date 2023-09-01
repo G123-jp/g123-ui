@@ -1,3 +1,4 @@
+import classnames from 'classnames';
 import React from 'react';
 import { twMerge } from 'tailwind-merge';
 
@@ -26,19 +27,25 @@ type Props = {
   className?: string;
   style?: React.CSSProperties;
   children: React.ReactNode;
+  id?: string;
+  scrollbarClassName?: string;
 };
 
 const InternalCarousel: React.VFC<Props> = ({
   style,
   className = '',
+  id,
+  scrollbarClassName = 'scrollbar-none',
   children,
 }) => {
   return (
     <div
       className={twMerge(
-        'flex snap-x snap-mandatory overflow-x-auto scroll-smooth scrollbar-none',
+        'flex snap-x snap-mandatory overflow-x-auto scroll-smooth',
+        scrollbarClassName,
         className,
       )}
+      id={id}
       {...(style && { style })}
     >
       {children}

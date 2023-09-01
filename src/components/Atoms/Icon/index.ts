@@ -2,11 +2,14 @@
 // ticket: https://app.clickup.com/t/908879/G123DEV-24941
 export { default as ChatOutlined } from './icons/ChatOutlined';
 export { default as CopyOutlined } from './icons/CopyOutlined';
+export { default as DocumentOutlined } from './icons/DocumentOutlined';
 export { default as DownloadOutlined } from './icons/DownloadOutlined';
 export { default as EarthOutlined } from './icons/EarthOutlined';
+export { default as FileOutlined } from './icons/FileOutlined';
 export { default as GameOutlined } from './icons/GameOutlined';
 export { default as HomeOutlined } from './icons/HomeOutlined';
 export { default as NotificationOutlined } from './icons/NotificationOutlined';
+export { default as PaymentOutlined } from './icons/PaymentOutlined';
 export { default as ProfileOutlined } from './icons/ProfileOutlined';
 export { default as ChevronUpOutlined } from './icons/ChevronUpOutlined';
 export { default as ChevronDownOutlined } from './icons/ChevronDownOutlined';
@@ -16,6 +19,7 @@ export { default as CloseOutlined } from './icons/CloseOutlined';
 export { default as LoadingOutlined } from './icons/LoadingOutlined';
 export { default as StarOutlined } from './icons/StarOutlined';
 export { default as StarHalfOutlined } from './icons/StarHalfOutlined';
+export { default as SecurityOutlined } from './icons/SecurityOutlined';
 
 export { default as ChatFilled } from './icons/ChatFilled';
 export { default as CopyFilled } from './icons/CopyFilled';

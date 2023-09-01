@@ -6,6 +6,11 @@ import {
   HomeOutlined,
   GameOutlined,
   ChatOutlined,
+  DocumentOutlined,
+  DownloadOutlined,
+  FileOutlined,
+  PaymentOutlined,
+  SecurityOutlined,
   EarthOutlined,
   ProfileOutlined,
   NotificationFilled,
@@ -20,7 +25,6 @@ import {
   ChatTwoTone,
   EarthTwoTone,
   ProfileTwoTone,
-  DownloadOutlined,
   ChevronUpOutlined,
   ChevronDownOutlined,
   ChevronLeftOutlined,
@@ -72,6 +76,10 @@ const Template: StoryFn = (args) => (
         style={{ color: 'orange' }}
       />
       <LoadingOutlined className="animate-spin" />
+      <DocumentOutlined />
+      <FileOutlined />
+      <PaymentOutlined />
+      <SecurityOutlined />
     </div>
 
     <h2>Filled</h2>

@@ -16,7 +16,7 @@ const Template: StoryFn = () => (
       <Button
         size={ButtonSize.small}
         onClick={(): void => {
-          toast('Just A Toast');
+          toast.default('Just A Toast');
         }}
       >
         Defaul
@@ -40,6 +40,17 @@ const Template: StoryFn = () => (
         }}
       >
         Error
+      </Button>
+
+      <Button
+        className="border-info-default text-info-default"
+        size={ButtonSize.small}
+        type={ButtonType.stroke}
+        onClick={(): void => {
+          toast.warn('Something got strange');
+        }}
+      >
+        Warning
       </Button>
 
       <Button

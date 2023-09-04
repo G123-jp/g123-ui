@@ -12,18 +12,21 @@ import {
   PaymentOutlined,
   SecurityOutlined,
   EarthOutlined,
+  ExclamationOutlined,
   ProfileOutlined,
   NotificationFilled,
   HomeFilled,
   GameFilled,
   ChatFilled,
   EarthFilled,
+  ExclamationFilled,
   ProfileFilled,
   NotificationTwoTone,
   HomeTwoTone,
   GameTwoTone,
   ChatTwoTone,
   EarthTwoTone,
+  ExclamationTwoTone,
   ProfileTwoTone,
   ChevronUpOutlined,
   ChevronDownOutlined,
@@ -60,6 +63,7 @@ const Template: StoryFn = (args) => (
       <ChatOutlined {...args} />
       <CopyOutlined className="text-blue-500" />
       <EarthOutlined />
+      <ExclamationOutlined />
       <GameOutlined />
       <HomeOutlined />
       <NotificationOutlined />
@@ -87,6 +91,7 @@ const Template: StoryFn = (args) => (
       <ChatFilled {...args} />
       <CopyFilled className="text-blue-500" />
       <EarthFilled className="text-highlight" style={{ color: 'orange' }} />
+      <ExclamationFilled />
       <GameFilled />
       <HomeFilled />
       <NotificationFilled />
@@ -100,6 +105,7 @@ const Template: StoryFn = (args) => (
       <ChatTwoTone {...args} />
       <CopyTwoTone className="text-blue-500" />
       <EarthTwoTone className="text-highlight" style={{ color: 'orange' }} />
+      <ExclamationTwoTone />
       <GameTwoTone />
       <HomeTwoTone />
       <NotificationTwoTone />

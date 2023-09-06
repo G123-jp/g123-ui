@@ -201,16 +201,5 @@ const Button: React.VFC<Props> = ({
   );
 };
 
-Button.defaultProps = {
-  type: Type.default,
-  style: undefined,
-  className: '',
-  size: Size.middle,
-  disabled: false,
-  block: false,
-  htmlType: HtmlType.button,
-  onClick: undefined,
-};
-
 export { Type as ButtonType, Size as ButtonSize, HtmlType as ButtonHtmlType };
 export default Button;

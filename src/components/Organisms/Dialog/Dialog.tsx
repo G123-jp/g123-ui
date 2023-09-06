@@ -230,8 +230,4 @@ const Dialog = ({
   );
 };
 
-Dialog.defaultProps = {
-  buttons: undefined,
-};
-
 export default Dialog;

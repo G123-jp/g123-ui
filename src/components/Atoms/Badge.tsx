@@ -67,11 +67,4 @@ const Badge: React.VFC<Props> = ({
   );
 };
 
-Badge.defaultProps = {
-  show: true,
-  content: null,
-  offsetRight: 0,
-  offsetTop: 0,
-};
-
 export default Badge;

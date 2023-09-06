@@ -92,8 +92,4 @@ const Modal: React.VFC<Props> = ({
   );
 };
 
-Modal.defaultProps = {
-  isOpen: false,
-};
-
 export default Modal;

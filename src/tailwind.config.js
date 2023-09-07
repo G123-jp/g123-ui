@@ -1,6 +1,10 @@
+/** @type {import('tailwindcss').Config} */
+// eslint-disable-next-line import/no-extraneous-dependencies
+import tailwindScrollbarPlugin from 'tailwind-scrollbar';
+
 import { Palette } from './utils/color_helper';
 
-module.exports = {
+export default {
   content: ['./src/components/**/*.tsx'],
   theme: {
     fontFamily: {
@@ -121,6 +125,5 @@ module.exports = {
       },
     },
   },
-  // eslint-disable-next-line global-require, import/no-extraneous-dependencies
-  plugins: [require('tailwind-scrollbar')],
+  plugins: [tailwindScrollbarPlugin],
 };

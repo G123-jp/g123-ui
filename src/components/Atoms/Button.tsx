@@ -34,18 +34,25 @@ enum Type {
   link = 'link',
 }
 
+type MergedHTMLAttributes = Omit<
+  React.HTMLAttributes<HTMLElement> &
+    React.ButtonHTMLAttributes<HTMLElement> &
+    React.AnchorHTMLAttributes<HTMLElement>,
+  'type'
+>;
+
 type Props = {
   type?: Type;
   size?: Size;
   disabled?: boolean;
   block?: boolean;
-  htmlType?: HtmlType;
+  htmlType?: HtmlType; // React.ButtonHTMLAttributes<HTMLButtonElement>.type
   icon?: ReactNode;
   children?: ReactNode;
   className?: string;
   style?: React.CSSProperties;
   onClick?: (e?: React.MouseEvent<HTMLButtonElement>) => void | Promise<void>;
-};
+} & MergedHTMLAttributes;
 
 const Button: React.VFC<Props> = ({
   type = Type.default,
@@ -58,6 +65,7 @@ const Button: React.VFC<Props> = ({
   className = '',
   style,
   onClick,
+  ...props
 }) => {
   const isInline = useMemo(
     () => type === Type.link || type === Type.text,
@@ -77,6 +85,7 @@ const Button: React.VFC<Props> = ({
 
   return (
     <button
+      {...props}
       className={twMerge(
         classnames(
           'inline-flex items-center justify-center gap-x-1',

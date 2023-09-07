@@ -27,7 +27,9 @@ export default {
 } as Meta<typeof Button>;
 
 const Template: StoryFn<typeof Button> = ({ children, ...args }) => (
-  <Button {...args}>{children ?? 'Button'}</Button>
+  <Button {...args} aria-label="g123-button">
+    {children ?? 'Button'}
+  </Button>
 );
 
 export const Default = Template.bind({});

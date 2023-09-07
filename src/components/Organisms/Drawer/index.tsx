@@ -48,7 +48,7 @@ type ContentProps = {
 };
 
 const Content: React.VFC<ContentProps> = ({
-  open,
+  open = false,
   isMobile = true,
   title,
   onGoBack,
@@ -178,10 +178,6 @@ const Drawer: React.VFC<Props> = ({
       </Content>
     </Mask>
   );
-};
-
-Drawer.defaultProps = {
-  open: false,
 };
 
 export default Drawer;

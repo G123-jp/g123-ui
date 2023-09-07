@@ -1,11 +1,27 @@
-export const palette = {
-  // Akira: v1.x palette, maybe DEPRECATED in the future
+const NutuarlDerivative = {
+  'nutuarl-0': '#ffffff',
+  'nutuarl-1': '#fafafa',
+  'nutuarl-2': '#f5f5f5',
+  'nutuarl-3': '#f0f0f0',
+  'nutuarl-4': '#d9d9d9',
+  'nutuarl-5': '#bfbfbf',
+  'nutuarl-6': '#8c8c8c',
+  'nutuarl-7': '#595959',
+  'nutuarl-8': '#434343',
+  'nutuarl-9': '#262626',
+  'nutuarl-10': '#1f1f1f',
+  'nutuarl-11': '#141414',
+  'nutuarl-12': '#000000',
+};
+
+export const Palette = {
+  // Akira: v1.x Palette, maybe DEPRECATED in the future
   primary: '#136c72',
   secondary: '#d9ede2',
   highlight: '#e3ff34',
   danger: '#ff385c',
 
-  // Akira: v2.x palette, Backward Compatibility
+  // Akira: v2.x Palette, Backward Compatibility
   // Brand
   'brand-primary-base': '#e3ff34',
   'brand-primary-secondary': '#d2ef1c',
@@ -15,13 +31,13 @@ export const palette = {
   'brand-secondary-secondary': '#89b5b8',
   'brand-secondary-container': '#d9ede2',
   'brand-secondary-bg': '#eef6ef',
-  'brand-tertiary-base': '#262626',
-  'brand-tertiary-container': '#f0f0f0',
+  'brand-tertiary-base': NutuarlDerivative['nutuarl-9'],
+  'brand-tertiary-container': NutuarlDerivative['nutuarl-3'],
   // Font
-  'font-primary': '#262626',
-  'font-secondary': '#8c8c8c',
-  'font-disabled': '#d9d9d9',
-  'font-overlay': '#ffffff',
+  'font-primary': NutuarlDerivative['nutuarl-9'],
+  'font-secondary': NutuarlDerivative['nutuarl-7'],
+  'font-disabled': NutuarlDerivative['nutuarl-4'],
+  'font-overlay': NutuarlDerivative['nutuarl-0'],
   // Link
   'link-default': '#136c72',
   'link-disabled': '#89b5b8',
@@ -38,19 +54,21 @@ export const palette = {
   'success-disabled': '#b7e2a1',
   'success-bg': '#f3faf0',
   // Surface
-  'surface-primary': '#ffffff',
-  'surface-secondary': '#fafafa',
-  'surface-tertiary': '#f5f5f5',
-  'surface-quaternary': '#f0f0f0',
+  'surface-primary': NutuarlDerivative['nutuarl-0'],
+  'surface-secondary': NutuarlDerivative['nutuarl-1'],
+  'surface-tertiary': NutuarlDerivative['nutuarl-2'],
+  'surface-quaternary': NutuarlDerivative['nutuarl-3'],
   // Line
-  'line-border': '#262626',
-  'line-divider': '#f0f0f0',
+  'line-border': NutuarlDerivative['nutuarl-9'],
+  'line-divider': NutuarlDerivative['nutuarl-3'],
+  // Nutuarl
+  ...NutuarlDerivative,
 };
 
 export const isValidPaletteColor = (color?: string): boolean => {
   if (!color || typeof color !== 'string') return false;
 
-  return Object.keys(palette).includes(color);
+  return Object.keys(Palette).includes(color);
 };
 
 export const isValidHtmlColor = (color?: string): boolean => {

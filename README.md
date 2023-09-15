@@ -1,9 +1,10 @@
 <h1 align="center"> g123-ui </h1>
 <div align="center">
 
-Reuseable UI based on [G123 Design System](https://www.figma.com/file/U4LsgpPqBkL5FX2UNUDm9o/G123-Design-System) and [Atomic Design](https://atomicdesign.bradfrost.com/)
+Reuseable UI based on [G123 Design System](https://www.figma.com/file/jbFjQ7abHxF8WybpmMBiGn/G123-Design-system) and [Atomic Design](https://atomicdesign.bradfrost.com/)
 
-  <img width="733" alt="image" src="https://github.com/G123-jp/g123-ui/assets/1228449/8e6c7a60-1431-4a16-af22-d609f30b914d">
+  <img width="733" alt="image" src="https://github.com/G123-jp/g123-ui/assets/1228449/df2128bd-dbad-48f3-9354-676c906a8bb4">
+
 
 </div>
 
@@ -17,7 +18,7 @@ yarn add @g123jp/g123-ui
 
 - ### make sure [tailwindcss](https://tailwindcss.com/) has [been installed correctly](https://tailwindcss.com/docs/installation).
 
-- ### make sure tailwind's default style has been loaded correctly.
+- ### make sure Tailwind's default style has been loaded correctly.
 
   <details><summary>expand details</summary>
   <p>
@@ -87,4 +88,5 @@ yarn add @g123jp/g123-ui
   ```bash
   yarn storybook
   ```
-  <img width="480" alt="image" src="https://github.com/G123-jp/g123-ui/assets/1228449/a9172088-4a66-49d7-ae54-ae02c3bcd9f8">
+  <img width="480" alt="image" src="https://github.com/G123-jp/g123-ui/assets/1228449/ce44fb3a-5403-4f64-b27e-e332841ac85b">
+

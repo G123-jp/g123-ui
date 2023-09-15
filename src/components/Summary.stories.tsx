@@ -32,6 +32,24 @@ import {
   ChevronDownOutlined,
   ChevronLeftOutlined,
   CloseOutlined,
+  CopyFilled,
+  CopyOutlined,
+  CopyTwoTone,
+  DocumentOutlined,
+  DownloadOutlined,
+  ExclamationFilled,
+  ExclamationOutlined,
+  ExclamationTwoTone,
+  FileOutlined,
+  LoadingOutlined,
+  PaymentOutlined,
+  SecurityOutlined,
+  StarFilled,
+  StarHalfFilled,
+  StarHalfOutlined,
+  StarHalfTwoTone,
+  StarOutlined,
+  StarTwoTone,
 } from './Atoms/Icon';
 
 const { ProfileTwoTone, NotificationTwoTone, HomeTwoTone, GameTwoTone } = Icon;
@@ -53,7 +71,7 @@ const Template: StoryFn = () => (
     </div>
 
     <div className="h-full w-full">
-      <Carousel className="w-72 gap-x-4 py-4">
+      <Carousel className="w-96 gap-x-4 py-4">
         <Carousel.Item className="rounded bg-primary">
           <h1 className="flex h-20 w-60 items-center justify-center gap-x-2">
             <Logo /> 1
@@ -309,32 +327,58 @@ const Template: StoryFn = () => (
     </div>
 
     {/* Icons */}
-    <div className="flex flex-col gap-2">
+    <div className="flex flex-col gap-4 text-neutral-800">
       <div className="flex gap-4 text-neutral-800">
+        <ChatOutlined className="text-primary" />
+        <CopyOutlined className="text-blue-500" />
+        <EarthOutlined className="text-nutuarl-5" />
+        <ExclamationOutlined />
+        <GameOutlined />
+        <HomeOutlined />
         <NotificationOutlined />
-        <HomeOutlined className="text-blue-500" />
-        <GameOutlined className="text-highlight" style={{ color: 'orange' }} />
-        <ChatOutlined />
-        <EarthOutlined />
         <ProfileOutlined />
+        <StarOutlined />
+        <StarHalfOutlined />
+        <ChevronUpOutlined />
+        <ChevronDownOutlined />
+        <ChevronLeftOutlined />
+        <ChevronRightOutlined />
+        <CloseOutlined />
+        <DownloadOutlined
+          className="text-highlight"
+          style={{ color: 'orange' }}
+        />
+        <LoadingOutlined className="animate-spin" />
+        <DocumentOutlined />
+        <FileOutlined />
+        <PaymentOutlined />
+        <SecurityOutlined />
       </div>
 
       <div className="flex gap-4 text-neutral-800">
+        <ChatFilled className="text-primary" />
+        <CopyFilled className="text-blue-500" />
+        <EarthFilled className="text-highlight" style={{ color: 'orange' }} />
+        <ExclamationFilled />
+        <GameFilled />
+        <HomeFilled />
         <NotificationFilled />
-        <HomeFilled className="text-blue-500" />
-        <GameFilled className="text-highlight" style={{ color: 'orange' }} />
-        <ChatFilled />
-        <EarthFilled />
         <ProfileFilled />
+        <StarFilled />
+        <StarHalfFilled />
       </div>
 
       <div className="flex gap-4 text-neutral-800">
+        <ChatTwoTone className="text-primary" />
+        <CopyTwoTone className="text-blue-500" />
+        <EarthTwoTone className="text-highlight" style={{ color: 'orange' }} />
+        <ExclamationTwoTone />
+        <GameTwoTone />
+        <HomeTwoTone />
         <NotificationTwoTone />
-        <HomeTwoTone className="text-blue-500" />
-        <GameTwoTone className="text-highlight" style={{ color: 'orange' }} />
-        <ChatTwoTone />
-        <EarthTwoTone />
         <ProfileTwoTone />
+        <StarTwoTone />
+        <StarHalfTwoTone />
       </div>
     </div>
   </div>

@@ -88,7 +88,7 @@ const Button: React.VFC<Props> = ({
       {...props}
       className={twMerge(
         classnames(
-          'inline-flex items-center justify-center gap-x-1',
+          'flex items-center justify-center gap-x-0.5',
           // Color
           {
             // normal
@@ -142,8 +142,8 @@ const Button: React.VFC<Props> = ({
 
             // inline: text & link
             'h-fit w-fit': isInline,
-            'rounded-sm px-xs py-xxs': size === Size.small && isInline,
-            'rounded-sm p-xs':
+            'gap-x-0 rounded-sm px-xs py-xxs': size === Size.small && isInline,
+            'gap-x-0 rounded-sm p-xs':
               (size === Size.middle || size === Size.default) && isInline,
             'rounded px-sm py-xs': size === Size.large && isInline,
 
@@ -181,11 +181,9 @@ const Button: React.VFC<Props> = ({
       {...(!disabled && onClick && { onClick: handleClick })}
       {...(style && { style })}
     >
-      <div>
-        {icon &&
-          icon &&
-          React.isValidElement<{ className: string }>(icon) &&
-          React.cloneElement(icon, {
+      {icon && React.isValidElement<{ className: string }>(icon) && (
+        <div>
+          {React.cloneElement(icon, {
             className: classnames(
               icon.props.className,
               {
@@ -204,8 +202,9 @@ const Button: React.VFC<Props> = ({
               },
             ),
           })}
-      </div>
-      {children}
+        </div>
+      )}
+      {children && <span className="truncate">{children}</span>}
     </button>
   );
 };

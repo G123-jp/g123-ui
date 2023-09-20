@@ -53,7 +53,9 @@ type Props = {
   children?: ReactNode;
   className?: string;
   style?: React.CSSProperties;
-  onClick?: (e?: React.MouseEvent<HTMLButtonElement>) => void | Promise<void>;
+  onClick?: (
+    e?: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>,
+  ) => void | Promise<void>;
 } & MergedHTMLAttributes;
 
 const Button: React.VFC<Props> = ({
@@ -184,6 +186,7 @@ const Button: React.VFC<Props> = ({
       )}
       disabled={disabled}
       type={htmlType}
+      // behave as link
       {...(!!href && { href, target })}
       {...(!disabled && onClick && { onClick: handleClick })}
       {...(style && { style })}

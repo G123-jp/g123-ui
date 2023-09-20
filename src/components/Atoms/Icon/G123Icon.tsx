@@ -1,10 +1,11 @@
 import React from 'react';
-// eslint-disable-next-line import/no-extraneous-dependencies
-// import { twMerge } from 'tailwind-merge';
 
 export type IconProps = {
   className?: string;
   style?: React.CSSProperties;
+  width?: number;
+  height?: number;
+  viewBox?: string;
 };
 
 type InternalProps = IconProps & {
@@ -13,11 +14,20 @@ type InternalProps = IconProps & {
 
 const G123Icon: React.VFC<InternalProps> = ({
   IconSvg,
+  width,
+  height,
+  viewBox,
   style,
   className = '',
 }) => {
   return (
-    <IconSvg {...(className && { className })} {...(style && { style })} />
+    <IconSvg
+      {...(width && { width })}
+      {...(height && { height })}
+      {...(viewBox && { viewBox })}
+      {...(className && { className })}
+      {...(style && { style })}
+    />
   );
 };
 

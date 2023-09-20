@@ -8,7 +8,7 @@ import {
   Switch,
   Icon,
 } from '@/components/Atoms';
-import { Carousel } from '@/components/Molecules';
+import { Carousel, Toaster, toast } from '@/components/Molecules';
 import { StoryFn, Meta } from '@storybook/react';
 import React from 'react';
 
@@ -197,10 +197,24 @@ const Template: StoryFn = () => (
         </div>
         <Button block>Block</Button>
       </div>
+
       {/* UX */}
       <div className="flex items-center gap-2">
         <Button>Normal</Button>
         <Button disabled>Disabled</Button>
+        <Button
+          onClick={(): void => {
+            toast.success('Behave as Button(default)');
+          }}
+        >
+          Behave as Button(default)
+        </Button>
+        <Button
+          href="https://www.npmjs.com/package/@g123jp/g123-ui"
+          target="_blank"
+        >
+          Behave as Link
+        </Button>
       </div>
     </div>
 
@@ -381,6 +395,8 @@ const Template: StoryFn = () => (
         <StarHalfTwoTone />
       </div>
     </div>
+
+    <Toaster />
   </div>
 );
 

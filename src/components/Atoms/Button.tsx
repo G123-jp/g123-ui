@@ -47,11 +47,15 @@ type Props = {
   disabled?: boolean;
   block?: boolean;
   htmlType?: HtmlType; // React.ButtonHTMLAttributes<HTMLButtonElement>.type
+  href?: string;
+  target?: '_blank' | '_self' | '_parent' | '_top'; // React.AnchorHTMLAttributes<HTMLAnchorElement>.target
   icon?: ReactNode;
   children?: ReactNode;
   className?: string;
   style?: React.CSSProperties;
-  onClick?: (e?: React.MouseEvent<HTMLButtonElement>) => void | Promise<void>;
+  onClick?: (
+    e?: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>,
+  ) => void | Promise<void>;
 } & MergedHTMLAttributes;
 
 const Button: React.VFC<Props> = ({
@@ -60,6 +64,8 @@ const Button: React.VFC<Props> = ({
   disabled = false,
   block = false,
   htmlType = HtmlType.button,
+  href,
+  target = '_self',
   icon,
   children,
   className = '',
@@ -77,14 +83,16 @@ const Button: React.VFC<Props> = ({
   const isWithIcon = useMemo(() => !!children && !!icon, [children, icon]);
 
   const handleClick = useCallback(
-    (e: React.MouseEvent<HTMLButtonElement>) => {
+    (e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>) => {
       onClick && onClick(e);
     },
     [onClick],
   );
 
+  const ButtonComponent = href ? 'a' : 'button';
+
   return (
-    <button
+    <ButtonComponent
       {...props}
       className={twMerge(
         classnames(
@@ -178,6 +186,8 @@ const Button: React.VFC<Props> = ({
       )}
       disabled={disabled}
       type={htmlType}
+      // behave as link
+      {...(!!href && { href, target })}
       {...(!disabled && onClick && { onClick: handleClick })}
       {...(style && { style })}
     >
@@ -205,7 +215,7 @@ const Button: React.VFC<Props> = ({
         </div>
       )}
       {children && <span className="truncate">{children}</span>}
-    </button>
+    </ButtonComponent>
   );
 };
 

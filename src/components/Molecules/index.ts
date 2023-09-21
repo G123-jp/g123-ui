@@ -1,4 +1,5 @@
 export { default as Carousel } from './Carousel';
+export { default as Breadcrumb } from './Breadcrumb';
 
 export {
   default as toast,

@@ -8,7 +8,7 @@ import {
   Switch,
   Icon,
 } from '@/components/Atoms';
-import { Carousel, Toaster, toast } from '@/components/Molecules';
+import { Carousel, Toaster, VipBadge, toast } from '@/components/Molecules';
 import { StoryFn, Meta } from '@storybook/react';
 import React from 'react';
 
@@ -396,6 +396,14 @@ const Template: StoryFn = () => (
         <StarTwoTone />
         <StarHalfTwoTone />
       </div>
+    </div>
+
+    {/* VIP Badge */}
+    <div className="flex gap-4">
+      <VipBadge rank={1} />
+      <VipBadge rank={6} />
+      <VipBadge rank={11} />
+      <VipBadge rank={99} />
     </div>
 
     <Toaster />

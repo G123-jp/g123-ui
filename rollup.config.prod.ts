@@ -1,11 +1,15 @@
 import postcss from 'rollup-plugin-postcss';
 import commonjs from '@rollup/plugin-commonjs';
+import dotenv from 'dotenv';
 import resolve from '@rollup/plugin-node-resolve';
 import image from '@rollup/plugin-image';
 import svgr from '@svgr/rollup';
 import { terser } from 'rollup-plugin-terser';
 import typescript from 'rollup-plugin-typescript2';
 import pkg from './package.json';
+
+// Akira: hack for handling NO_COLOR & FORCE_COLOR issues with .env
+dotenv.config();
 
 export default {
   input: 'src/index.ts',

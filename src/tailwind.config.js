@@ -2,7 +2,7 @@
 // eslint-disable-next-line import/no-extraneous-dependencies
 import tailwindScrollbarPlugin from 'tailwind-scrollbar';
 
-import { Palette } from './utils/color_helper';
+// import { Palette } from './utils/color_helper';
 
 export default {
   content: ['./src/components/**/*.tsx'],
@@ -65,12 +65,12 @@ export default {
         '4xl': '5rem',
       },
       // Akira: tailwind defualt colors + g123 Palette
-      colors: {
-        transparent: 'transparent',
-        current: 'currentColor',
+      // colors: {
+      //   transparent: 'transparent',
+      //   current: 'currentColor',
 
-        ...Palette,
-      },
+      //   ...Palette,
+      // },
       animation: {
         'fade-in-bottom': 'fade-in-bottom 0.4s ease-out',
         'fade-out-bottom': 'fade-out-bottom 0.4s ease-out forwards',

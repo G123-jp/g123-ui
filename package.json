@@ -1,6 +1,6 @@
 {
   "name": "@g123jp/g123-ui",
-  "version": "2.0.8-canary.1",
+  "version": "2.0.8",
   "description": "Reuseable UI based on G123 Design System",
   "author": "hydRAnger <armyiljfe@gmail.com>",
   "license": "MIT",
@@ -45,7 +45,6 @@
     "@typescript-eslint/parser": "^5.51.0",
     "autoprefixer": "^10.4.1",
     "babel-loader": "^9.1.2",
-    "dotenv": "^16.3.1",
     "eslint": "^8.1.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^8.3.0",

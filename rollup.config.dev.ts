@@ -35,6 +35,8 @@ export default {
     image({ exclude: '**/*.svg' }),
     resolve(),
     commonjs(),
+    // Akira: hack for avoid undefined process.env caused by picocolors
+    // ref: https://github.com/alexeyraspopov/picocolors/pull/56
     injectProcessEnv({
       NO_COLOR: 0,
       FORCE_COLOR: 3,

@@ -5,6 +5,7 @@ import image from '@rollup/plugin-image';
 import svgr from '@svgr/rollup';
 import { terser } from 'rollup-plugin-terser';
 import typescript from 'rollup-plugin-typescript2';
+import injectProcessEnv from 'rollup-plugin-inject-process-env';
 import pkg from './package.json';
 
 export default {
@@ -35,6 +36,12 @@ export default {
     image({ exclude: '**/*.svg' }),
     resolve(),
     commonjs(),
+    // Akira: hack for avoid undefined process.env caused by picocolors
+    // ref: https://github.com/alexeyraspopov/picocolors/pull/56
+    injectProcessEnv({
+      NO_COLOR: 0,
+      FORCE_COLOR: 3,
+    }),
     typescript({
       useTsconfigDeclarationDir: true,
     }),

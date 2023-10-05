@@ -145,8 +145,7 @@ typings/
 .yarn-integrity
 
 # dotenv environment variables file
-# Akira: hack for handling NO_COLOR & FORCE_COLOR issues with .env
-# .env
+.env
 
 # parcel-bundler cache (https://parceljs.org/)
 .cache

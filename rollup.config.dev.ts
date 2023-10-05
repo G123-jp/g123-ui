@@ -4,6 +4,7 @@ import resolve from '@rollup/plugin-node-resolve';
 import image from '@rollup/plugin-image';
 import svgr from '@svgr/rollup';
 import typescript from 'rollup-plugin-typescript2';
+import injectProcessEnv from 'rollup-plugin-inject-process-env';
 import pkg from './package.json';
 
 export default {
@@ -34,6 +35,10 @@ export default {
     image({ exclude: '**/*.svg' }),
     resolve(),
     commonjs(),
+    injectProcessEnv({
+      NO_COLOR: 0,
+      FORCE_COLOR: 3,
+    }),
     typescript({
       useTsconfigDeclarationDir: true,
     }),

@@ -5,7 +5,6 @@ Reuseable UI based on [G123 Design System](https://www.figma.com/file/jbFjQ7abHx
 
   <img width="733" alt="image" src="https://github.com/G123-jp/g123-ui/assets/1228449/df2128bd-dbad-48f3-9354-676c906a8bb4">
 
-
 </div>
 
 ## 📦 Install
@@ -37,20 +36,16 @@ yarn add @g123jp/g123-ui
 
 - ### import g123-ui's config as default(use tailwindcss's [presents](https://tailwindcss.com/docs/presets))
 
-  ```js
-  const g123UI = require('@g123jp/g123-ui');
+  ```typescript
+  import { g123TailwindPresets } from '@g123jp/g123-ui';
 
-  module.exports = {
-    // use g123-ui's config as default
-    presets: [g123UI.tailwindConfig],
+  const TailindConfig = {
+    // use g123-ui's presets as default
+    presets: [g123TailwindPresets],
     content: [
       // ... put your content here
       './node_modules/@g123jp/g123-ui/dist/*.js',
     ],
-    plugins: [
-      ...g123UI.tailwindPlugins,
-      // ... put your plugins here
-    ]
     // ... your other configs
   };
   ```
@@ -89,4 +84,3 @@ yarn add @g123jp/g123-ui
   yarn storybook
   ```
   <img width="480" alt="image" src="https://github.com/G123-jp/g123-ui/assets/1228449/ce44fb3a-5403-4f64-b27e-e332841ac85b">
-

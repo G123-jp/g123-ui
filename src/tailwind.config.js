@@ -1,6 +1,4 @@
 /** @type {import('tailwindcss').Config} */
-// eslint-disable-next-line import/no-extraneous-dependencies
-import tailwindScrollbarPlugin from 'tailwind-scrollbar';
 
 import { Palette } from './utils/color_helper';
 
@@ -125,5 +123,6 @@ export default {
       },
     },
   },
-  plugins: [tailwindScrollbarPlugin],
+  // eslint-disable-next-line import/no-extraneous-dependencies, global-require
+  plugins: [require('tailwind-scrollbar')],
 };

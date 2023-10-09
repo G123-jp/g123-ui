@@ -1,10 +1,6 @@
-// eslint-disable-next-line import/no-extraneous-dependencies
-import tailwindScrollbarPlugin from 'tailwind-scrollbar';
-
 import tailwindConfig from './tailwind.config.js';
 
-const tailwindPlugins = [tailwindScrollbarPlugin];
-export { tailwindConfig, tailwindPlugins };
+export { tailwindConfig };
 
 export * from './utils';
 

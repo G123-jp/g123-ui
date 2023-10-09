@@ -1,6 +1,6 @@
 import tailwindConfig from './tailwind.config.js';
 
-export { tailwindConfig };
+export { tailwindConfig as g123TailwindPresets };
 
 export * from './utils';
 

@@ -34,7 +34,7 @@ const InternalCarousel: React.VFC<Props> = ({
   style,
   className = '',
   id,
-  scrollbarClassName = 'scrollbar-none',
+  scrollbarClassName = 'hidden-scrollbar',
   children,
 }) => {
   return (

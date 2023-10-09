@@ -43,7 +43,7 @@ const CarouselWithScrollbar: Story = () => {
     <div className="h-full w-full">
       <Carousel
         className="w-72 gap-x-4 py-4"
-        scrollbarClassName="max-[1024px]:scrollbar-none"
+        scrollbarClassName="max-[1024px]:hidden-scrollbar"
       >
         <Carousel.Item className="rounded bg-primary">
           <h1 className="flex h-20 w-60 items-center justify-center gap-x-2">

@@ -10,24 +10,18 @@ enum HtmlType {
 }
 
 enum Size {
-  // Akira: for v1.x, Backward Compatibility
-  large = 'large',
-  middle = 'middle',
   small = 'small',
-
-  // Akira: v2.x
+  middle = 'middle',
+  large = 'large',
+  xLarge = 'xLarge',
   default = 'default', // default equals to middle
 }
 
 enum Type {
-  // Akira: for v1.x, Backward Compatibility
   primary = 'primary',
   secondary = 'secondary',
-  inactive = 'inactive', // v1.x: maybe DEPRECATED in the future
-  danger = 'danger', // v2.x: TODO in Design System
+  danger = 'danger',
   text = 'text',
-
-  // Akira: v2.x
   default = 'default', // default equals to secondary
   highlight = 'highlight',
   stroke = 'stroke',
@@ -102,7 +96,6 @@ const Button: React.VFC<Props> = ({
             // normal
             'border-transparent': true,
             'bg-brand-tertiary-base text-font-overlay': type === Type.primary,
-            'bg-zinc-100 text-zinc-500': type === Type.inactive, // v1.x: maybe DEPRECATED in the future
             'bg-danger text-white': type === Type.danger, // v2.x: TODO in Design System
             'bg-transparent text-font-primary': type === Type.text,
             'bg-brand-primary-base text-font-primary': type === Type.highlight,
@@ -147,6 +140,8 @@ const Button: React.VFC<Props> = ({
               !isOnlyIcon,
             'h-16 min-w-[6.25rem]':
               size === Size.large && !isInline && !isOnlyIcon,
+            'h-20 min-w-[7.5rem] px-xl':
+              size === Size.xLarge && !isInline && !isOnlyIcon,
 
             // inline: text & link
             'h-fit w-fit': isInline,
@@ -154,6 +149,7 @@ const Button: React.VFC<Props> = ({
             'gap-x-0 rounded-sm p-xs':
               (size === Size.middle || size === Size.default) && isInline,
             'rounded px-sm py-xs': size === Size.large && isInline,
+            'rounded px-xl py-xxs': size === Size.xLarge && isInline,
 
             // icon only
             'rounded-full': isOnlyIcon,
@@ -161,14 +157,15 @@ const Button: React.VFC<Props> = ({
             '!p-xs':
               (size === Size.middle || size === Size.default) && isOnlyIcon,
             '!p-5': size === Size.large && isOnlyIcon,
+            '!p-6': size === Size.xLarge && isOnlyIcon,
           },
 
           // Font
           {
             'text-center text-xs font-semibold': true,
-            '!text-sm':
-              isInline && (size === Size.middle || size === Size.default),
-            '!text-base': isInline && size === Size.large,
+            '!text-sm': size === Size.middle || size === Size.default,
+            '!text-base': size === Size.large,
+            '!text-xl': size === Size.xLarge,
           },
 
           // Block
@@ -202,13 +199,15 @@ const Button: React.VFC<Props> = ({
                 'scale-100':
                   (size === Size.middle || size === Size.default) && isOnlyIcon,
                 'scale-[1.8]': size === Size.large && isOnlyIcon,
+                'scale-[2]': size === Size.xLarge && isOnlyIcon,
               },
               {
                 // WITH icon
                 'scale-[0.67]': size === Size.small && isWithIcon,
                 'scale-[0.75]':
                   (size === Size.middle || size === Size.default) && isWithIcon,
-                'scale-100': size === Size.large && isWithIcon,
+                'scale-100':
+                  (size === Size.large || size === Size.xLarge) && isWithIcon,
               },
             ),
           })}

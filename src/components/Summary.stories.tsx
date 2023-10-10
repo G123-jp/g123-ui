@@ -150,6 +150,7 @@ const Template: StoryFn = () => (
           <Button size={ButtonSize.small}>Small</Button>
           <Button size={ButtonSize.middle}>Middle</Button>
           <Button size={ButtonSize.large}>Large</Button>
+          <Button size={ButtonSize.xLarge}>XLarge</Button>
           <Button size={ButtonSize.small} type={ButtonType.link}>
             Small
           </Button>
@@ -159,42 +160,62 @@ const Template: StoryFn = () => (
           <Button size={ButtonSize.large} type={ButtonType.link}>
             Large
           </Button>
+          <Button size={ButtonSize.xLarge} type={ButtonType.link}>
+            XLarge
+          </Button>
         </div>
         {/* Button Size: Only Icon & With Icon & Inline With Icon */}
-        <div className="flex items-center gap-2">
-          <Button icon={<ChatOutlined />} size={ButtonSize.small} />
-          <Button icon={<ChatOutlined />} size={ButtonSize.middle} />
-          <Button icon={<ChatOutlined />} size={ButtonSize.large} />
-          <Button icon={<ChatOutlined />} size={ButtonSize.small}>
-            Small
-          </Button>
-          <Button icon={<ChatOutlined />} size={ButtonSize.middle}>
-            Middle
-          </Button>
-          <Button icon={<ChatOutlined />} size={ButtonSize.large}>
-            Large
-          </Button>
-          <Button
-            icon={<ChatOutlined />}
-            size={ButtonSize.small}
-            type={ButtonType.link}
-          >
-            Small
-          </Button>
-          <Button
-            icon={<ChatOutlined />}
-            size={ButtonSize.middle}
-            type={ButtonType.link}
-          >
-            Middle
-          </Button>
-          <Button
-            icon={<ChatOutlined />}
-            size={ButtonSize.large}
-            type={ButtonType.link}
-          >
-            Large
-          </Button>
+        <div className="flex flex-col gap-2">
+          <div className="flex items-center gap-2">
+            <Button icon={<ChatOutlined />} size={ButtonSize.small} />
+            <Button icon={<ChatOutlined />} size={ButtonSize.middle} />
+            <Button icon={<ChatOutlined />} size={ButtonSize.large} />
+            <Button icon={<ChatOutlined />} size={ButtonSize.xLarge} />
+          </div>
+          <div className="flex items-center gap-2">
+            <Button icon={<ChatOutlined />} size={ButtonSize.small}>
+              Small
+            </Button>
+            <Button icon={<ChatOutlined />} size={ButtonSize.middle}>
+              Middle
+            </Button>
+            <Button icon={<ChatOutlined />} size={ButtonSize.large}>
+              Large
+            </Button>
+            <Button icon={<ChatOutlined />} size={ButtonSize.xLarge}>
+              XLarge
+            </Button>
+          </div>
+          <div className="flex items-center gap-2">
+            <Button
+              icon={<ChatOutlined />}
+              size={ButtonSize.small}
+              type={ButtonType.link}
+            >
+              Small
+            </Button>
+            <Button
+              icon={<ChatOutlined />}
+              size={ButtonSize.middle}
+              type={ButtonType.link}
+            >
+              Middle
+            </Button>
+            <Button
+              icon={<ChatOutlined />}
+              size={ButtonSize.large}
+              type={ButtonType.link}
+            >
+              Large
+            </Button>
+            <Button
+              icon={<ChatOutlined />}
+              size={ButtonSize.xLarge}
+              type={ButtonType.link}
+            >
+              XLarge
+            </Button>
+          </div>
         </div>
         <Button block>Block</Button>
       </div>
@@ -217,6 +238,7 @@ const Template: StoryFn = () => (
           Behave as Link
         </Button>
       </div>
+      <Toaster />
     </div>
 
     {/* Badge */}

@@ -34,16 +34,13 @@ const VipBadge: React.VFC<Props> = ({ rank = 0 }) => {
 
   // Akira: lv1-5, bronze
   let badgeStyles;
-  let levelOuterStyles;
-  let levelInnerStyles;
+  let levelStyles;
   if (isBronze) {
     badgeStyles = {
       backgroundImage: `url('data:image/svg+xml;base64,${bronzeSvg64}')`,
     };
-    levelOuterStyles = {
-      textShadow: '0.5px 0px 0px #ae6d43',
-    };
-    levelInnerStyles = {
+    levelStyles = {
+      color: '#fff7ee',
       WebkitTextStroke: '0.5px #ae6d43',
     };
   }
@@ -53,10 +50,8 @@ const VipBadge: React.VFC<Props> = ({ rank = 0 }) => {
     badgeStyles = {
       backgroundImage: `url('data:image/svg+xml;base64,${silverSvg64}')`,
     };
-    levelOuterStyles = {
-      textShadow: '0.5px 0px 0px #6974a8',
-    };
-    levelInnerStyles = {
+    levelStyles = {
+      color: '#f3f8ff',
       WebkitTextStroke: '0.5px #6974a8',
     };
   }
@@ -66,17 +61,11 @@ const VipBadge: React.VFC<Props> = ({ rank = 0 }) => {
     badgeStyles = {
       backgroundImage: `url('data:image/svg+xml;base64,${goldSvg64}')`,
     };
-    levelOuterStyles = {
-      textShadow: '0.5px 0px 0px #f3a126',
-    };
-    levelInnerStyles = {
+    levelStyles = {
+      color: '#fffbf1',
       WebkitTextStroke: '0.5px #f3a126',
     };
   }
-  const levelCommonClass = classnames(
-    'absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2',
-    'text-xs font-normal not-italic text-transparent',
-  );
 
   return (
     <div
@@ -88,30 +77,14 @@ const VipBadge: React.VFC<Props> = ({ rank = 0 }) => {
       style={badgeStyles}
     >
       <div className="relative">
-        {/* Akira: tricky for archivingt the text-shadow */}
-        <span
-          className={levelCommonClass}
-          style={{
-            fontFamily: 'Impact, sans-serif',
-            ...levelOuterStyles,
-          }}
-        >
-          R{rank}
-        </span>
-        {/* Akira: tricky for archiving the -webkit-text-stroke */}
         <span
           className={classnames(
-            levelCommonClass,
-            'bg-gradient-to-r from-white bg-clip-text',
-            {
-              'to-[#fff2e2]': isBronze,
-              'to-[#e2eeff]': isSilver,
-              'to-[#fff0c8]': isGold,
-            },
+            'absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2',
+            'text-xs font-normal not-italic text-transparent',
           )}
           style={{
             fontFamily: 'Impact, sans-serif',
-            ...levelInnerStyles,
+            ...levelStyles,
           }}
         >
           R{rank}

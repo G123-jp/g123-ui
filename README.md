@@ -3,7 +3,7 @@
 
 Reuseable UI based on [G123 Design System](https://www.figma.com/file/jbFjQ7abHxF8WybpmMBiGn/G123-Design-system) and [Atomic Design](https://atomicdesign.bradfrost.com/)
 
-  <img width="733" alt="image" src="https://github.com/G123-jp/g123-ui/assets/1228449/df2128bd-dbad-48f3-9354-676c906a8bb4">
+  <img width="733" alt="image" src="https://github.com/G123-jp/g123-ui/assets/1228449/b6ad523a-5bb2-4ec1-b5bc-a85c59495a90">
 
 </div>
 
@@ -73,7 +73,7 @@ yarn add @g123jp/g123-ui
 
 - ### build
 
-  > ⛑: **Make sure run build before publish it.**
+  > ⛑: **Make sure to run build before publishing it.**
 
   ```bash
   yarn build

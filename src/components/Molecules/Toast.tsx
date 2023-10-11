@@ -4,11 +4,10 @@ import toast, {
   Toast,
   ToastBar,
   ToastIcon,
-  ToastOptions,
-  ToastType,
   Toaster,
   ValueOrFunction,
 } from 'react-hot-toast';
+import type { ToastOptions, ToastType } from 'react-hot-toast';
 
 import { Icon } from '../Atoms';
 
@@ -53,6 +52,6 @@ const customToast = {
   },
 };
 
-export default Object.assign(customToast, { default: customToast });
-
-export { Toast, ToastBar, ToastIcon, ToastOptions, ToastType, Toaster };
+export { Toast, ToastBar, ToastIcon, Toaster };
+export type { ToastOptions, ToastType };
+export default Object.assign(customToast, { default: customToast.default });

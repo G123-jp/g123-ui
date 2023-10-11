@@ -49,6 +49,7 @@ Default.args = {
   type: ButtonType.default,
   block: false,
   disabled: false,
+  loading: false,
   className: '',
   style: {},
 };
@@ -186,6 +187,11 @@ const SummaryTemplate: Story = () => (
     <div className="flex items-center gap-2">
       <Button>Normal</Button>
       <Button disabled>Disabled</Button>
+      <Button loading>Loading</Button>
+      <Button icon={<ChatOutlined />} loading>
+        Loading with given icon
+      </Button>
+      <Button icon={<ChatOutlined />} loading />
       <Button
         onClick={(): void => {
           toast.success('Behave as Button(default)');

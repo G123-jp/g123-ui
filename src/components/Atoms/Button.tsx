@@ -3,6 +3,8 @@ import classnames from 'classnames';
 import React, { ReactNode, useCallback, useMemo } from 'react';
 import { twMerge } from 'tailwind-merge';
 
+import { LoadingOutlined } from './Icon';
+
 enum HtmlType {
   button = 'button',
   submit = 'submit',
@@ -39,6 +41,7 @@ type Props = {
   type?: Type;
   size?: Size;
   disabled?: boolean;
+  loading?: boolean;
   block?: boolean;
   htmlType?: HtmlType; // React.ButtonHTMLAttributes<HTMLButtonElement>.type
   href?: string;
@@ -48,7 +51,7 @@ type Props = {
   className?: string;
   style?: React.CSSProperties;
   onClick?: (
-    e?: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>,
+    e: React.MouseEvent<HTMLButtonElement | HTMLAnchorElement>,
   ) => void | Promise<void>;
 } & MergedHTMLAttributes;
 
@@ -56,6 +59,7 @@ const Button: React.VFC<Props> = ({
   type = Type.default,
   size = Size.default,
   disabled = false,
+  loading = false,
   block = false,
   htmlType = HtmlType.button,
   href,
@@ -84,6 +88,36 @@ const Button: React.VFC<Props> = ({
   );
 
   const ButtonComponent = href ? 'a' : 'button';
+
+  const DEFAULT_ICON_CLASSNAMES = useMemo(
+    () => ({
+      'scale-[0.67]': size === Size.small,
+      'scale-[0.75]': size === Size.middle || size === Size.default,
+      'scale-100': size === Size.large || size === Size.xLarge,
+    }),
+    [size],
+  );
+
+  const ONLY_ICON_CLASSNAMES = useMemo(
+    () => ({
+      'scale-[0.67]': size === Size.small && isOnlyIcon,
+      'scale-100':
+        (size === Size.middle || size === Size.default) && isOnlyIcon,
+      'scale-[1.8]': size === Size.large && isOnlyIcon,
+      'scale-[2]': size === Size.xLarge && isOnlyIcon,
+    }),
+    [isOnlyIcon, size],
+  );
+
+  const WITH_ICON_CLASSNAMES = useMemo(
+    () => ({
+      'scale-[0.67]': size === Size.small && isWithIcon,
+      'scale-[0.75]':
+        (size === Size.middle || size === Size.default) && isWithIcon,
+      'scale-100': (size === Size.large || size === Size.xLarge) && isWithIcon,
+    }),
+    [isWithIcon, size],
+  );
 
   return (
     <ButtonComponent
@@ -125,7 +159,7 @@ const Button: React.VFC<Props> = ({
               type === Type.secondary || type === Type.default, // Akira: default equals to secondary
 
             // disabled
-            '!text-font-disabled': disabled,
+            '!text-font-disabled': disabled || loading,
           },
 
           // Size
@@ -175,8 +209,9 @@ const Button: React.VFC<Props> = ({
 
           // UX
           {
-            'cursor-pointer': !disabled,
+            'cursor-pointer': !disabled && !loading,
             'cursor-not-allowed': disabled,
+            'cursor-wait': loading,
           },
         ),
         className,
@@ -188,31 +223,42 @@ const Button: React.VFC<Props> = ({
       {...(!disabled && onClick && { onClick: handleClick })}
       {...(style && { style })}
     >
-      {icon && React.isValidElement<{ className: string }>(icon) && (
-        <div>
-          {React.cloneElement(icon, {
-            className: classnames(
-              icon.props.className,
-              {
-                // ONLY icon
-                'scale-[0.67]': size === Size.small && isOnlyIcon,
-                'scale-100':
-                  (size === Size.middle || size === Size.default) && isOnlyIcon,
-                'scale-[1.8]': size === Size.large && isOnlyIcon,
-                'scale-[2]': size === Size.xLarge && isOnlyIcon,
-              },
-              {
-                // WITH icon
-                'scale-[0.67]': size === Size.small && isWithIcon,
-                'scale-[0.75]':
-                  (size === Size.middle || size === Size.default) && isWithIcon,
-                'scale-100':
-                  (size === Size.large || size === Size.xLarge) && isWithIcon,
-              },
-            ),
-          })}
+      {/* Loading Spinner */}
+      {loading && (
+        <div className="animate-spin">
+          <LoadingOutlined
+            className={twMerge(
+              classnames(
+                icon && React.isValidElement<{ className: string }>(icon)
+                  ? icon.props.className
+                  : '',
+                DEFAULT_ICON_CLASSNAMES,
+                ONLY_ICON_CLASSNAMES,
+                WITH_ICON_CLASSNAMES,
+              ),
+            )}
+          />
         </div>
       )}
+
+      {/* Given Icon */}
+      {icon &&
+        React.isValidElement<{ className: string }>(icon) &&
+        !loading && (
+          <div>
+            {React.cloneElement(icon, {
+              className: twMerge(
+                classnames(
+                  icon.props.className,
+                  ONLY_ICON_CLASSNAMES,
+                  WITH_ICON_CLASSNAMES,
+                ),
+              ),
+            })}
+          </div>
+        )}
+
+      {/* Content */}
       {children && <span className="truncate">{children}</span>}
     </ButtonComponent>
   );

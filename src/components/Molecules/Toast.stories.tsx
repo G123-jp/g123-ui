@@ -57,10 +57,28 @@ const Template: StoryFn = () => (
         size={ButtonSize.small}
         type={ButtonType.secondary}
         onClick={(): void => {
-          toast.loading('Loading');
+          const toastId = toast.loading('Loading');
+
+          setTimeout(() => {
+            toast.dismiss(toastId);
+          }, 2000);
         }}
       >
-        Loading
+        Loading & dismiss
+      </Button>
+
+      <Button
+        size={ButtonSize.small}
+        type={ButtonType.secondary}
+        onClick={(): void => {
+          const toastId = toast.loading('Loading');
+
+          setTimeout(() => {
+            toast.remove(toastId);
+          }, 2000);
+        }}
+      >
+        Loading & remove(without animation)
       </Button>
     </div>
     <Toaster />

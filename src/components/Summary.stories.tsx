@@ -243,7 +243,6 @@ const Template: StoryFn = () => (
           Behave as Link
         </Button>
       </div>
-      <Toaster />
     </div>
 
     {/* Badge */}

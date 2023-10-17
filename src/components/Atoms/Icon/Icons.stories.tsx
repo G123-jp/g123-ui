@@ -44,6 +44,7 @@ import {
   StarHalfTwoTone,
   StarTwoTone,
   SwitchOutlined,
+  DisconnectOutlined,
 } from '.';
 
 export default {
@@ -86,6 +87,7 @@ const Template: StoryFn = (args) => (
       <PaymentOutlined />
       <SecurityOutlined />
       <SwitchOutlined />
+      <DisconnectOutlined />
     </div>
 
     <h2>Filled</h2>

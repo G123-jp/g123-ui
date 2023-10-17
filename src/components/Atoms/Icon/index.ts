@@ -3,6 +3,7 @@
 export { default as AccountRecoveryOutlined } from './icons/AccountRecoveryOutlined';
 export { default as ChatOutlined } from './icons/ChatOutlined';
 export { default as CopyOutlined } from './icons/CopyOutlined';
+export { default as DisconnectOutlined } from './icons/DisconnectOutlined';
 export { default as DocumentOutlined } from './icons/DocumentOutlined';
 export { default as DownloadOutlined } from './icons/DownloadOutlined';
 export { default as EarthOutlined } from './icons/EarthOutlined';

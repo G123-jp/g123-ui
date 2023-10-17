@@ -51,6 +51,7 @@ import {
   StarOutlined,
   StarTwoTone,
   SwitchOutlined,
+  DisconnectOutlined,
 } from './Atoms/Icon';
 
 const { ProfileTwoTone, NotificationTwoTone, HomeTwoTone, GameTwoTone } = Icon;
@@ -395,6 +396,7 @@ const Template: StoryFn = () => (
         <PaymentOutlined />
         <SecurityOutlined />
         <SwitchOutlined />
+        <DisconnectOutlined />
       </div>
 
       <div className="flex gap-4 text-neutral-800">

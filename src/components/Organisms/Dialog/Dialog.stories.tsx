@@ -1,6 +1,7 @@
 import { Button, ButtonType } from '@/components/Atoms';
 import { StoryFn, Meta } from '@storybook/react';
 import React from 'react';
+import toast, { Toaster } from 'react-hot-toast';
 
 import Dialog, { dialog, DialogContainer } from '.';
 
@@ -160,6 +161,9 @@ const Template: StoryFn<typeof Dialog> = () => (
           onClick={(): void => {
             dialog.show(`Custom Dialog`, null, null, {
               className: 'bg-brand-primary-base font-bold text-xl',
+              onClose: (): void => {
+                toast.success('Dialog Closed');
+              },
             });
           }}
         >
@@ -179,6 +183,7 @@ const Template: StoryFn<typeof Dialog> = () => (
         </Button>
       </div>
     </div>
+    <Toaster />
   </div>
 );
 

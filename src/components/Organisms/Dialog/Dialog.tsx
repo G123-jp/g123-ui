@@ -42,6 +42,7 @@ export type DialogOption = {
   style?: React.CSSProperties;
   contentClassName?: string;
   contentStyle?: React.CSSProperties;
+  onClose?: () => Promise<void> | void;
 };
 
 type Props = {
@@ -64,6 +65,7 @@ const Dialog = ({
     style,
     contentClassName,
     contentStyle,
+    onClose,
   },
   title,
   buttons,
@@ -79,6 +81,7 @@ const Dialog = ({
     handleBackdropClick: (): void => {
       setDestroying(true);
     },
+
     handleBackdropKeyPress: (e: React.KeyboardEvent): void => {
       e.preventDefault();
 
@@ -86,6 +89,7 @@ const Dialog = ({
         setDestroying(true);
       }
     },
+
     handleButtonClick: (
       e: React.SyntheticEvent,
       callback?: DialogButtonOnClickFunction,
@@ -98,9 +102,12 @@ const Dialog = ({
 
       return actions.destroy();
     },
+
     handleCloseButtonClick: (): void => {
+      onClose && onClose();
       setDestroying(true);
     },
+
     handleDialogAnimationEnd: (): void => {
       if (destroying) {
         setDestroyed(true);

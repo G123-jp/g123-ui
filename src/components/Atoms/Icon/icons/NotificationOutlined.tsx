@@ -1,10 +1,10 @@
 import React from 'react';
 
 import Icon, { IconProps } from '../G123Icon';
-import NotificationSvg from '../svg-images/outlined/notification.svg';
+import SvgImage from '../svg-images/outlined/notification.svg';
 
 const NotificationOutlined: React.VFC<IconProps> = (props) => {
-  return <Icon IconSvg={NotificationSvg} {...props} />;
+  return <Icon IconSvg={SvgImage} {...props} />;
 };
 
 export default NotificationOutlined;

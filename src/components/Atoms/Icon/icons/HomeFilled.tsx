@@ -1,10 +1,10 @@
 import React from 'react';
 
 import Icon, { IconProps } from '../G123Icon';
-import HomeSvg from '../svg-images/filled/home.svg';
+import SvgImage from '../svg-images/filled/home.svg';
 
 const HomeFilled: React.VFC<IconProps> = (props) => {
-  return <Icon IconSvg={HomeSvg} {...props} />;
+  return <Icon IconSvg={SvgImage} {...props} />;
 };
 
 export default HomeFilled;

@@ -1,10 +1,10 @@
 import React from 'react';
 
 import Icon, { IconProps } from '../G123Icon';
-import PaymentSvg from '../svg-images/outlined/payment.svg';
+import SvgImage from '../svg-images/outlined/payment.svg';
 
 const PaymentOutlined: React.VFC<IconProps> = (props) => {
-  return <Icon IconSvg={PaymentSvg} {...props} />;
+  return <Icon IconSvg={SvgImage} {...props} />;
 };
 
 export default PaymentOutlined;

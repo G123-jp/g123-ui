@@ -47,6 +47,8 @@ import {
   StarTwoTone,
   SwitchOutlined,
   DisconnectOutlined,
+  FileFilled,
+  FileTwoTone,
 } from '.';
 
 export default {
@@ -72,6 +74,7 @@ const Template: StoryFn = (args) => (
       <HomeOutlined />
       <NotificationOutlined />
       <ProfileOutlined />
+      <FileOutlined />
       <StarOutlined />
       <StarHalfOutlined />
       <LinkOutlined />
@@ -86,7 +89,6 @@ const Template: StoryFn = (args) => (
       />
       <LoadingOutlined className="animate-spin" />
       <DocumentOutlined />
-      <FileOutlined />
       <PaymentOutlined />
       <SecurityOutlined />
       <SwitchOutlined />
@@ -103,6 +105,7 @@ const Template: StoryFn = (args) => (
       <HomeFilled />
       <NotificationFilled />
       <ProfileFilled />
+      <FileFilled />
       <StarFilled />
       <StarHalfFilled />
     </div>
@@ -117,6 +120,7 @@ const Template: StoryFn = (args) => (
       <HomeTwoTone />
       <NotificationTwoTone />
       <ProfileTwoTone />
+      <FileTwoTone />
       <StarTwoTone />
       <StarHalfTwoTone />
       <LinkTwoTone />

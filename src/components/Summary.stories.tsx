@@ -54,6 +54,8 @@ import {
   DisconnectOutlined,
   LinkOutlined,
   LinkTwoTone,
+  FileTwoTone,
+  FileFilled,
 } from './Atoms/Icon';
 
 const { ProfileTwoTone, NotificationTwoTone, HomeTwoTone, GameTwoTone } = Icon;
@@ -381,6 +383,7 @@ const Template: StoryFn = () => (
         <HomeOutlined />
         <NotificationOutlined />
         <ProfileOutlined />
+        <FileOutlined />
         <StarOutlined />
         <StarHalfOutlined />
         <LinkOutlined />
@@ -395,7 +398,6 @@ const Template: StoryFn = () => (
         />
         <LoadingOutlined className="animate-spin" />
         <DocumentOutlined />
-        <FileOutlined />
         <PaymentOutlined />
         <SecurityOutlined />
         <SwitchOutlined />
@@ -411,6 +413,7 @@ const Template: StoryFn = () => (
         <HomeFilled />
         <NotificationFilled />
         <ProfileFilled />
+        <FileFilled />
         <StarFilled />
         <StarHalfFilled />
       </div>
@@ -424,6 +427,7 @@ const Template: StoryFn = () => (
         <HomeTwoTone />
         <NotificationTwoTone />
         <ProfileTwoTone />
+        <FileTwoTone />
         <StarTwoTone />
         <StarHalfTwoTone />
         <LinkTwoTone />

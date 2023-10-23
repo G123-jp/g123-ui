@@ -4,6 +4,7 @@ import React from 'react';
 import {
   NotificationOutlined,
   HomeOutlined,
+  LinkOutlined,
   GameOutlined,
   ChatOutlined,
   DocumentOutlined,
@@ -23,6 +24,7 @@ import {
   ProfileFilled,
   NotificationTwoTone,
   HomeTwoTone,
+  LinkTwoTone,
   GameTwoTone,
   ChatTwoTone,
   EarthTwoTone,
@@ -72,6 +74,7 @@ const Template: StoryFn = (args) => (
       <ProfileOutlined />
       <StarOutlined />
       <StarHalfOutlined />
+      <LinkOutlined />
       <ChevronUpOutlined />
       <ChevronDownOutlined />
       <ChevronLeftOutlined />
@@ -116,6 +119,7 @@ const Template: StoryFn = (args) => (
       <ProfileTwoTone />
       <StarTwoTone />
       <StarHalfTwoTone />
+      <LinkTwoTone />
     </div>
   </div>
 );

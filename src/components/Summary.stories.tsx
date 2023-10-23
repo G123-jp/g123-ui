@@ -52,6 +52,8 @@ import {
   StarTwoTone,
   SwitchOutlined,
   DisconnectOutlined,
+  LinkOutlined,
+  LinkTwoTone,
 } from './Atoms/Icon';
 
 const { ProfileTwoTone, NotificationTwoTone, HomeTwoTone, GameTwoTone } = Icon;
@@ -381,6 +383,7 @@ const Template: StoryFn = () => (
         <ProfileOutlined />
         <StarOutlined />
         <StarHalfOutlined />
+        <LinkOutlined />
         <ChevronUpOutlined />
         <ChevronDownOutlined />
         <ChevronLeftOutlined />
@@ -423,6 +426,7 @@ const Template: StoryFn = () => (
         <ProfileTwoTone />
         <StarTwoTone />
         <StarHalfTwoTone />
+        <LinkTwoTone />
       </div>
     </div>
 

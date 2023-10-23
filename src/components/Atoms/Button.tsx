@@ -229,12 +229,12 @@ const Button: React.VFC<Props> = ({
           <LoadingOutlined
             className={twMerge(
               classnames(
-                icon && React.isValidElement<{ className: string }>(icon)
-                  ? icon.props.className
-                  : '',
                 DEFAULT_ICON_CLASSNAMES,
                 ONLY_ICON_CLASSNAMES,
                 WITH_ICON_CLASSNAMES,
+                icon && React.isValidElement<{ className: string }>(icon)
+                  ? icon.props.className
+                  : '',
               ),
             )}
           />
@@ -249,9 +249,9 @@ const Button: React.VFC<Props> = ({
             {React.cloneElement(icon, {
               className: twMerge(
                 classnames(
-                  icon.props.className,
                   ONLY_ICON_CLASSNAMES,
                   WITH_ICON_CLASSNAMES,
+                  icon.props.className,
                 ),
               ),
             })}

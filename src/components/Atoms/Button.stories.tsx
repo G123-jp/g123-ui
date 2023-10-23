@@ -130,6 +130,10 @@ const SummaryTemplate: Story = () => (
       {/* Button Size: Only Icon & With Icon & Inline With Icon */}
       <div className="flex flex-col gap-2">
         <div className="flex items-center gap-2">
+          <Button
+            icon={<ChatOutlined className="scale-50" />}
+            size={ButtonSize.small}
+          />
           <Button icon={<ChatOutlined />} size={ButtonSize.small} />
           <Button icon={<ChatOutlined />} size={ButtonSize.middle} />
           <Button icon={<ChatOutlined />} size={ButtonSize.large} />

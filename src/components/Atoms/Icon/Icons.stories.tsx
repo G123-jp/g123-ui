@@ -49,6 +49,7 @@ import {
   DisconnectOutlined,
   FileFilled,
   FileTwoTone,
+  BasketOutlined,
 } from '.';
 
 export default {
@@ -93,6 +94,7 @@ const Template: StoryFn = (args) => (
       <SecurityOutlined />
       <SwitchOutlined />
       <DisconnectOutlined />
+      <BasketOutlined />
     </div>
 
     <h2>Filled</h2>

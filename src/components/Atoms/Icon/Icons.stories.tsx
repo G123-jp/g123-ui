@@ -50,6 +50,7 @@ import {
   FileFilled,
   FileTwoTone,
   BasketOutlined,
+  BindedOutlined,
 } from '.';
 
 export default {
@@ -95,6 +96,7 @@ const Template: StoryFn = (args) => (
       <SwitchOutlined />
       <DisconnectOutlined />
       <BasketOutlined />
+      <BindedOutlined />
     </div>
 
     <h2>Filled</h2>

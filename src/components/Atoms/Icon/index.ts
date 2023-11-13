@@ -26,6 +26,7 @@ export { default as StarHalfOutlined } from './icons/StarHalfOutlined';
 export { default as SecurityOutlined } from './icons/SecurityOutlined';
 export { default as SwitchOutlined } from './icons/SwitchOutlined';
 export { default as BasketOutlined } from './icons/BasketOutlined';
+export { default as BindedOutlined } from './icons/BindedOutlined';
 
 export { default as ChatFilled } from './icons/ChatFilled';
 export { default as CopyFilled } from './icons/CopyFilled';

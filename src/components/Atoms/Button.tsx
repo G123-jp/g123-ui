@@ -130,7 +130,7 @@ const Button: React.VFC<Props> = ({
             // normal
             'border-transparent': true,
             'bg-brand-tertiary-base text-font-overlay': type === Type.primary,
-            'bg-danger text-white': type === Type.danger, // v2.x: TODO in Design System
+            'bg-error-default text-white': type === Type.danger, // v2.x: TODO in Design System
             'bg-transparent text-font-primary': type === Type.text,
             'bg-brand-primary-base text-font-primary': type === Type.highlight,
             'border-2 border-solid border-brand-tertiary-base bg-transparent text-font-primary':
@@ -141,7 +141,7 @@ const Button: React.VFC<Props> = ({
 
             // hover
             'hover:bg-font-secondary': type === Type.primary,
-            // '': type === Type.danger, // v2.x: TODO in Design System
+            'hover:bg-error-disabled': type === Type.danger, // v2.x: TODO in Design System
             'hover:bg-brand-primary-container': type === Type.highlight,
             'hover:text-brand-secondary-secondary': type === Type.link,
             'hover:bg-surface-tertiary':

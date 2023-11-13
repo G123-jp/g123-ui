@@ -42,7 +42,12 @@ const customToast = {
 
   warn: (message: Message, options?: ToastOptions): string => {
     return toast.error(message, {
-      icon: <Icon.ExclamationOutlined className="text-info-default" />,
+      icon: (
+        // FIXME: Akira: occasionally use this trick for avoid icon to be collapsed, maybe fix this in <Icon/> component
+        <div>
+          <Icon.ExclamationOutlined className="text-info-default" />
+        </div>
+      ),
       ...options,
     });
   },

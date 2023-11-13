@@ -105,7 +105,7 @@ const Content: React.VFC<ContentProps> = ({
       <div className="flex h-15 items-center px-xs">
         {isMobile && (
           <div className="absolute inset-x-0 top-2 h-fit">
-            <div className="mx-auto h-1 w-11 rounded-sm bg-[#bfbfbf]/30" />
+            <div className="mx-auto h-1 w-11 rounded-sm bg-nutuarl-5/30" />
           </div>
         )}
         {onGoBack ? (

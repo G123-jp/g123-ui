@@ -57,6 +57,7 @@ import {
   FileTwoTone,
   FileFilled,
   BasketOutlined,
+  BindedOutlined,
 } from './Atoms/Icon';
 
 const { ProfileTwoTone, NotificationTwoTone, HomeTwoTone, GameTwoTone } = Icon;
@@ -404,6 +405,7 @@ const Template: StoryFn = () => (
         <SwitchOutlined />
         <DisconnectOutlined />
         <BasketOutlined />
+        <BindedOutlined />
       </div>
 
       <div className="flex gap-4 text-neutral-800">

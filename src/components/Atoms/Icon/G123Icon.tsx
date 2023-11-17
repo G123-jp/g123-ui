@@ -2,7 +2,9 @@ import React from 'react';
 
 export type IconProps = {
   className?: string;
+  containerClassName?: string;
   style?: React.CSSProperties;
+  containerStyle?: React.CSSProperties;
   width?: number;
   height?: number;
   viewBox?: string;
@@ -18,16 +20,23 @@ const G123Icon: React.VFC<InternalProps> = ({
   height,
   viewBox,
   style,
+  containerStyle,
   className = '',
+  containerClassName = '',
 }) => {
   return (
-    <IconSvg
-      {...(width && { width })}
-      {...(height && { height })}
-      {...(viewBox && { viewBox })}
-      {...(className && { className })}
-      {...(style && { style })}
-    />
+    <div
+      {...(containerClassName && { className: containerClassName })}
+      {...(containerStyle && { style: containerStyle })}
+    >
+      <IconSvg
+        {...(width && { width })}
+        {...(height && { height })}
+        {...(viewBox && { viewBox })}
+        {...(className && { className })}
+        {...(style && { style })}
+      />
+    </div>
   );
 };
 

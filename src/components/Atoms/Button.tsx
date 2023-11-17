@@ -244,19 +244,16 @@ const Button: React.VFC<Props> = ({
       {/* Given Icon */}
       {icon &&
         React.isValidElement<{ className: string }>(icon) &&
-        !loading && (
-          <div>
-            {React.cloneElement(icon, {
-              className: twMerge(
-                classnames(
-                  ONLY_ICON_CLASSNAMES,
-                  WITH_ICON_CLASSNAMES,
-                  icon.props.className,
-                ),
-              ),
-            })}
-          </div>
-        )}
+        !loading &&
+        React.cloneElement(icon, {
+          className: twMerge(
+            classnames(
+              ONLY_ICON_CLASSNAMES,
+              WITH_ICON_CLASSNAMES,
+              icon.props.className,
+            ),
+          ),
+        })}
 
       {/* Content */}
       {children && <span className="truncate">{children}</span>}

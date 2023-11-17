@@ -70,7 +70,7 @@ const Template: StoryFn = (args) => (
     <div className="flex gap-4 text-neutral-800">
       <ChatOutlined {...args} />
       <CopyOutlined className="text-blue-500" />
-      <EarthOutlined className="text-nutuarl-5" />
+      <EarthOutlined className="text-neutral-5" />
       <ExclamationOutlined />
       <GameOutlined />
       <HomeOutlined />

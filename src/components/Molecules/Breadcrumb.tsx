@@ -49,10 +49,10 @@ const Breadcrumb: React.VFC<Props> = ({ style, className = '', items }) => {
                 className={twMerge(
                   classnames(
                     'flex items-center px-1',
-                    'rounded hover:bg-nutuarl-3',
+                    'rounded hover:bg-neutral-3',
                     {
-                      'text-nutuarl-7': !isCurrent,
-                      'text-nutuarl-9': isCurrent,
+                      'text-neutral-7': !isCurrent,
+                      'text-neutral-9': isCurrent,
                     },
                   ),
                   itemClassName,

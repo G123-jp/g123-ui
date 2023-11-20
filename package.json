@@ -14,7 +14,8 @@
   "module": "dist/index.esm.js",
   "types": "dist/types",
   "scripts": {
-    "build": "rollup -c rollup.config.prod.ts",
+    "generate-icons": "node src/components/Atoms/Icon/generateIcons.mjs",
+    "build": "yarn generate-icons && rollup -c rollup.config.prod.ts",
     "dev-build": "rollup -c rollup.config.dev.ts",
     "lint": "tsc --noEmit && eslint \"./**/*.ts\" \"./**/*.tsx\"",
     "fix": "eslint --fix \"./**/*.ts\" \"./**/*.tsx\"",
@@ -45,6 +46,7 @@
     "@typescript-eslint/parser": "^5.51.0",
     "autoprefixer": "^10.4.1",
     "babel-loader": "^9.1.2",
+    "change-case": "^5.2.0",
     "eslint": "^8.1.0",
     "eslint-config-airbnb": "^18.2.1",
     "eslint-config-prettier": "^8.3.0",

@@ -59,6 +59,9 @@ import {
   BasketOutlined,
   BindedOutlined,
 } from './Atoms/Icon';
+import PlayFilled from './Atoms/Icon/icons/PlayFilled';
+import PlayOutlined from './Atoms/Icon/icons/PlayOutlined';
+import PlayTwoTone from './Atoms/Icon/icons/PlayTwoTone';
 
 const { ProfileTwoTone, NotificationTwoTone, HomeTwoTone, GameTwoTone } = Icon;
 export default {
@@ -388,6 +391,7 @@ const Template: StoryFn = () => (
         <FileOutlined />
         <StarOutlined />
         <StarHalfOutlined />
+        <PlayOutlined />
         <LinkOutlined />
         <ChevronUpOutlined />
         <ChevronDownOutlined />
@@ -420,6 +424,7 @@ const Template: StoryFn = () => (
         <FileFilled />
         <StarFilled />
         <StarHalfFilled />
+        <PlayFilled />
       </div>
 
       <div className="flex gap-4 text-neutral-800">
@@ -434,6 +439,7 @@ const Template: StoryFn = () => (
         <FileTwoTone />
         <StarTwoTone />
         <StarHalfTwoTone />
+        <PlayTwoTone />
         <LinkTwoTone />
       </div>
     </div>

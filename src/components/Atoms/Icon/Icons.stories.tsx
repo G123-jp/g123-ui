@@ -1,6 +1,10 @@
 import { StoryFn, Meta } from '@storybook/react';
 import React from 'react';
 
+import PlayFilled from './icons/PlayFilled';
+import PlayOutlined from './icons/PlayOutlined';
+import PlayTwoTone from './icons/PlayTwoTone';
+
 import {
   NotificationOutlined,
   HomeOutlined,
@@ -79,6 +83,7 @@ const Template: StoryFn = (args) => (
       <FileOutlined />
       <StarOutlined />
       <StarHalfOutlined />
+      <PlayOutlined />
       <LinkOutlined />
       <ChevronUpOutlined />
       <ChevronDownOutlined />
@@ -112,6 +117,7 @@ const Template: StoryFn = (args) => (
       <FileFilled />
       <StarFilled />
       <StarHalfFilled />
+      <PlayFilled />
     </div>
 
     <h2>TwoTone</h2>
@@ -127,6 +133,7 @@ const Template: StoryFn = (args) => (
       <FileTwoTone />
       <StarTwoTone />
       <StarHalfTwoTone />
+      <PlayTwoTone />
       <LinkTwoTone />
     </div>
   </div>

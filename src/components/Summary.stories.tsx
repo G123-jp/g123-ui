@@ -58,6 +58,9 @@ import {
   FileFilled,
   BasketOutlined,
   BindedOutlined,
+  PlayFilled,
+  PlayOutlined,
+  PlayTwoTone,
 } from './Atoms/Icon';
 
 const { ProfileTwoTone, NotificationTwoTone, HomeTwoTone, GameTwoTone } = Icon;
@@ -379,7 +382,7 @@ const Template: StoryFn = () => (
       <div className="flex gap-4 text-neutral-800">
         <ChatOutlined className="text-primary" />
         <CopyOutlined className="text-blue-500" />
-        <EarthOutlined className="text-nutuarl-5" />
+        <EarthOutlined className="text-neutral-5" />
         <ExclamationOutlined />
         <GameOutlined />
         <HomeOutlined />
@@ -388,6 +391,7 @@ const Template: StoryFn = () => (
         <FileOutlined />
         <StarOutlined />
         <StarHalfOutlined />
+        <PlayOutlined />
         <LinkOutlined />
         <ChevronUpOutlined />
         <ChevronDownOutlined />
@@ -420,6 +424,7 @@ const Template: StoryFn = () => (
         <FileFilled />
         <StarFilled />
         <StarHalfFilled />
+        <PlayFilled />
       </div>
 
       <div className="flex gap-4 text-neutral-800">
@@ -434,6 +439,7 @@ const Template: StoryFn = () => (
         <FileTwoTone />
         <StarTwoTone />
         <StarHalfTwoTone />
+        <PlayTwoTone />
         <LinkTwoTone />
       </div>
     </div>

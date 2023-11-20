@@ -51,6 +51,9 @@ import {
   FileTwoTone,
   BasketOutlined,
   BindedOutlined,
+  PlayFilled,
+  PlayOutlined,
+  PlayTwoTone,
 } from '.';
 
 export default {
@@ -70,7 +73,7 @@ const Template: StoryFn = (args) => (
     <div className="flex gap-4 text-neutral-800">
       <ChatOutlined {...args} />
       <CopyOutlined className="text-blue-500" />
-      <EarthOutlined className="text-nutuarl-5" />
+      <EarthOutlined className="text-neutral-5" />
       <ExclamationOutlined />
       <GameOutlined />
       <HomeOutlined />
@@ -79,6 +82,7 @@ const Template: StoryFn = (args) => (
       <FileOutlined />
       <StarOutlined />
       <StarHalfOutlined />
+      <PlayOutlined />
       <LinkOutlined />
       <ChevronUpOutlined />
       <ChevronDownOutlined />
@@ -112,6 +116,7 @@ const Template: StoryFn = (args) => (
       <FileFilled />
       <StarFilled />
       <StarHalfFilled />
+      <PlayFilled />
     </div>
 
     <h2>TwoTone</h2>
@@ -127,6 +132,7 @@ const Template: StoryFn = (args) => (
       <FileTwoTone />
       <StarTwoTone />
       <StarHalfTwoTone />
+      <PlayTwoTone />
       <LinkTwoTone />
     </div>
   </div>

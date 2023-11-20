@@ -58,10 +58,10 @@ import {
   FileFilled,
   BasketOutlined,
   BindedOutlined,
+  PlayFilled,
+  PlayOutlined,
+  PlayTwoTone,
 } from './Atoms/Icon';
-import PlayFilled from './Atoms/Icon/icons/PlayFilled';
-import PlayOutlined from './Atoms/Icon/icons/PlayOutlined';
-import PlayTwoTone from './Atoms/Icon/icons/PlayTwoTone';
 
 const { ProfileTwoTone, NotificationTwoTone, HomeTwoTone, GameTwoTone } = Icon;
 export default {

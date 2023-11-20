@@ -1,10 +1,6 @@
 import { StoryFn, Meta } from '@storybook/react';
 import React from 'react';
 
-import PlayFilled from './icons/PlayFilled';
-import PlayOutlined from './icons/PlayOutlined';
-import PlayTwoTone from './icons/PlayTwoTone';
-
 import {
   NotificationOutlined,
   HomeOutlined,
@@ -55,6 +51,9 @@ import {
   FileTwoTone,
   BasketOutlined,
   BindedOutlined,
+  PlayFilled,
+  PlayOutlined,
+  PlayTwoTone,
 } from '.';
 
 export default {

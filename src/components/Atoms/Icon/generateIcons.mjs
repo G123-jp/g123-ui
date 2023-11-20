@@ -16,13 +16,19 @@ const iconCategoriesNameMap = {
 };
 
 const main = () => {
-  iconCategories.forEach((category) => {
+  const iconIndexFilePath = path.join(__dirname, 'index.ts');
+  fs.writeFileSync(iconIndexFilePath, '// G123 Icons:\n');
+
+  iconCategories.forEach((category, idx) => {
     const categoryDir = path.join(svgImagesDir, category);
+    const categoryName = iconCategoriesNameMap[category];
+    fs.appendFileSync(iconIndexFilePath, `// ${categoryName}:\n`);
+
     fs.readdirSync(categoryDir, { withFileTypes: true }).forEach((file) => {
       if (file.isFile() && path.extname(file.name) === '.svg') {
         const svgFileName = path.basename(file.name, '.svg');
         const iconFileName = changeCase.pascalCase(
-          `${svgFileName}-${iconCategoriesNameMap[category]}`,
+          `${svgFileName}-${categoryName}`,
         );
 
         const iconComponentContent = [
@@ -41,8 +47,14 @@ const main = () => {
 
         const iconFilePath = path.join(iconsDir, `${iconFileName}.tsx`);
         fs.writeFileSync(iconFilePath, iconComponentContent);
+
+        const iconComponentInIndexContent = `export { default as ${iconFileName} } from './icons/${iconFileName}';\n`;
+        fs.appendFileSync(iconIndexFilePath, iconComponentInIndexContent);
       }
     });
+
+    idx < iconCategories.length - 1 &&
+      fs.appendFileSync(iconIndexFilePath, '\n');
   });
 };
 

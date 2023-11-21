@@ -22,20 +22,14 @@ const customToast = {
 
   success: (message: Message, options?: ToastOptions): string => {
     return toast.success(message, {
-      iconTheme: {
-        primary: '#61c630', // success-default
-        secondary: 'white',
-      },
+      icon: <Icon.CheckCircleOutlined className="text-success-default" />,
       ...options,
     });
   },
 
   error: (message: Message, options?: ToastOptions): string => {
     return toast.error(message, {
-      iconTheme: {
-        primary: '#f6375a', // error-default
-        secondary: 'white',
-      },
+      icon: <Icon.CloseCircleOutlined className="text-error-default" />,
       ...options,
     });
   },
@@ -48,7 +42,15 @@ const customToast = {
   },
 
   loading: (message: Message, options?: ToastOptions): string => {
-    return toast.loading(message, options);
+    return toast.loading(message, {
+      icon: (
+        <Icon.LoadingOutlined
+          className="scale-75 text-font-secondary"
+          containerClassName="animate-spin"
+        />
+      ),
+      ...options,
+    });
   },
 
   dismiss: (toastId?: string): void => {

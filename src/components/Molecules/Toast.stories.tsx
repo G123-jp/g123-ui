@@ -11,7 +11,7 @@ export default {
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: StoryFn = () => (
-  <div className="h-full w-full">
+  <div className="flex h-full w-full flex-col gap-y-4">
     <div className="flex gap-x-4">
       <Button
         size={ButtonSize.small}
@@ -79,6 +79,44 @@ const Template: StoryFn = () => (
         }}
       >
         Loading & remove(without animation)
+      </Button>
+    </div>
+
+    <div className="flex gap-x-4">
+      <Button
+        size={ButtonSize.small}
+        onClick={(): void => {
+          toast.default('Just A Toast', {
+            extraContent: (
+              <div className="h-full w-full border border-solid border-brand-primary-secondary bg-brand-primary-bg">
+                Default Extra Content
+              </div>
+            ),
+          });
+        }}
+      >
+        Defaul(with extra)
+      </Button>
+
+      <Button
+        size={ButtonSize.small}
+        type={ButtonType.highlight}
+        onClick={(): void => {
+          toast.success('Success', {
+            extraContent: (
+              <div className="h-full w-full rounded-md border border-solid border-brand-primary-secondary bg-brand-primary-bg p-4">
+                <p>Success Extra Content</p>
+                <p>Success Extra Content</p>
+                <p>Success Extra Content</p>
+                <p>Success Extra Content</p>
+                <p>Success Extra Content</p>
+              </div>
+            ),
+            duration: 999999999,
+          });
+        }}
+      >
+        Success(with extra)
       </Button>
     </div>
     <Toaster />

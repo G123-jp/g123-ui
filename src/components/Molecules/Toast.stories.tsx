@@ -1,4 +1,5 @@
 import { StoryFn, Meta } from '@storybook/react';
+import classnames from 'classnames';
 import React from 'react';
 
 import { Button, ButtonSize, ButtonType } from '../Atoms';
@@ -88,7 +89,13 @@ const Template: StoryFn = () => (
         onClick={(): void => {
           toast.default('Just A Toast', {
             extraContent: (
-              <div className="h-full w-full border border-solid border-brand-primary-secondary bg-brand-primary-bg">
+              <div
+                className={classnames(
+                  'h-full w-full',
+                  'border border-solid border-brand-primary-secondary',
+                  'bg-brand-primary-bg',
+                )}
+              >
                 Default Extra Content
               </div>
             ),
@@ -104,7 +111,14 @@ const Template: StoryFn = () => (
         onClick={(): void => {
           toast.success('Success', {
             extraContent: (
-              <div className="h-full w-full rounded-md border border-solid border-brand-primary-secondary bg-brand-primary-bg p-4">
+              <div
+                className={classnames(
+                  'h-full w-full p-4',
+                  'rounded-md border border-dashed border-brand-primary-secondary',
+                  'bg-brand-primary-bg',
+                  'text-brand-primary-secondary',
+                )}
+              >
                 <p>Success Extra Content</p>
                 <p>Success Extra Content</p>
                 <p>Success Extra Content</p>
@@ -112,11 +126,68 @@ const Template: StoryFn = () => (
                 <p>Success Extra Content</p>
               </div>
             ),
-            duration: 999999999,
+            duration: 3000,
           });
         }}
       >
-        Success(with extra)
+        Success(with extra content)
+      </Button>
+
+      <Button
+        size={ButtonSize.small}
+        type={ButtonType.danger}
+        onClick={(): void => {
+          toast.error('Error', {
+            extraContent: (
+              <div
+                className={classnames(
+                  'h-full w-full p-4',
+                  'rounded-md border border-dashed border-error-disabled',
+                  'text-error-default',
+                  'bg-error-bg',
+                )}
+              >
+                <p>Error Extra Content</p>
+                <p>Error Extra Content</p>
+                <p>Error Extra Content</p>
+                <p>Error Extra Content</p>
+                <p>Error Extra Content</p>
+              </div>
+            ),
+            duration: 3000,
+          });
+        }}
+      >
+        Error(with extra content)
+      </Button>
+
+      <Button
+        className="border-info-default text-info-default"
+        size={ButtonSize.small}
+        type={ButtonType.stroke}
+        onClick={(): void => {
+          toast.warn('Warning', {
+            extraContent: (
+              <div
+                className={classnames(
+                  'h-full w-full p-4',
+                  'rounded-md border border-dashed border-info-disabled',
+                  'text-info-default',
+                  'bg-info-bg',
+                )}
+              >
+                <p>Warning Extra Content</p>
+                <p>Warning Extra Content</p>
+                <p>Warning Extra Content</p>
+                <p>Warning Extra Content</p>
+                <p>Warning Extra Content</p>
+              </div>
+            ),
+            duration: 3000,
+          });
+        }}
+      >
+        Warning(with extra content)
       </Button>
     </div>
     <Toaster />

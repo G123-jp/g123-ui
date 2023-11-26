@@ -135,6 +135,7 @@ const triggerExpandableToast = ({
       // Akira: hack the padding of toast, to offset the maring of its child
       className: '!px-0 !py-1.5',
       ...originalOptions,
+      duration: Infinity,
     },
   );
 };

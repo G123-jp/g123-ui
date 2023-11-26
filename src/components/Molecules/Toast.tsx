@@ -69,7 +69,6 @@ const ExpandableToast: React.VFC<ExpandableToastProps> = ({
         'cursor-pointer': !expanded,
       })}
       role="button"
-      // style={{ minWidth: '18.5rem', maxWidth: '24rem' }}
       tabIndex={0}
       onClick={hanldeExpand}
     >
@@ -133,7 +132,7 @@ const triggerExpandableToast = ({
     ),
     {
       // Akira: hack the padding of toast, to offset the maring of its child
-      className: '!px-0 !py-1.5',
+      className: '!py-2.5 !px-1.5',
       ...originalOptions,
       duration: Infinity,
     },
@@ -152,7 +151,7 @@ const customToast = {
           extraContent,
           originalOptions: options,
         })
-      : toast(message, options);
+      : toast(message, { className: '!py-3 !px-1.5', ...options });
   },
 
   success: (message: Message, options?: ToastOptions): string => {
@@ -168,6 +167,7 @@ const customToast = {
         })
       : toast.success(message, {
           icon,
+          className: '!py-3 !px-4',
           ...options,
         });
   },
@@ -185,6 +185,7 @@ const customToast = {
         })
       : toast.error(message, {
           icon,
+          className: '!py-3 !px-4',
           ...options,
         });
   },
@@ -202,6 +203,7 @@ const customToast = {
         })
       : toast.error(message, {
           icon,
+          className: '!py-3 !px-4',
           ...options,
         });
   },
@@ -224,6 +226,7 @@ const customToast = {
         })
       : toast.loading(message, {
           icon,
+          className: '!py-3 !px-4',
           ...options,
         });
   },
@@ -245,7 +248,10 @@ const customToast = {
     },
     options?: ToastOptions,
   ): Promise<unknown> => {
-    return toast.promise(promise, msgs, options);
+    return toast.promise(promise, msgs, {
+      className: '!py-3 !px-4',
+      ...options,
+    });
   },
 };
 

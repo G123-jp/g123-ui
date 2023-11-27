@@ -187,11 +187,10 @@ const Button: React.VFC<Props> = ({
 
             // icon only
             'rounded-full': isOnlyIcon,
-            // '!p-xxs': size === Size.small && isOnlyIcon,
-            '!p-xs':
+            'p-xs':
               (size === Size.middle || size === Size.default) && isOnlyIcon,
-            '!p-5': size === Size.large && isOnlyIcon,
-            '!p-6': size === Size.xLarge && isOnlyIcon,
+            'p-5': size === Size.large && isOnlyIcon,
+            'p-6': size === Size.xLarge && isOnlyIcon,
           },
 
           // Font

@@ -1,4 +1,5 @@
 import { StoryFn, Meta } from '@storybook/react';
+import classnames from 'classnames';
 import React from 'react';
 
 import { Button, ButtonSize, ButtonType } from '../Atoms';
@@ -11,7 +12,7 @@ export default {
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: StoryFn = () => (
-  <div className="h-full w-full">
+  <div className="flex h-full w-full flex-col gap-y-4">
     <div className="flex gap-x-4">
       <Button
         size={ButtonSize.small}
@@ -79,6 +80,114 @@ const Template: StoryFn = () => (
         }}
       >
         Loading & remove(without animation)
+      </Button>
+    </div>
+
+    <div className="flex gap-x-4">
+      <Button
+        size={ButtonSize.small}
+        onClick={(): void => {
+          toast.default('Just A Toast', {
+            extraContent: (
+              <div
+                className={classnames(
+                  'h-full w-full',
+                  'border border-solid border-brand-primary-secondary',
+                  'bg-brand-primary-bg',
+                )}
+              >
+                Default Extra Content
+              </div>
+            ),
+          });
+        }}
+      >
+        Defaul(with extra)
+      </Button>
+
+      <Button
+        size={ButtonSize.small}
+        type={ButtonType.highlight}
+        onClick={(): void => {
+          toast.success('Success', {
+            extraContent: (
+              <div
+                className={classnames(
+                  'h-full w-full p-4',
+                  'rounded-md border border-dashed border-brand-primary-secondary',
+                  'bg-brand-primary-bg',
+                  'text-brand-primary-secondary',
+                )}
+              >
+                <p>Success Extra Content</p>
+                <p>Success Extra Content</p>
+                <p>Success Extra Content</p>
+                <p>Success Extra Content</p>
+                <p>Success Extra Content</p>
+              </div>
+            ),
+            duration: 3000,
+          });
+        }}
+      >
+        Success(with extra content)
+      </Button>
+
+      <Button
+        size={ButtonSize.small}
+        type={ButtonType.danger}
+        onClick={(): void => {
+          toast.error('Error', {
+            extraContent: (
+              <div
+                className={classnames(
+                  'h-full w-full p-4',
+                  'rounded-md border border-dashed border-error-disabled',
+                  'text-error-default',
+                  'bg-error-bg',
+                )}
+              >
+                <p>Error Extra Content</p>
+                <p>Error Extra Content</p>
+                <p>Error Extra Content</p>
+                <p>Error Extra Content</p>
+                <p>Error Extra Content</p>
+              </div>
+            ),
+            duration: 3000,
+          });
+        }}
+      >
+        Error(with extra content)
+      </Button>
+
+      <Button
+        className="border-info-default text-info-default"
+        size={ButtonSize.small}
+        type={ButtonType.stroke}
+        onClick={(): void => {
+          toast.warn('Warning', {
+            extraContent: (
+              <div
+                className={classnames(
+                  'h-full w-full p-4',
+                  'rounded-md border border-dashed border-info-disabled',
+                  'text-info-default',
+                  'bg-info-bg',
+                )}
+              >
+                <p>Warning Extra Content</p>
+                <p>Warning Extra Content</p>
+                <p>Warning Extra Content</p>
+                <p>Warning Extra Content</p>
+                <p>Warning Extra Content</p>
+              </div>
+            ),
+            duration: 3000,
+          });
+        }}
+      >
+        Warning(with extra content)
       </Button>
     </div>
     <Toaster />

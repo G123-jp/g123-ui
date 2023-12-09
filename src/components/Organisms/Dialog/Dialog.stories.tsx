@@ -1,7 +1,7 @@
 import { Button, ButtonType } from '@/components/Atoms';
+import toast, { Toaster } from '@/components/Molecules/Toast';
 import { StoryFn, Meta } from '@storybook/react';
 import React from 'react';
-import toast, { Toaster } from 'react-hot-toast';
 
 import Dialog, { dialog, DialogContainer } from '.';
 

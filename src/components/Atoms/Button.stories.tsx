@@ -1,11 +1,12 @@
 import { StoryFn, Meta } from '@storybook/react';
 import React from 'react';
-import toast, { Toaster } from 'react-hot-toast';
+
+import toast, { Toaster } from '../Molecules/Toast';
 
 import Button from './Button';
 import { ChatOutlined } from './Icon';
 
-import { ButtonSize, ButtonType } from '.';
+import { ButtonSize, ButtonType } from './index';
 
 export default {
   title: 'Atoms/Button',

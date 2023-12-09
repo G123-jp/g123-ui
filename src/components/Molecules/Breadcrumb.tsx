@@ -1,6 +1,8 @@
-import classnames from 'classnames';
+'use client';
+
+import classnames from '@/utils/classnames';
+import { twMerge } from '@/utils/tailwind-merge';
 import React, { ReactElement, cloneElement, isValidElement } from 'react';
-import { twMerge } from 'tailwind-merge';
 
 import { Icon } from '../Atoms';
 

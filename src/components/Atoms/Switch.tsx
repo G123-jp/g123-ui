@@ -1,4 +1,6 @@
-import classnames from 'classnames';
+'use client';
+
+import classnames from '@/utils/classnames';
 import React, { useCallback } from 'react';
 
 type Props = {

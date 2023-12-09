@@ -54,7 +54,7 @@ import {
   PlayFilled,
   PlayOutlined,
   PlayTwoTone,
-} from '.';
+} from './index';
 
 export default {
   title: 'Atoms/Icons',

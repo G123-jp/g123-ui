@@ -1,8 +1,10 @@
+'use client';
+
 import { Button, ButtonType } from '@/components/Atoms';
 import { ChevronLeftOutlined, CloseOutlined } from '@/components/Atoms/Icon';
-import classnames from 'classnames';
+import classnames from '@/utils/classnames';
+import { twMerge } from '@/utils/tailwind-merge';
 import React, { ReactNode, useEffect, useState } from 'react';
-import { twMerge } from 'tailwind-merge';
 
 type MaskProps = {
   children: ReactNode;

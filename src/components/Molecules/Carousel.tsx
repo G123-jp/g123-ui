@@ -1,5 +1,7 @@
+'use client';
+
+import { twMerge } from '@/utils/tailwind-merge';
 import React from 'react';
-import { twMerge } from 'tailwind-merge';
 
 type CarouselItemProps = {
   className?: string;

@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useMemo } from 'react';
 
 import LogoSvg from './images/G123_logo.svg';

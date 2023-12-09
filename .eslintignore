@@ -1,2 +1,10 @@
 dist
 rollup.config.*.ts
+src/utils/tailwind-merge/lib/*.ts
+
+src/lib/goober/*.js
+
+src/lib/react-hot-toast/*.ts
+src/lib/react-hot-toast/components/*.ts
+src/lib/react-hot-toast/components/*.tsx
+src/lib/react-hot-toast/core/*.ts

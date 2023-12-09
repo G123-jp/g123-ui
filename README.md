@@ -39,12 +39,13 @@ yarn add @g123jp/g123-ui
   ```typescript
   import { g123TailwindPresets } from '@g123jp/g123-ui';
 
-  const TailindConfig = {
+  const TailwindConfig = {
     // use g123-ui's presets as default
     presets: [g123TailwindPresets],
     content: [
       // ... put your content here
-      './node_modules/@g123jp/g123-ui/dist/*.js',
+      './node_modules/@g123jp/g123-ui/dist/components/**/*.js',
+      './node_modules/@g123jp/g123-ui/dist/utils/**/*.js',
     ],
     // ... your other configs
   };

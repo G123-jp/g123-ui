@@ -3,8 +3,6 @@ import toast, { Toaster } from '@/components/Molecules/Toast';
 import { StoryFn, Meta } from '@storybook/react';
 import React from 'react';
 
-import toast, { Toaster } from '../../Molecules/Toast';
-
 import Dialog, { dialog, DialogContainer } from './index';
 
 export default {

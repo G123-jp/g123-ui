@@ -4,10 +4,7 @@
 import { Logo, Button, ButtonType } from '@/components/Atoms';
 import { CloseOutlined } from '@/components/Atoms/Icon';
 import classnames from '@/utils/classnames';
-<<<<<<< HEAD
 import { twMerge } from '@/utils/tailwind-merge';
-=======
->>>>>>> origin/develop
 import React, { ReactNode } from 'react';
 
 import IconExclamation from './icons/exclamation.svg';

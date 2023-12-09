@@ -1,8 +1,6 @@
 'use client';
 
 import { Button, ButtonType, Icon } from '@/components/Atoms';
-import classnames from '@/utils/classnames';
-import React, { useCallback, useEffect, useRef, useState } from 'react';
 import toast, {
   Renderable,
   Toast,
@@ -15,6 +13,8 @@ import type {
   ToastOptions as RawToastOptions,
   ToastType,
 } from '@/lib/react-hot-toast';
+import classnames from '@/utils/classnames';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 
 type Message = ValueOrFunction<Renderable, Toast>;
 

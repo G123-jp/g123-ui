@@ -1,12 +1,7 @@
-<<<<<<< HEAD
 'use client';
 
 import classnames from '@/utils/classnames';
 import { twMerge } from '@/utils/tailwind-merge';
-=======
-/* eslint-disable react/button-has-type */
-import classnames from '@/utils/classnames';
->>>>>>> origin/develop
 import React, { ReactNode, useCallback, useMemo } from 'react';
 
 import { LoadingOutlined } from './Icon';

@@ -1,4 +1,4 @@
-import classnames from 'classnames';
+import classnames from '@/utils/classnames';
 import React, { ReactElement, cloneElement, isValidElement } from 'react';
 import { twMerge } from 'tailwind-merge';
 

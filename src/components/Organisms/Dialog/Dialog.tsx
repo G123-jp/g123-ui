@@ -1,7 +1,7 @@
 // FIXME: Akira: Legacy of Edward
 import { Logo, Button, ButtonType } from '@/components/Atoms';
 import { CloseOutlined } from '@/components/Atoms/Icon';
-import classnames from 'classnames';
+import classnames from '@/utils/classnames';
 import React, { ReactNode } from 'react';
 import { twMerge } from 'tailwind-merge';
 

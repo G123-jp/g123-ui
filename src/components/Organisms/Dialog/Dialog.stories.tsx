@@ -1,9 +1,10 @@
 import { Button, ButtonType } from '@/components/Atoms';
 import { StoryFn, Meta } from '@storybook/react';
 import React from 'react';
-import toast, { Toaster } from 'react-hot-toast';
 
-import Dialog, { dialog, DialogContainer } from '.';
+import toast, { Toaster } from '../../Molecules/Toast';
+
+import Dialog, { dialog, DialogContainer } from './index';
 
 export default {
   title: 'Organisms/Dialog',

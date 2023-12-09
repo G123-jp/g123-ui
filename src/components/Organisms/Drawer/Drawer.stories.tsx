@@ -1,9 +1,9 @@
+import classnames from '@/utils/classnames';
 import { useArgs } from '@storybook/client-api';
 import { StoryFn, Meta } from '@storybook/react';
-import classnames from 'classnames';
 import React from 'react';
 
-import Drawer from '.';
+import Drawer from './index';
 
 export default {
   title: 'Organisms/Drawer',

@@ -1,5 +1,5 @@
 /* eslint-disable react/button-has-type */
-import classnames from 'classnames';
+import classnames from '@/utils/classnames';
 import React, { ReactNode, useCallback, useMemo } from 'react';
 import { twMerge } from 'tailwind-merge';
 

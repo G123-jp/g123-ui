@@ -10,16 +10,14 @@ export default {
   input: 'src/index.ts',
   output: [
     {
-      file: pkg.main,
-      format: 'cjs',
-    },
-    {
-      file: pkg.module,
+      dir: 'dist',
       format: 'es',
+      preserveModules: true,
+      preserveModulesRoot: 'src',
     },
   ],
   onwarn(warning, warn) {
-    // Akira: ignore warning caused by 'use client' in react-hot-toast@2.4.1
+    // Akira: ignore warning caused by 'use client'
     // ref: https://github.com/TanStack/query/issues/5175#issuecomment-1482196558
     if (warning.code === 'MODULE_LEVEL_DIRECTIVE') {
       return;

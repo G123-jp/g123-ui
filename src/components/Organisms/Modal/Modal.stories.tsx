@@ -2,7 +2,7 @@ import { Logo, Avatar } from '@/components/Atoms';
 import { StoryFn, Meta } from '@storybook/react';
 import React from 'react';
 
-import Modal from '.';
+import Modal from './index';
 
 export default {
   title: 'Organisms/Modal',

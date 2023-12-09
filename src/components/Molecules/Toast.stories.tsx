@@ -1,5 +1,5 @@
+import classnames from '@/utils/classnames';
 import { StoryFn, Meta } from '@storybook/react';
-import classnames from 'classnames';
 import React from 'react';
 
 import { Button, ButtonSize, ButtonType } from '../Atoms';

@@ -1,10 +1,10 @@
 import { StoryFn, Meta } from '@storybook/react';
 import React from 'react';
-import toast, { Toaster } from 'react-hot-toast';
 
 import { Button, ButtonType } from '../Atoms';
 
 import Breadcrumb from './Breadcrumb';
+import toast, { Toaster } from './Toast';
 
 export default {
   title: 'Molecules/Breadcrumb',

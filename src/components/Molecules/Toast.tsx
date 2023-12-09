@@ -1,5 +1,5 @@
 import { Button, ButtonType, Icon } from '@/components/Atoms';
-import classnames from 'classnames';
+import classnames from '@/utils/classnames';
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import toast, {
   Renderable,

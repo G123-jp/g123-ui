@@ -1,4 +1,4 @@
-import classnames from 'classnames';
+import classnames from '@/utils/classnames';
 import React from 'react';
 
 type Props = {

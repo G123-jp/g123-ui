@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 'use client';
 
+=======
+>>>>>>> origin/develop
 import classnames from '@/utils/classnames';
 import React, { useCallback } from 'react';
 

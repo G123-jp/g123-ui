@@ -3,7 +3,10 @@
 import { Button, ButtonType } from '@/components/Atoms';
 import { ChevronLeftOutlined, CloseOutlined } from '@/components/Atoms/Icon';
 import classnames from '@/utils/classnames';
+<<<<<<< HEAD
 import { twMerge } from '@/utils/tailwind-merge';
+=======
+>>>>>>> origin/develop
 import React, { ReactNode, useEffect, useState } from 'react';
 
 type MaskProps = {

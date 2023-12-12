@@ -1,4 +1,6 @@
+import classnames from '@/utils/classnames';
 import React, { ReactNode, useEffect, useState } from 'react';
+import { twMerge } from 'tailwind-merge';
 
 type WrapperProps = {
   children: ReactNode;
@@ -18,9 +20,14 @@ const Wrapper: React.VFC<WrapperProps> = ({ isOpen, children }) => {
 
   return (
     <div
-      className={`block w-full transition-all duration-300 ease-out ${
-        drawerOpen ? 'h-full' : 'h-0'
-      }`}
+      className={classnames(
+        'block w-full',
+        'transition-all duration-300 ease-out',
+        {
+          'h-full': drawerOpen,
+          'h-0': !drawerOpen,
+        },
+      )}
     >
       {children}
     </div>
@@ -41,22 +48,16 @@ const Content: React.VFC<ContentProps> = ({
   return (
     <div
       aria-hidden="true"
-      className={`
-        fixed
-        inset-x-0
-        -bottom-3
-        z-50
-        box-border
-        block
-        w-full
-        animate-slide-in-bottom
-        overflow-hidden
-        rounded-b-none
-        rounded-t-xl
-        bg-white
-        ${className}
-      `}
-      style={{ height: '38rem', ...(style && { style }) }}
+      className={twMerge(
+        classnames(
+          'fixed inset-x-0 -bottom-3 z-50',
+          'box-border rounded-b-none rounded-t-xl bg-white',
+          'block h-[38rem] w-full overflow-hidden',
+          'animate-slide-in-bottom',
+        ),
+        className,
+      )}
+      {...(style && { style })}
       onClick={(e: React.MouseEvent): void => {
         e.preventDefault();
         e.stopPropagation();

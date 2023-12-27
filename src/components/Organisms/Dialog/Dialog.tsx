@@ -1,4 +1,4 @@
-// FIXME: Akira: Legacy of Edward
+// FIXME(Akira): Legacy of Edward
 import { Logo, Button, ButtonType } from '@/components/Atoms';
 import { CloseOutlined } from '@/components/Atoms/Icon';
 import classnames from '@/utils/classnames';
@@ -17,8 +17,8 @@ export type DialogButtonOnClickFunction = (
   actions: DialogAction,
 ) => Promise<void> | void;
 
-// FIXME: Akira: Legacy of Edward
-// TODO: Akira: use G123 Button
+// FIXME(Akira): Legacy of Edward
+// TODO(Akira): use G123 Button
 export type DialogButton = {
   color: 'primary' | 'secondary';
   onClick?: DialogButtonOnClickFunction;
@@ -34,7 +34,7 @@ export type DialogOption = {
   };
   icon?: 'exclamation' | 'tick' | false;
   logo?: boolean;
-  // TODO: Akira: size implementation
+  // TODO(Akira): size implementation
   size?: 'xs' | 'sm' | 'md' | 'lg' | 'xl';
   maskClassName?: string;
   maskStyle?: React.CSSProperties;

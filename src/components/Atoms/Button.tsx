@@ -150,7 +150,7 @@ const Button: React.VFC<Props> = ({
               type === Type.default, // Akira: default equals to secondary
 
             // active
-            // FIXME: Akira: Missing this color variable
+            // FIXME(Akira): Missing this color variable
             'active:bg-[#595959]': type === Type.primary,
             // '': type === Type.danger, // v2.x: TODO in Design System
             'active:bg-brand-primary-secondary': type === Type.highlight,

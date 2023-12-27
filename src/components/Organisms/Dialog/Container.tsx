@@ -1,4 +1,4 @@
-// FIXME: Akira: Legacy of Edward
+// FIXME(Akira): Legacy of Edward
 import React, { useEffect, useState } from 'react';
 
 import Dialog from './Dialog';

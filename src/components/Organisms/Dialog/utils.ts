@@ -1,4 +1,4 @@
-// FIXME: Akira: Legacy of Edward
+// FIXME(Akira): Legacy of Edward
 import type {
   DialogButton,
   DialogMessage,
@@ -57,7 +57,7 @@ const dialog = {
     });
   },
 
-  // FIXME: Akira: simplify this ugly props definition!
+  // FIXME(Akira): simplify this ugly props definition!
   show(
     message: DialogMessage,
     title?: DialogTitle,

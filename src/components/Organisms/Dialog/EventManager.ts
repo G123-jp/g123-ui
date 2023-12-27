@@ -1,4 +1,4 @@
-// FIXME: Akira: Legacy of Edward
+// FIXME(Akira): Legacy of Edward
 interface EventManagerInterface {
   clear(): void;
   events: Map<string, FunctionConstructor[]>;

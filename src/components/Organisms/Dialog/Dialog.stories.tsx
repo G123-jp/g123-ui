@@ -16,7 +16,7 @@ const Template: StoryFn<typeof Dialog> = () => (
   <div className="flex h-full w-full flex-col gap-y-8">
     <DialogContainer />
 
-    {/* TODO: Akira: size implementation  */}
+    {/* TODO(Akira): size implementation  */}
     {/* <div className="flex h-full w-full items-center gap-2">
       <h2>Size:</h2>
       <Button

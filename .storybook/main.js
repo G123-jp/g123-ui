@@ -24,7 +24,7 @@ module.exports = {
       return rule;
     });
 
-    // TODO: Akira: Use SVGR and asset SVG in the same project
+    // TODO(Akira): Use SVGR and asset SVG in the same project
     // ref: https://react-svgr.com/docs/webpack/#use-svgr-and-asset-svg-in-the-same-project
     // config.module.rules.push({
     //   type: 'asset',

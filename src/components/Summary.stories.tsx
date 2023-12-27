@@ -81,7 +81,7 @@ const Template: StoryFn = () => (
       <Avatar size="small" type="cs" />
     </div>
 
-    <div className="h-full w-full">
+    <div className="size-full">
       <Carousel className="w-96 gap-x-4 py-4">
         <Carousel.Item className="rounded bg-primary">
           <h1 className="flex h-20 w-60 items-center justify-center gap-x-2">

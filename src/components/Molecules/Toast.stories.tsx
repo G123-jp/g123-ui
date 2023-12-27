@@ -12,7 +12,7 @@ export default {
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: StoryFn = () => (
-  <div className="flex h-full w-full flex-col gap-y-4">
+  <div className="flex size-full flex-col gap-y-4">
     <div className="flex gap-x-4">
       <Button
         size={ButtonSize.small}
@@ -91,7 +91,7 @@ const Template: StoryFn = () => (
             extraContent: (
               <div
                 className={classnames(
-                  'h-full w-full',
+                  'size-full',
                   'border border-solid border-brand-primary-secondary',
                   'bg-brand-primary-bg',
                 )}
@@ -113,7 +113,7 @@ const Template: StoryFn = () => (
             extraContent: (
               <div
                 className={classnames(
-                  'h-full w-full p-4',
+                  'size-full p-4',
                   'rounded-md border border-dashed border-brand-primary-secondary',
                   'bg-brand-primary-bg',
                   'text-brand-primary-secondary',
@@ -141,7 +141,7 @@ const Template: StoryFn = () => (
             extraContent: (
               <div
                 className={classnames(
-                  'h-full w-full p-4',
+                  'size-full p-4',
                   'rounded-md border border-dashed border-error-disabled',
                   'text-error-default',
                   'bg-error-bg',
@@ -170,7 +170,7 @@ const Template: StoryFn = () => (
             extraContent: (
               <div
                 className={classnames(
-                  'h-full w-full p-4',
+                  'size-full p-4',
                   'rounded-md border border-dashed border-info-disabled',
                   'text-info-default',
                   'bg-info-bg',

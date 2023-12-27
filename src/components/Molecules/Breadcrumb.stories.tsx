@@ -14,7 +14,7 @@ export default {
 type Story = StoryFn<typeof Breadcrumb>;
 
 const BreadcrumbWithDefaultItems: Story = () => (
-  <div className="h-full w-full">
+  <div className="size-full">
     <Breadcrumb
       items={[
         { title: 'g123-ui', href: 'https://github.com/G123-jp/g123-ui' },
@@ -43,7 +43,7 @@ export const Default = BreadcrumbWithDefaultItems.bind({});
 
 const BreadcrumbWithReactElementItems: Story = () => {
   return (
-    <div className="h-full w-full">
+    <div className="size-full">
       <Breadcrumb
         items={[
           <div key="g123-ui">Element g123-ui</div>,

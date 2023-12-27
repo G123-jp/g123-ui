@@ -13,7 +13,7 @@ type Story = StoryFn<typeof Carousel>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: Story = () => (
-  <div className="h-full w-full">
+  <div className="size-full">
     <Carousel className="w-72 gap-x-4 py-4">
       <Carousel.Item className="rounded bg-primary">
         <h1 className="flex h-20 w-60 items-center justify-center gap-x-2">
@@ -40,7 +40,7 @@ Default.args = {};
 
 const CarouselWithScrollbar: Story = () => {
   return (
-    <div className="h-full w-full">
+    <div className="size-full">
       <Carousel
         className="w-72 gap-x-4 py-4"
         scrollbarClassName="max-[1024px]:hidden-scrollbar"
@@ -75,7 +75,7 @@ const CarouselWithNavigation: Story = () => {
     element?.scrollBy(width * num, 0);
   }
   return (
-    <div className="h-full w-full">
+    <div className="size-full">
       <Carousel className="w-72 gap-x-4 py-4" id={ID}>
         <Carousel.Item className="rounded bg-primary">
           <h1 className="flex h-20 w-60 items-center justify-center gap-x-2">

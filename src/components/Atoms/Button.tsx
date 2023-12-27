@@ -167,7 +167,7 @@ const Button: React.VFC<Props> = ({
             'w-fit rounded-full px-sm': !isInline && !isOnlyIcon,
             'h-6 min-w-[4.25rem] gap-x-0':
               size === Size.small && !isInline && !isOnlyIcon,
-            'h-10 min-w-[5rem]':
+            'h-10 min-w-20':
               (size === Size.middle || size === Size.default) &&
               !isInline &&
               !isOnlyIcon,

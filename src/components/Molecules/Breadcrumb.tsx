@@ -66,7 +66,7 @@ const Breadcrumb: React.VFC<Props> = ({ style, className = '', items }) => {
               {!isCurrent && (
                 <Icon.ChevronRightOutlined
                   className="relative -left-1 top-[-5px] scale-50"
-                  containerClassName="w-3 h-3"
+                  containerClassName="size-3"
                 />
               )}
             </>
@@ -84,7 +84,7 @@ const Breadcrumb: React.VFC<Props> = ({ style, className = '', items }) => {
             {!isCurrent && (
               <Icon.ChevronRightOutlined
                 className="relative -left-1 top-[-5px] scale-50"
-                containerClassName="h-3 w-3"
+                containerClassName="size-3"
               />
             )}
           </>

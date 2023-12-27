@@ -115,7 +115,7 @@ const Content: React.VFC<ContentProps> = ({
           />
         ) : (
           // Akira: GoBackButton placeholder
-          <div className="h-10 w-10" />
+          <div className="size-10" />
         )}
         <h2 className="flex flex-1 justify-center text-base font-semibold">
           {title}

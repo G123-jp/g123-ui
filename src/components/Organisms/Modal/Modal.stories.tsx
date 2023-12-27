@@ -16,7 +16,7 @@ export default {
 // use Drawer instead for general purpose
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: StoryFn<typeof Modal> = (args) => (
-  <div className="h-full w-full">
+  <div className="size-full">
     <Modal {...args}>
       <Logo />
       <Avatar />

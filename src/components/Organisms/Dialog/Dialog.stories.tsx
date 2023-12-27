@@ -13,11 +13,11 @@ export default {
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: StoryFn<typeof Dialog> = () => (
-  <div className="flex h-full w-full flex-col gap-y-8">
+  <div className="flex size-full flex-col gap-y-8">
     <DialogContainer />
 
     {/* TODO(Akira): size implementation  */}
-    {/* <div className="flex h-full w-full items-center gap-2">
+    {/* <div className="flex size-full items-center gap-2">
       <h2>Size:</h2>
       <Button
         size={ButtonSize.small}
@@ -62,8 +62,8 @@ const Template: StoryFn<typeof Dialog> = () => (
       </Button>
     </div> */}
 
-    <div className="flex h-full w-full flex-col gap-2">
-      <div className="flex h-full w-full items-center gap-2">
+    <div className="flex size-full flex-col gap-2">
+      <div className="flex size-full items-center gap-2">
         <h2>Confirm: </h2>
         <Button
           onClick={(): void => {
@@ -99,7 +99,7 @@ const Template: StoryFn<typeof Dialog> = () => (
         </Button>
       </div>
 
-      <div className="flex h-full w-full items-center gap-2">
+      <div className="flex size-full items-center gap-2">
         <h2>Alert: </h2>
         <Button
           type={ButtonType.danger}
@@ -111,7 +111,7 @@ const Template: StoryFn<typeof Dialog> = () => (
         </Button>
       </div>
 
-      <div className="flex h-full w-full items-center gap-2">
+      <div className="flex size-full items-center gap-2">
         <h2>Show&Customize: </h2>
         <Button
           type={ButtonType.stroke}

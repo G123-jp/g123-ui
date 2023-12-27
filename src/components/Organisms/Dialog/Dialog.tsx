@@ -138,7 +138,7 @@ const Dialog = ({
       <div
         aria-label="Close Dialog"
         className={twMerge(
-          'fixed top-0 h-full w-full bg-black/30 backdrop-blur transition-opacity',
+          'fixed top-0 size-full bg-black/30 backdrop-blur transition-opacity',
           maskClassName,
         )}
         {...(maskStyle && { maskStyle })}
@@ -154,7 +154,7 @@ const Dialog = ({
           classnames(
             'z-50 inline-block overflow-hidden',
             'rounded-lg bg-white shadow-lg',
-            'w-fit min-w-[20rem]', // Akira: 20rem stands for 'xs'
+            'w-fit min-w-80', // Akira: 20rem stands for 'xs'
           ),
           className,
         )}
@@ -163,7 +163,7 @@ const Dialog = ({
         {/* Dialog Header */}
         <header className="relative flex items-center justify-center">
           {/* Akira: placeholder */}
-          <div className="h-10 w-10" />
+          <div className="size-10" />
 
           <div className="flex flex-1 items-center justify-center">
             {logo && <Logo />}

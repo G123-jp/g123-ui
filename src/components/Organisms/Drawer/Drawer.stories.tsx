@@ -20,7 +20,7 @@ const Template: StoryFn<typeof Drawer> = ({ open, ...args }) => {
   const handleClose = (): void => updateArgs({ open: false });
 
   return (
-    <div className="h-full w-full">
+    <div className="size-full">
       <Drawer
         {...args}
         maskClassName="bg-slate-300/40"

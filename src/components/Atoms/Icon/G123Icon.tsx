@@ -11,7 +11,7 @@ export type IconProps = {
 };
 
 type InternalProps = IconProps & {
-  IconSvg: React.VFC<React.SVGProps<SVGSVGElement>>;
+  IconSvg: React.VFC<React.SVGProps<SVGElement>>;
 };
 
 const G123Icon = forwardRef(

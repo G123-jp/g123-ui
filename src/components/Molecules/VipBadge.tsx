@@ -1,5 +1,5 @@
 import classnames from '@/utils/classnames';
-import React from 'react';
+import React, { Ref, forwardRef } from 'react';
 
 type Props = {
   rank?: number;
@@ -22,7 +22,7 @@ const goldSvg64 =
     ? window.btoa(goldSvgRaw)
     : Buffer.from(goldSvgRaw).toString('base64');
 
-const VipBadge: React.VFC<Props> = ({ rank = 0 }) => {
+const VipBadge = forwardRef(({ rank = 0 }: Props, ref: Ref<HTMLDivElement>) => {
   if (rank === 0) {
     return null;
   }
@@ -69,6 +69,7 @@ const VipBadge: React.VFC<Props> = ({ rank = 0 }) => {
 
   return (
     <div
+      ref={ref}
       className={classnames(
         'flex items-center justify-center',
         'bg-contain bg-center bg-no-repeat',
@@ -92,6 +93,6 @@ const VipBadge: React.VFC<Props> = ({ rank = 0 }) => {
       </div>
     </div>
   );
-};
+});
 
 export default VipBadge;

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Ref, forwardRef } from 'react';
 
 export type IconProps = {
   className?: string;
@@ -14,30 +14,36 @@ type InternalProps = IconProps & {
   IconSvg: React.VFC<React.SVGProps<SVGSVGElement>>;
 };
 
-const G123Icon: React.VFC<InternalProps> = ({
-  IconSvg,
-  width,
-  height,
-  viewBox,
-  style,
-  containerStyle,
-  className = '',
-  containerClassName = '',
-}) => {
-  return (
-    <div
-      {...(containerClassName && { className: containerClassName })}
-      {...(containerStyle && { style: containerStyle })}
-    >
-      <IconSvg
-        {...(width && { width })}
-        {...(height && { height })}
-        {...(viewBox && { viewBox })}
-        {...(className && { className })}
-        {...(style && { style })}
-      />
-    </div>
-  );
-};
+const G123Icon = forwardRef(
+  (
+    {
+      IconSvg,
+      width,
+      height,
+      viewBox,
+      style,
+      containerStyle,
+      className = '',
+      containerClassName = '',
+    }: InternalProps,
+    ref: Ref<HTMLDivElement>,
+  ) => {
+    return (
+      <div
+        ref={ref}
+        {...(containerClassName && { className: containerClassName })}
+        {...(containerStyle && { style: containerStyle })}
+      >
+        <IconSvg
+          {...(width && { width })}
+          {...(height && { height })}
+          {...(viewBox && { viewBox })}
+          {...(className && { className })}
+          {...(style && { style })}
+        />
+      </div>
+    );
+  },
+);
 
 export default G123Icon;

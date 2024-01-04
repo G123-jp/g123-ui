@@ -2,7 +2,9 @@ import * as changeCase from 'change-case';
 import * as fs from 'fs';
 import * as path from 'path';
 
+// eslint-disable-next-line no-underscore-dangle
 const __filename = new URL(import.meta.url).pathname;
+// eslint-disable-next-line no-underscore-dangle
 const __dirname = path.dirname(__filename);
 
 const svgImagesDir = path.join(__dirname, 'svg-images');
@@ -32,14 +34,16 @@ const main = () => {
         );
 
         const iconComponentContent = [
-          "import React from 'react';",
+          "import React, { Ref, forwardRef } from 'react';",
           '',
           "import Icon, { IconProps } from '../G123Icon';",
           `import SvgImage from '../svg-images/${category}/${svgFileName}.svg';`,
           '',
-          `const ${iconFileName}: React.VFC<IconProps> = (props) => {`,
-          '  return <Icon IconSvg={SvgImage} {...props} />;',
-          '};',
+          `const ${iconFileName} = forwardRef(`,
+          '  (props: IconProps, ref: Ref<HTMLDivElement>) => {',
+          '    return <Icon ref={ref} IconSvg={SvgImage} {...props} />;',
+          '  },',
+          ');',
           '',
           `export default ${iconFileName};`,
           '',

@@ -31,7 +31,9 @@ export default {
 
 type Story = StoryFn<typeof Button>;
 
-const DefaultTemplate: Story = ({ children, ...args }) => (
+type DefaultProps = React.PropsWithChildren<any>;
+
+const DefaultTemplate: Story = ({ children, ...args }: DefaultProps) => (
   <div className="flex flex-col gap-2">
     {/* Button Type: Basic */}
     <div className="flex items-center gap-2">

@@ -23,6 +23,7 @@ const Switch: React.VFC<Props> = ({
 
   return (
     <div className="flex w-fit items-center justify-center">
+      {/* eslint-disable-next-line jsx-a11y/label-has-associated-control */}
       <label className="flex cursor-pointer items-center" htmlFor="switch">
         <div className="relative">
           <input checked={checked} className="sr-only" type="checkbox" />

@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { Ref, forwardRef } from 'react';
 
 import Icon, { IconProps } from '../G123Icon';
 import SvgImage from '../svg-images/twotone/game.svg';
 
-const GameTwoTone: React.VFC<IconProps> = (props) => {
-  return <Icon IconSvg={SvgImage} {...props} />;
-};
+const GameTwoTone = forwardRef((props: IconProps, ref: Ref<HTMLDivElement>) => {
+  return <Icon ref={ref} IconSvg={SvgImage} {...props} />;
+});
 
 export default GameTwoTone;

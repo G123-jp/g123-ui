@@ -1,4 +1,4 @@
-import { Logo } from '@/components/Atoms';
+import { Button, Icon, Logo } from '@/components/Atoms';
 import { StoryFn, Meta } from '@storybook/react';
 import React from 'react';
 
@@ -67,6 +67,45 @@ const CarouselWithScrollbar: Story = () => {
 
 export const WithScrollbar = CarouselWithScrollbar.bind({});
 
+const CarouselWithRef: Story = () => {
+  const ref = React.useRef<HTMLDivElement>(null);
+
+  const handleScroll = (scrollOffset: number): void => {
+    if (ref.current) {
+      // NOTE(Akira): 304 stands for carousel item width(w-72/18rem/288px) + gap(1rem/16px)
+      ref.current.scrollBy(scrollOffset * 304, 0);
+    }
+  };
+
+  return (
+    <div className="size-full">
+      <Carousel ref={ref} className="w-72 gap-x-4 py-4">
+        <Carousel.Item className="rounded bg-primary">
+          <h1 className="flex h-20 w-60 items-center justify-center gap-x-2">
+            <Logo /> 1
+          </h1>
+        </Carousel.Item>
+        <Carousel.Item className="rounded bg-secondary">
+          <h1 className="flex h-20 w-60 items-center justify-center gap-x-2">
+            <Logo /> 2
+          </h1>
+        </Carousel.Item>
+        <Carousel.Item className="rounded bg-highlight">
+          <h1 className="flex h-20 w-60 items-center justify-center gap-x-2">
+            <Logo /> 3
+          </h1>
+        </Carousel.Item>
+      </Carousel>
+      <div className="flex gap-x-4">
+        <Button onClick={(): void => handleScroll(-1)}>left</Button>
+        <Button onClick={(): void => handleScroll(1)}>right</Button>
+      </div>
+    </div>
+  );
+};
+
+export const WithRef = CarouselWithRef.bind({});
+
 const CarouselWithNavigation: Story = () => {
   const ID = 'test-carousel';
   function navigate(num: number): void {
@@ -74,8 +113,13 @@ const CarouselWithNavigation: Story = () => {
     const width = element?.querySelector('div')?.clientWidth || 0;
     element?.scrollBy(width * num, 0);
   }
+
   return (
     <div className="size-full">
+      <div className="flex w-fit rounded-md border border-info-default bg-info-bg p-2 text-info-default">
+        <Icon.ExclamationOutlined className="scale-75" /> Deprecated, use ref
+        instead.
+      </div>
       <Carousel className="w-72 gap-x-4 py-4" id={ID}>
         <Carousel.Item className="rounded bg-primary">
           <h1 className="flex h-20 w-60 items-center justify-center gap-x-2">
@@ -93,13 +137,10 @@ const CarouselWithNavigation: Story = () => {
           </h1>
         </Carousel.Item>
       </Carousel>
-      <button type="button" onClick={(): void => navigate(-1)}>
-        left
-      </button>
-      &nbsp;
-      <button type="button" onClick={(): void => navigate(1)}>
-        right
-      </button>
+      <div className="flex gap-x-4">
+        <Button onClick={(): void => navigate(-1)}>left</Button>
+        <Button onClick={(): void => navigate(1)}>right</Button>
+      </div>
     </div>
   );
 };

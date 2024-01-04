@@ -15,7 +15,8 @@ export default {
 } as Meta<typeof Drawer>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: StoryFn<typeof Drawer> = ({ open, ...args }) => {
+const Template: StoryFn<typeof Drawer> = ({ ...args }) => {
+  const { open } = args;
   const [_, updateArgs] = useArgs();
   const handleClose = (): void => updateArgs({ open: false });
 

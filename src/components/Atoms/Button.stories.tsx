@@ -1,5 +1,5 @@
 import { StoryFn, Meta } from '@storybook/react';
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import toast, { Toaster } from '../Molecules/Toast';
 
@@ -31,17 +31,32 @@ export default {
 
 type Story = StoryFn<typeof Button>;
 
-const DefaultTemplate: Story = ({ children, ...args }) => (
-  <div className="flex flex-col gap-2">
-    {/* Button Type: Basic */}
-    <div className="flex items-center gap-2">
-      <Button {...args} aria-label="g123-button">
-        {children ?? 'Button'}
-      </Button>
+type DefaultProps = React.PropsWithChildren<any>;
+
+const DefaultTemplate: Story = ({ children, ...args }: DefaultProps) => {
+  const ref = React.useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (ref.current) {
+      setInterval(() => {
+        ref.current?.classList?.toggle('opacity-40');
+      }, 1000);
+    }
+  }, []);
+
+  return (
+    <div className="flex flex-col gap-2">
+      {/* Button Type: Basic */}
+      <div className="flex items-center gap-2">
+        <Button {...args} aria-label="g123-button">
+          {children ?? 'Button'}
+        </Button>
+        <Button ref={ref}>opacity is controled via ref</Button>
+      </div>
+      <Toaster />
     </div>
-    <Toaster />
-  </div>
-);
+  );
+};
 
 export const Default = DefaultTemplate.bind({});
 Default.args = {

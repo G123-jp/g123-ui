@@ -19,7 +19,13 @@ export default {
 } as Meta<typeof Switch>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: StoryFn<typeof Switch> = (args) => <Switch {...args} />;
+const Template: StoryFn<typeof Switch> = (args) => {
+  return (
+    <div className="flex gap-x-4">
+      <Switch {...args} />
+    </div>
+  );
+};
 
 export const Default = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args

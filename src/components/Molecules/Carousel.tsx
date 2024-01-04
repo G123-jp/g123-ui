@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Ref, forwardRef } from 'react';
 import { twMerge } from 'tailwind-merge';
 
 type CarouselItemProps = {
@@ -30,29 +30,37 @@ type Props = {
   scrollbarClassName?: string;
 };
 
-const InternalCarousel: React.VFC<Props> = ({
-  style,
-  className = '',
-  id,
-  scrollbarClassName = 'hidden-scrollbar',
-  children,
-}) => {
-  return (
-    <div
-      className={twMerge(
-        'flex snap-x snap-mandatory overflow-x-auto scroll-smooth',
-        scrollbarClassName,
-        className,
-      )}
-      id={id}
-      {...(style && { style })}
-    >
-      {children}
-    </div>
-  );
-};
+const InternalCarousel = forwardRef(
+  (
+    {
+      style,
+      className = '',
+      id,
+      scrollbarClassName = 'hidden-scrollbar',
+      children,
+    }: Props,
+    ref: Ref<HTMLDivElement>,
+  ) => {
+    return (
+      <div
+        ref={ref}
+        className={twMerge(
+          'flex snap-x snap-mandatory overflow-x-auto scroll-smooth',
+          scrollbarClassName,
+          className,
+        )}
+        id={id}
+        {...(style && { style })}
+      >
+        {children}
+      </div>
+    );
+  },
+);
 
-const Carousel = InternalCarousel as React.VFC<Props> & {
+const Carousel = InternalCarousel as React.ForwardRefExoticComponent<
+  Props & React.RefAttributes<HTMLDivElement>
+> & {
   Item: React.VFC<CarouselItemProps>;
 };
 

@@ -15,7 +15,7 @@ enum Size {
   middle = 'middle',
   large = 'large',
   xLarge = 'xLarge',
-  default = 'default', // default equals to middle
+  default = 'default', // NOTE(Akira): default === secondary
 }
 
 enum Type {
@@ -23,7 +23,7 @@ enum Type {
   secondary = 'secondary',
   danger = 'danger',
   text = 'text',
-  default = 'default', // default equals to secondary
+  default = 'default', // NOTE(Akira): default === secondary
   highlight = 'highlight',
   stroke = 'stroke',
   link = 'link',
@@ -134,8 +134,9 @@ const Button = forwardRef(
             {
               // normal
               'border-transparent': true,
-              'bg-brand-tertiary-base text-font-overlay': type === Type.primary,
-              'bg-error-default text-white': type === Type.danger, // v2.x: TODO in Design System
+              'bg-brand-tertiary-base text-font-overlay dark:bg-neutral-0 dark:text-font-primary':
+                type === Type.primary,
+              'bg-error-default text-white': type === Type.danger,
               'bg-transparent text-font-primary': type === Type.text,
               'bg-brand-primary-base text-font-primary':
                 type === Type.highlight,
@@ -143,26 +144,27 @@ const Button = forwardRef(
                 type === Type.stroke,
               'bg-transparent text-link-default': type === Type.link,
               'bg-brand-tertiary-container text-font-primary':
-                type === Type.secondary || type === Type.default, // Akira: default equals to secondary
+                type === Type.secondary || type === Type.default, // NOTE(Akira): default === secondary
 
               // hover
-              'hover:bg-font-secondary': type === Type.primary,
-              'hover:bg-error-disabled': type === Type.danger, // v2.x: TODO in Design System
+              'hover:bg-font-secondary dark:hover:bg-neutral-0':
+                type === Type.primary,
+              'hover:bg-error-disabled': type === Type.danger,
               'hover:bg-brand-primary-container': type === Type.highlight,
               'hover:text-brand-secondary-secondary': type === Type.link,
               'hover:bg-surface-tertiary':
                 type === Type.text ||
                 type === Type.stroke ||
                 type === Type.secondary ||
-                type === Type.default, // Akira: default equals to secondary
+                type === Type.default, // NOTE(Akira): default === secondary
 
               // active
-              // FIXME(Akira): Missing this color variable
-              'active:bg-[#595959]': type === Type.primary,
-              // '': type === Type.danger, // v2.x: TODO in Design System
+              'active:bg-font-secondary dark:active:bg-neutral-5':
+                type === Type.primary,
+              'active:bg-error-disabled': type === Type.danger,
               'active:bg-brand-primary-secondary': type === Type.highlight,
               'active:bg-font-disabled':
-                type === Type.secondary || type === Type.default, // Akira: default equals to secondary
+                type === Type.secondary || type === Type.default, // NOTE(Akira): default === secondary
 
               // disabled
               '!text-font-disabled': disabled || loading,
@@ -224,7 +226,7 @@ const Button = forwardRef(
         )}
         disabled={disabled}
         type={htmlType}
-        // behave as link
+        // NOTE(Akira): behave as link
         {...(!!href && { href, target })}
         {...(!disabled && onClick && { onClick: handleClick })}
         {...(style && { style })}

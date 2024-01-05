@@ -3,7 +3,6 @@
 import { Palette } from './utils/color_helper';
 
 export default {
-  darkMode: 'class',
   content: ['./src/components/**/*.tsx'],
   theme: {
     fontFamily: {

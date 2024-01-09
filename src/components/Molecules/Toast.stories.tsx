@@ -91,12 +91,17 @@ const Template: StoryFn = () => (
             extraContent: (
               <div
                 className={classnames(
-                  'size-full',
-                  'border border-solid border-brand-primary-secondary',
-                  'bg-brand-primary-bg',
+                  'size-full p-4',
+                  'rounded-md border border-dashed border-font-secondary',
+                  'bg-font-disabled',
+                  'text-font-primary',
                 )}
               >
-                Default Extra Content
+                <p>Default Extra Content</p>
+                <p>Default Extra Content</p>
+                <p>Default Extra Content</p>
+                <p>Default Extra Content</p>
+                <p>Default Extra Content</p>
               </div>
             ),
           });

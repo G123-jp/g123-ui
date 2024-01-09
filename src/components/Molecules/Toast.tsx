@@ -79,7 +79,9 @@ const ExpandableToast: React.VFC<ExpandableToastProps> = ({
         {expanded ? (
           <Button
             className="!p-0"
-            icon={<Icon.CloseOutlined className="text-brand-tertiary-base" />}
+            icon={
+              <Icon.CloseOutlined className="text-brand-tertiary-base dark:text-font-overlay" />
+            }
             type={ButtonType.link}
             onClick={(): void => toast.dismiss(currToast.id)}
           />
@@ -87,7 +89,7 @@ const ExpandableToast: React.VFC<ExpandableToastProps> = ({
           <Button
             className="!p-0"
             icon={
-              <Icon.ChevronDownOutlined className="text-brand-tertiary-base" />
+              <Icon.ChevronDownOutlined className="text-brand-tertiary-base dark:text-font-overlay" />
             }
             type={ButtonType.link}
           />
@@ -132,7 +134,8 @@ const triggerExpandableToast = ({
     ),
     {
       // Akira: hack the padding of toast, to offset the maring of its child
-      className: '!py-2.5 !px-1.5',
+      className:
+        '!py-2.5 !px-1.5 !bg-surface-primary dark:!bg-neutral-7 !text-font-primary dark:!text-font-overlay',
       ...originalOptions,
       duration: Infinity,
     },
@@ -151,7 +154,11 @@ const customToast = {
           extraContent,
           originalOptions: options,
         })
-      : toast(message, { className: '!py-3 !px-1.5', ...options });
+      : toast(message, {
+          className:
+            '!py-3 !px-1.5 !bg-surface-primary dark:!bg-neutral-7 !text-font-primary dark:!text-font-overlay',
+          ...options,
+        });
   },
 
   success: (message: Message, options?: ToastOptions): string => {
@@ -167,7 +174,8 @@ const customToast = {
         })
       : toast.success(message, {
           icon,
-          className: '!py-3 !px-4',
+          className:
+            '!py-3 !px-4 !bg-surface-primary dark:!bg-neutral-7 !text-font-primary dark:!text-font-overlay',
           ...options,
         });
   },
@@ -185,7 +193,8 @@ const customToast = {
         })
       : toast.error(message, {
           icon,
-          className: '!py-3 !px-4',
+          className:
+            '!py-3 !px-4 !bg-surface-primary dark:!bg-neutral-7 !text-font-primary dark:!text-font-overlay',
           ...options,
         });
   },
@@ -203,7 +212,8 @@ const customToast = {
         })
       : toast.error(message, {
           icon,
-          className: '!py-3 !px-4',
+          className:
+            '!py-3 !px-4 !bg-surface-primary dark:!bg-neutral-7 !text-font-primary dark:!text-font-overlay',
           ...options,
         });
   },
@@ -211,7 +221,7 @@ const customToast = {
   loading: (message: Message, options?: ToastOptions): string => {
     const icon = (
       <Icon.LoadingOutlined
-        className="scale-75 text-font-secondary"
+        className="scale-75 text-font-secondary dark:text-font-overlay"
         containerClassName="animate-spin"
       />
     );
@@ -226,7 +236,8 @@ const customToast = {
         })
       : toast.loading(message, {
           icon,
-          className: '!py-3 !px-4',
+          className:
+            '!py-3 !px-4 !bg-surface-primary dark:!bg-neutral-7 !text-font-primary dark:!text-font-overlay',
           ...options,
         });
   },
@@ -249,7 +260,8 @@ const customToast = {
     options?: ToastOptions,
   ): Promise<unknown> => {
     return toast.promise(promise, msgs, {
-      className: '!py-3 !px-4',
+      className:
+        '!py-3 !px-4 !bg-surface-primary dark:!bg-neutral-7 !text-font-primary dark:!text-font-overlay',
       ...options,
     });
   },

@@ -75,7 +75,7 @@ type Props = {
   style?: React.CSSProperties;
 };
 
-// DEPRECATED: Akira: for v1.x, support game&psp
+// DEPRECATED(Akira): for v1.x, support game&psp
 // use Drawer instead for general purpose
 // Akira refs: https://gist.github.com/raymondsiu/b565b629d84b7085d073934eee4da6ab
 const Modal: React.VFC<Props> = ({

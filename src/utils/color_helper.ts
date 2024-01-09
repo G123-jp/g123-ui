@@ -15,13 +15,13 @@ const NutuarlDerivative = {
 };
 
 export const Palette = {
-  // Akira: v1.x Palette, maybe DEPRECATED in the future
+  // DEPRECATED(Akira): v1.x Palette
   primary: '#136c72',
   secondary: '#d9ede2',
   highlight: '#e3ff34',
   danger: '#ff385c',
 
-  // Akira: v2.x Palette, Backward Compatibility
+  // NOTE(Akira): v2.x Palette, Backward Compatibility
   // Brand
   'brand-primary-base': '#e3ff34',
   'brand-primary-secondary': '#d2ef1c',

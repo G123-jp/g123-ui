@@ -38,7 +38,7 @@ const Switch = forwardRef(
             <div
               aria-hidden
               className={classnames(
-                'absolute rounded-full bg-white transition',
+                'absolute rounded-full bg-surface-primary transition',
                 {
                   'top-[3px] h-[1.125rem] w-[1.125rem]': size === 'default',
                   'right-[3px]': size === 'default' && checked,

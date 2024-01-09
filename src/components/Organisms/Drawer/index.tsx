@@ -85,7 +85,7 @@ const Content: React.VFC<ContentProps> = ({
           'fixed inset-x-0 -bottom-3',
           'z-50 block w-full',
           'overflow-hidden',
-          'box-border rounded-b-none rounded-t-xl bg-surface-primary',
+          'box-border rounded-b-none rounded-t-xl bg-surface-primary dark:bg-neutral-7',
           'transition-all duration-300 ease-out',
           {
             'translate-y-0': drawerOpen,
@@ -110,18 +110,22 @@ const Content: React.VFC<ContentProps> = ({
         )}
         {onGoBack ? (
           <Button
-            icon={<ChevronLeftOutlined className="text-font-primary" />}
+            icon={
+              <ChevronLeftOutlined className="text-font-primary dark:text-font-overlay" />
+            }
             type={ButtonType.link}
           />
         ) : (
           // Akira: GoBackButton placeholder
           <div className="size-10" />
         )}
-        <h2 className="flex flex-1 justify-center text-base font-semibold">
+        <h2 className="flex flex-1 justify-center text-base font-semibold text-font-primary dark:text-font-overlay">
           {title}
         </h2>
         <Button
-          icon={<CloseOutlined className="text-font-primary" />}
+          icon={
+            <CloseOutlined className="text-font-primary dark:text-font-overlay" />
+          }
           type={ButtonType.link}
           onClick={handleClose}
         />

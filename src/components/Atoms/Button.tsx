@@ -137,22 +137,27 @@ const Button = forwardRef(
               'bg-brand-tertiary-base text-font-overlay dark:bg-neutral-0 dark:text-font-primary':
                 type === Type.primary,
               'bg-error-default text-white': type === Type.danger,
-              'bg-transparent text-font-primary': type === Type.text,
+              'bg-transparent text-font-primary dark:text-font-overlay':
+                type === Type.text,
               'bg-brand-primary-base text-font-primary':
                 type === Type.highlight,
-              'border-2 border-solid border-brand-tertiary-base bg-transparent text-font-primary':
+              'border-2 border-solid border-brand-tertiary-base bg-transparent text-font-primary dark:border-font-overlay dark:text-font-overlay':
                 type === Type.stroke,
-              'bg-transparent text-link-default': type === Type.link,
-              'bg-brand-tertiary-container text-font-primary':
+              'bg-transparent text-link-default dark:text-brand-secondary-secondary':
+                type === Type.link,
+              'bg-brand-tertiary-container text-font-primary dark:bg-font-secondary dark:text-font-overlay':
                 type === Type.secondary || type === Type.default, // NOTE(Akira): default === secondary
 
               // hover
-              'hover:bg-font-secondary dark:hover:bg-neutral-0':
+              'hover:bg-font-secondary dark:hover:bg-neutral-3':
                 type === Type.primary,
               'hover:bg-error-disabled': type === Type.danger,
               'hover:bg-brand-primary-container': type === Type.highlight,
-              'hover:text-brand-secondary-secondary': type === Type.link,
-              'hover:bg-surface-tertiary':
+              'hover:text-brand-secondary-secondary dark:hover:text-brand-secondary-container':
+                type === Type.link,
+              'dark:hover:border-neutral-3 dark:hover:bg-neutral-3':
+                type === Type.stroke,
+              'hover:bg-surface-tertiary dark:hover:bg-neutral-6':
                 type === Type.text ||
                 type === Type.stroke ||
                 type === Type.secondary ||
@@ -162,12 +167,27 @@ const Button = forwardRef(
               'active:bg-font-secondary dark:active:bg-neutral-5':
                 type === Type.primary,
               'active:bg-error-disabled': type === Type.danger,
+              'active:bg-surface-tertiary': type === Type.text,
               'active:bg-brand-primary-secondary': type === Type.highlight,
-              'active:bg-font-disabled':
+              'active:text-brand-secondary-base ': type === Type.link,
+              'active:bg-font-disabled dark:active:bg-neutral-5':
                 type === Type.secondary || type === Type.default, // NOTE(Akira): default === secondary
 
               // disabled
-              '!text-font-disabled': disabled || loading,
+              '!text-font-disabled dark:!text-font-secondary': disabled,
+              'bg-neutral-3 dark:!bg-neutral-8':
+                (type === Type.default ||
+                  type === Type.secondary ||
+                  type === Type.danger ||
+                  type === Type.highlight ||
+                  type === Type.primary) &&
+                disabled,
+              '!border-font-disabled dark:!border-font-secondary':
+                type === Type.stroke && disabled,
+
+              // loading
+              'opacity-100': !loading,
+              'opacity-40': loading,
             },
 
             // Size
@@ -189,7 +209,7 @@ const Button = forwardRef(
               'h-fit w-fit': isInline,
               'gap-x-0 rounded-sm px-xs py-xxs':
                 size === Size.small && isInline,
-              'gap-x-0 rounded-sm p-xs':
+              'gap-x-0 rounded-md p-xs':
                 (size === Size.middle || size === Size.default) && isInline,
               'rounded px-sm py-xs': size === Size.large && isInline,
               'rounded px-xl py-xxs': size === Size.xLarge && isInline,

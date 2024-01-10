@@ -64,6 +64,18 @@ yarn add @g123jp/g123-ui
   );
   ```
 
+## 🌛 Dark Mode:
+
+- #### g123-ui supports the system's dark mode by default(uses the `prefers-color-scheme` CSS media feature).
+- #### But you can also build sites that support toggling dark mode manually using [the ‘class’ strategy](https://tailwindcss.com/docs/dark-mode#toggling-dark-mode-manually).
+- #### Or use your own [customize the dark mode selector](https://tailwindcss.com/docs/dark-mode#customizing-the-class-name), for example, add the following code in your `tailwind.config.js` and control dark mode by adding `data-mode="g123-dark"` to your `<html>` tag:
+
+```typescript
+darkMode: ['class', '[data-mode="g123-dark"]'];
+```
+
+![image](https://github.com/G123-jp/g123-ui/assets/1228449/f85133b7-745b-422d-b3fd-d19e74cd0c47)
+
 ## ⌨️ Development
 
 - ### install

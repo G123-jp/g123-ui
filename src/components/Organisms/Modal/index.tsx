@@ -51,7 +51,7 @@ const Content: React.VFC<ContentProps> = ({
       className={twMerge(
         classnames(
           'fixed inset-x-0 -bottom-3 z-50',
-          'box-border rounded-b-none rounded-t-xl bg-white',
+          'box-border rounded-b-none rounded-t-xl bg-surface-primary dark:bg-neutral-7',
           'block h-[38rem] w-full overflow-hidden',
           'animate-slide-in-bottom',
         ),
@@ -75,7 +75,7 @@ type Props = {
   style?: React.CSSProperties;
 };
 
-// DEPRECATED: Akira: for v1.x, support game&psp
+// DEPRECATED(Akira): for v1.x, support game&psp
 // use Drawer instead for general purpose
 // Akira refs: https://gist.github.com/raymondsiu/b565b629d84b7085d073934eee4da6ab
 const Modal: React.VFC<Props> = ({

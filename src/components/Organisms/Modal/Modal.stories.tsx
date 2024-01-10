@@ -12,7 +12,7 @@ export default {
   },
 } as Meta<typeof Modal>;
 
-// DEPRECATED: Akira: for v1.x, support game&psp
+// DEPRECATED(Akira): for v1.x, support game&psp
 // use Drawer instead for general purpose
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
 const Template: StoryFn<typeof Modal> = (args) => (

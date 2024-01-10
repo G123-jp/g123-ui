@@ -204,27 +204,107 @@ const SummaryTemplate: Story = () => (
     </div>
 
     {/* UX */}
-    <div className="flex items-center gap-2">
-      <Button>Normal</Button>
-      <Button disabled>Disabled</Button>
-      <Button loading>Loading</Button>
-      <Button icon={<ChatOutlined />} loading>
-        Loading with given icon
-      </Button>
-      <Button icon={<ChatOutlined />} loading />
-      <Button
-        onClick={(): void => {
-          toast.success('Behave as Button(default)');
-        }}
-      >
-        Behave as Button(default)
-      </Button>
-      <Button
-        href="https://www.npmjs.com/package/@g123jp/g123-ui"
-        target="_blank"
-      >
-        Behave as Link
-      </Button>
+    <div className="flex flex-col gap-2">
+      <div className="flex items-center gap-2">
+        <Button>Normal</Button>
+        <Button disabled>Disabled</Button>
+        <Button loading>Loading</Button>
+        <Button icon={<ChatOutlined />} loading>
+          Loading with given icon
+        </Button>
+        <Button icon={<ChatOutlined />} loading />
+        <Button
+          onClick={(): void => {
+            toast.success('Behave as Button(default)');
+          }}
+        >
+          Behave as Button(default)
+        </Button>
+        <Button
+          href="https://www.npmjs.com/package/@g123jp/g123-ui"
+          target="_blank"
+        >
+          Behave as Link
+        </Button>
+      </div>
+      <div className="flex items-center gap-2">
+        <Button type={ButtonType.highlight}>Normal</Button>
+        <Button disabled type={ButtonType.highlight}>
+          Disabled
+        </Button>
+        <Button loading type={ButtonType.highlight}>
+          Loading
+        </Button>
+        <Button icon={<ChatOutlined />} loading type={ButtonType.highlight}>
+          Loading with given icon
+        </Button>
+        <Button icon={<ChatOutlined />} loading type={ButtonType.highlight} />
+      </div>
+      <div className="flex items-center gap-2">
+        <Button type={ButtonType.primary}>Normal</Button>
+        <Button disabled type={ButtonType.primary}>
+          Disabled
+        </Button>
+        <Button loading type={ButtonType.primary}>
+          Loading
+        </Button>
+        <Button icon={<ChatOutlined />} loading type={ButtonType.primary}>
+          Loading with given icon
+        </Button>
+        <Button icon={<ChatOutlined />} loading type={ButtonType.primary} />
+      </div>
+      <div className="flex items-center gap-2">
+        <Button type={ButtonType.stroke}>Normal</Button>
+        <Button disabled type={ButtonType.stroke}>
+          Disabled
+        </Button>
+        <Button loading type={ButtonType.stroke}>
+          Loading
+        </Button>
+        <Button icon={<ChatOutlined />} loading type={ButtonType.stroke}>
+          Loading with given icon
+        </Button>
+        <Button icon={<ChatOutlined />} loading type={ButtonType.stroke} />
+      </div>
+      <div className="flex items-center gap-2">
+        <Button type={ButtonType.danger}>Normal</Button>
+        <Button disabled type={ButtonType.danger}>
+          Disabled
+        </Button>
+        <Button loading type={ButtonType.danger}>
+          Loading
+        </Button>
+        <Button icon={<ChatOutlined />} loading type={ButtonType.danger}>
+          Loading with given icon
+        </Button>
+        <Button icon={<ChatOutlined />} loading type={ButtonType.danger} />
+      </div>
+      <div className="flex items-center gap-2">
+        <Button type={ButtonType.link}>Normal</Button>
+        <Button disabled type={ButtonType.link}>
+          Disabled
+        </Button>
+        <Button loading type={ButtonType.link}>
+          Loading
+        </Button>
+        <Button icon={<ChatOutlined />} loading type={ButtonType.link}>
+          Loading with given icon
+        </Button>
+        <Button icon={<ChatOutlined />} loading type={ButtonType.link} />
+      </div>
+      <div className="flex items-center gap-2">
+        <Button type={ButtonType.text}>Normal</Button>
+        <Button disabled type={ButtonType.text}>
+          Disabled
+        </Button>
+        <Button loading type={ButtonType.text}>
+          Loading
+        </Button>
+        <Button icon={<ChatOutlined />} loading type={ButtonType.text}>
+          Loading with given icon
+        </Button>
+        <Button icon={<ChatOutlined />} loading type={ButtonType.text} />
+      </div>
     </div>
     <Toaster />
   </div>
@@ -381,22 +461,107 @@ Size.args = {};
 const UXTemplate: Story = () => (
   <div className="flex flex-col gap-2">
     {/* UX */}
-    <div className="flex items-center gap-2">
-      <Button>Normal</Button>
-      <Button disabled>Disabled</Button>
-      <Button
-        onClick={(): void => {
-          toast.success('Behave as Button(default)');
-        }}
-      >
-        Behave as Button(default)
-      </Button>
-      <Button
-        href="https://www.npmjs.com/package/@g123jp/g123-ui"
-        target="_blank"
-      >
-        Behave as Link
-      </Button>
+    <div className="flex flex-col gap-2">
+      <div className="flex items-center gap-2">
+        <Button>Normal</Button>
+        <Button disabled>Disabled</Button>
+        <Button loading>Loading</Button>
+        <Button icon={<ChatOutlined />} loading>
+          Loading with given icon
+        </Button>
+        <Button icon={<ChatOutlined />} loading />
+        <Button
+          onClick={(): void => {
+            toast.success('Behave as Button(default)');
+          }}
+        >
+          Behave as Button(default)
+        </Button>
+        <Button
+          href="https://www.npmjs.com/package/@g123jp/g123-ui"
+          target="_blank"
+        >
+          Behave as Link
+        </Button>
+      </div>
+      <div className="flex items-center gap-2">
+        <Button type={ButtonType.highlight}>Normal</Button>
+        <Button disabled type={ButtonType.highlight}>
+          Disabled
+        </Button>
+        <Button loading type={ButtonType.highlight}>
+          Loading
+        </Button>
+        <Button icon={<ChatOutlined />} loading type={ButtonType.highlight}>
+          Loading with given icon
+        </Button>
+        <Button icon={<ChatOutlined />} loading type={ButtonType.highlight} />
+      </div>
+      <div className="flex items-center gap-2">
+        <Button type={ButtonType.primary}>Normal</Button>
+        <Button disabled type={ButtonType.primary}>
+          Disabled
+        </Button>
+        <Button loading type={ButtonType.primary}>
+          Loading
+        </Button>
+        <Button icon={<ChatOutlined />} loading type={ButtonType.primary}>
+          Loading with given icon
+        </Button>
+        <Button icon={<ChatOutlined />} loading type={ButtonType.primary} />
+      </div>
+      <div className="flex items-center gap-2">
+        <Button type={ButtonType.stroke}>Normal</Button>
+        <Button disabled type={ButtonType.stroke}>
+          Disabled
+        </Button>
+        <Button loading type={ButtonType.stroke}>
+          Loading
+        </Button>
+        <Button icon={<ChatOutlined />} loading type={ButtonType.stroke}>
+          Loading with given icon
+        </Button>
+        <Button icon={<ChatOutlined />} loading type={ButtonType.stroke} />
+      </div>
+      <div className="flex items-center gap-2">
+        <Button type={ButtonType.danger}>Normal</Button>
+        <Button disabled type={ButtonType.danger}>
+          Disabled
+        </Button>
+        <Button loading type={ButtonType.danger}>
+          Loading
+        </Button>
+        <Button icon={<ChatOutlined />} loading type={ButtonType.danger}>
+          Loading with given icon
+        </Button>
+        <Button icon={<ChatOutlined />} loading type={ButtonType.danger} />
+      </div>
+      <div className="flex items-center gap-2">
+        <Button type={ButtonType.link}>Normal</Button>
+        <Button disabled type={ButtonType.link}>
+          Disabled
+        </Button>
+        <Button loading type={ButtonType.link}>
+          Loading
+        </Button>
+        <Button icon={<ChatOutlined />} loading type={ButtonType.link}>
+          Loading with given icon
+        </Button>
+        <Button icon={<ChatOutlined />} loading type={ButtonType.link} />
+      </div>
+      <div className="flex items-center gap-2">
+        <Button type={ButtonType.text}>Normal</Button>
+        <Button disabled type={ButtonType.text}>
+          Disabled
+        </Button>
+        <Button loading type={ButtonType.text}>
+          Loading
+        </Button>
+        <Button icon={<ChatOutlined />} loading type={ButtonType.text}>
+          Loading with given icon
+        </Button>
+        <Button icon={<ChatOutlined />} loading type={ButtonType.text} />
+      </div>
     </div>
     <Toaster />
   </div>

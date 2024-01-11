@@ -1,12 +1,8 @@
 // FIXME(Akira): Legacy of Edward
-import { Logo, Button, ButtonType } from '@/components/Atoms';
-import { CloseOutlined } from '@/components/Atoms/Icon';
+import { Icon, Logo, Button, ButtonType } from '@/components/Atoms';
 import classnames from '@/utils/classnames';
 import React, { ReactNode } from 'react';
 import { twMerge } from 'tailwind-merge';
-
-import IconExclamation from './icons/exclamation.svg';
-import IconTick from './icons/tick.svg';
 
 export type DialogAction = {
   destroy: () => void;
@@ -176,7 +172,7 @@ const Dialog = ({
 
           <div className="flex justify-end">
             <Button
-              icon={<CloseOutlined className="text-font-primary" />}
+              icon={<Icon.CloseOutlined className="text-font-primary" />}
               type={ButtonType.link}
               onClick={events.handleCloseButtonClick}
             />
@@ -186,20 +182,23 @@ const Dialog = ({
         {/* Dialog Icon */}
         {icon && (
           <div
-            className={classnames('flex items-center justify-center pb-2', {
+            className={classnames('flex items-center justify-center pb-4', {
               'pt-4': !!logo,
             })}
           >
-            {icon === 'exclamation' && <IconExclamation />}
-
-            {icon === 'tick' && <IconTick />}
+            {icon === 'exclamation' && (
+              <Icon.ExclamationFilled className="scale-[2] text-error-default" />
+            )}
+            {icon === 'tick' && (
+              <Icon.CheckFilled className="scale-[2] text-success-default" />
+            )}
           </div>
         )}
 
         {/* Dialog Content */}
         <div
           className={twMerge(
-            classnames('break-words px-10 pb-3 pt-2 text-center', {
+            classnames('break-words px-10 pb-3 pt-2 text-center font-medium', {
               'pt-4': logo && icon,
               'pb-6': !buttons || buttons.length === 0,
             }),
@@ -214,21 +213,20 @@ const Dialog = ({
         {buttons && buttons.length > 0 && (
           <footer className="flex px-8 pb-5 pt-3">
             {buttons.map((button) => (
-              <button
-                className={classnames(
-                  'mx-2 flex-1 rounded-full border-0 py-3.5 text-center text-xs font-bold first:ml-0 last:mr-0',
+              <Button
+                className="mx-2 flex-1 rounded-full border-0 py-3.5 text-center text-xs font-bold first:ml-0 last:mr-0"
+                type={
                   {
-                    'bg-primary text-secondary': button.color === 'primary',
-                    'bg-secondary text-primary': button.color === 'secondary',
-                  },
-                )}
-                type="button"
+                    primary: ButtonType.primary,
+                    secondary: ButtonType.secondary,
+                  }[button.color]
+                }
                 onClick={(e): Promise<void> | void =>
                   events.handleButtonClick(e, button.onClick)
                 }
               >
                 {button.text}
-              </button>
+              </Button>
             ))}
           </footer>
         )}

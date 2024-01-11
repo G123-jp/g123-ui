@@ -38,7 +38,9 @@ export type DialogOption = {
   style?: React.CSSProperties;
   contentClassName?: string;
   contentStyle?: React.CSSProperties;
+  onConfirm?: () => Promise<void> | void;
   onClose?: () => Promise<void> | void;
+  onCancle?: () => Promise<void> | void;
 };
 
 type Props = {

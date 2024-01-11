@@ -15,10 +15,18 @@ const dialog = {
     message: DialogMessage,
     options: DialogOption = { icon: 'exclamation' },
   ): void {
+    const { onConfirm } = options;
+
     const buttons: DialogButton[] = [
       {
         color: 'primary',
         text: 'OK',
+        onClick: (e, actions): void => {
+          e.preventDefault();
+
+          onConfirm && onConfirm();
+          actions.destroy();
+        },
       },
     ];
 
@@ -29,6 +37,7 @@ const dialog = {
     message: DialogMessage,
     options: DialogOption = { icon: 'exclamation' },
   ): Promise<boolean> {
+    const { onConfirm, onCancle } = options;
     return new Promise((resolve) => {
       const buttons: DialogButton[] = [
         {
@@ -36,6 +45,7 @@ const dialog = {
           onClick: (e, actions): void => {
             e.preventDefault();
 
+            onConfirm && onConfirm();
             resolve(true);
             actions.destroy();
           },
@@ -46,6 +56,7 @@ const dialog = {
           onClick: (e, actions): void => {
             e.preventDefault();
 
+            onCancle && onCancle();
             resolve(false);
             actions.destroy();
           },

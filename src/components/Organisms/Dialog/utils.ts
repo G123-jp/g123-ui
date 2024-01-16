@@ -30,7 +30,10 @@ const dialog = {
       },
     ];
 
-    this.show(message, null, buttons, options);
+    this.show(message, null, buttons, {
+      ...options,
+      icon: options.icon ?? 'exclamation',
+    });
   },
 
   confirm(
@@ -64,7 +67,10 @@ const dialog = {
         },
       ];
 
-      this.show(message, null, buttons, options);
+      this.show(message, null, buttons, {
+        ...options,
+        icon: options.icon ?? 'exclamation',
+      });
     });
   },
 

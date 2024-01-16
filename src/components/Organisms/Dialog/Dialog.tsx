@@ -189,10 +189,10 @@ const Dialog = ({
             })}
           >
             {icon === 'exclamation' && (
-              <Icon.ExclamationFilled className="scale-[2] text-error-default" />
+              <Icon.ExclamationFilled className="scale-[2.5] text-error-default" />
             )}
             {icon === 'tick' && (
-              <Icon.CheckFilled className="scale-[2] text-success-default" />
+              <Icon.CheckFilled className="scale-[2.5] text-success-default" />
             )}
           </div>
         )}
@@ -201,7 +201,7 @@ const Dialog = ({
         <div
           className={twMerge(
             classnames('break-words px-10 pb-3 pt-2 text-center font-medium', {
-              'pt-4': logo && icon,
+              'pt-4': icon,
               'pb-6': !buttons || buttons.length === 0,
             }),
             contentClassName,

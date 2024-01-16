@@ -152,7 +152,8 @@ const Dialog = ({
           classnames(
             'z-50 inline-block overflow-hidden',
             'rounded-lg bg-surface-primary shadow-lg',
-            'w-fit min-w-80', // Akira: 20rem stands for 'xs'
+            // NOTE(Akira): -3rem stands for padding(24px * 2) on small screens
+            'w-fit min-w-64 max-w-[calc(100%-3rem)]',
           ),
           className,
         )}

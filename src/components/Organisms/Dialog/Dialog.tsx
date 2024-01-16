@@ -200,10 +200,13 @@ const Dialog = ({
         {/* Dialog Content */}
         <div
           className={twMerge(
-            classnames('break-words px-10 pb-3 pt-2 text-center font-medium', {
-              'pt-4': icon,
-              'pb-6': !buttons || buttons.length === 0,
-            }),
+            classnames(
+              'break-words px-10 pb-3 pt-2 text-center font-semibold',
+              {
+                'pt-4': icon,
+                'pb-6': !buttons || buttons.length === 0,
+              },
+            ),
             contentClassName,
           )}
           {...(contentStyle && { style: contentStyle })}

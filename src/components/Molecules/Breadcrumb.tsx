@@ -22,6 +22,7 @@ type BreadcrumbItem = {
 };
 
 type Props = {
+  mode?: 'desktop' | 'mobile';
   className?: string;
   style?: React.CSSProperties;
   items: (
@@ -31,11 +32,20 @@ type Props = {
 };
 
 const Breadcrumb = forwardRef(
-  ({ style, className = '', items }: Props, ref: Ref<HTMLDivElement>) => {
+  (
+    { mode = 'desktop', style, className = '', items }: Props,
+    ref: Ref<HTMLDivElement>,
+  ) => {
     return (
       <div
         ref={ref}
-        className={twMerge('flex items-center text-sm font-light', className)}
+        className={twMerge(
+          classnames('flex items-center text-sm', {
+            'font-light': mode === 'desktop',
+            'font-semibold': mode === 'mobile',
+          }),
+          className,
+        )}
         {...(style && { style })}
       >
         {items.map((item, idx) => {
@@ -59,8 +69,9 @@ const Breadcrumb = forwardRef(
                       'flex items-center px-1',
                       'rounded hover:bg-neutral-3',
                       {
-                        'text-neutral-7': !isCurrent,
-                        'text-neutral-9': isCurrent,
+                        'text-font-primary': isCurrent,
+                        'text-font-secondary': !isCurrent && mode === 'desktop',
+                        'text-neutral-6': !isCurrent && mode === 'mobile',
                       },
                     ),
                     itemClassName,
@@ -73,8 +84,15 @@ const Breadcrumb = forwardRef(
                 </a>
                 {!isCurrent && (
                   <Icon.ChevronRightOutlined
-                    className="relative -left-1 top-[-5px] scale-50"
-                    containerClassName="size-3"
+                    className={classnames('relative', {
+                      '-left-1 top-[-5px] scale-50 text-font-secondary':
+                        mode === 'desktop',
+                      'scale-100 text-neutral-6': mode === 'mobile',
+                    })}
+                    containerClassName={classnames({
+                      'size-3': mode === 'desktop',
+                      'size-6': mode === 'mobile',
+                    })}
                   />
                 )}
               </>
@@ -91,8 +109,15 @@ const Breadcrumb = forwardRef(
               })}
               {!isCurrent && (
                 <Icon.ChevronRightOutlined
-                  className="relative -left-1 top-[-5px] scale-50"
-                  containerClassName="size-3"
+                  className={classnames('relative', {
+                    '-left-1 top-[-5px] scale-50 text-font-secondary':
+                      mode === 'desktop',
+                    'scale-100 text-neutral-6': mode === 'mobile',
+                  })}
+                  containerClassName={classnames({
+                    'size-3': mode === 'desktop',
+                    'size-6': mode === 'mobile',
+                  })}
                 />
               )}
             </>
